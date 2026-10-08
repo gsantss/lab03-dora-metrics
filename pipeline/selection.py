@@ -1,28 +1,40 @@
 ﻿from __future__ import annotations
 
 import csv
-from dataclasses import dataclass, asdict
+from collections import Counter, defaultdict
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Iterable
 
 from .github_api import GitHubAPI
 
 
+STAGES = ("candidates", "with_actions", "with_min_releases", "with_min_runs", "included")
+
+
 @dataclass
 class Funnel:
-    candidates: int = 0
-    with_actions: int = 0
-    with_min_releases: int = 0
-    with_min_runs: int = 0
-    included: int = 0
+    """Quantos repositórios chegaram a cada etapa e por que os demais ficaram nela."""
+
+    counts: Counter = field(default_factory=Counter)
+    discards: defaultdict = field(default_factory=lambda: defaultdict(Counter))
+
+    def reached(self, stage: str) -> None:
+        self.counts[stage] += 1
+
+    def discard(self, stage: str, reason: str) -> None:
+        """Registra um repositório que não chegou a `stage` pelo motivo `reason`."""
+        self.discards[stage][reason] += 1
 
     def to_rows(self) -> list[dict[str, int | str]]:
         return [
-            {"stage": "candidates", "count": self.candidates},
-            {"stage": "with_actions", "count": self.with_actions},
-            {"stage": "with_min_releases", "count": self.with_min_releases},
-            {"stage": "with_min_runs", "count": self.with_min_runs},
-            {"stage": "included", "count": self.included},
+            {
+                "stage": stage,
+                "count": self.counts[stage],
+                "discarded": sum(self.discards[stage].values()),
+                "reasons": "; ".join(f"{r}={n}" for r, n in sorted(self.discards[stage].items())),
+            }
+            for stage in STAGES
         ]
 
 

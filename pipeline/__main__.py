@@ -6,10 +6,9 @@ from pathlib import Path
 
 import yaml
 
+from .collect import SampleWriter, collect_repository
 from .github_api import GitHubAPI
-from .releases import collect_releases
-from .selection import Funnel, candidate_repositories, has_actions, write_csv
-from .workflows import collect_workflow_runs
+from .selection import Funnel, candidate_repositories, write_csv
 
 
 def _parse_day(value: str, end_of_day: bool = False) -> datetime:
@@ -17,53 +16,39 @@ def _parse_day(value: str, end_of_day: bool = False) -> datetime:
     return day.replace(hour=23, minute=59, second=59) if end_of_day else day
 
 
-def run(config_path: str) -> None:
+def run(config_path: str) -> Funnel:
     config = yaml.safe_load(Path(config_path).read_text(encoding="utf-8"))
     start = _parse_day(config["window"]["start"])
     end = _parse_day(config["window"]["end"], end_of_day=True)
     out_dir = Path(config["output_dir"])
+    sample_size = config["sample_size"]
 
     api = GitHubAPI(cache_dir=config["cache_dir"])
     funnel = Funnel()
-    selected: list[dict] = []
 
-    for repo in candidate_repositories(api):
-        if len(selected) >= config["sample_size"]:
-            break
-        funnel.candidates += 1
-        owner, name = repo["owner"]["login"], repo["name"]
+    with SampleWriter(out_dir) as writer:
+        for repo in candidate_repositories(api):
+            if funnel.counts["included"] >= sample_size:
+                break
+            funnel.reached("candidates")
 
-        if not has_actions(api, owner, name):
-            continue
-        funnel.with_actions += 1
-
-        _, in_window = collect_releases(api, owner, name, start, end)
-        if len(in_window) < config["min_releases"]:
-            continue
-        funnel.with_min_releases += 1
-
-        runs = collect_workflow_runs(api, owner, name, repo["default_branch"], start, end)
-        if len(runs) < config["min_runs"]:
-            continue
-        funnel.with_min_runs += 1
-
-        selected.append(
-            {
-                "full_name": repo["full_name"],
-                "default_branch": repo["default_branch"],
-                "stars": repo["stargazers_count"],
-                "language": repo.get("language"),
-                "created_at": repo["created_at"],
-                "contributors": api.contributor_count(owner, name),
-                "releases_valid": len(in_window),
-                "workflow_runs_valid": len(runs),
-            }
-        )
-        funnel.included = len(selected)
-        print(f"[{len(selected)}/{config['sample_size']}] {repo['full_name']}")
+            data = collect_repository(
+                api,
+                repo,
+                start,
+                end,
+                funnel,
+                min_releases=config["min_releases"],
+                min_runs=config["min_runs"],
+            )
+            if data:
+                writer.write(data)
+                print(f"[{funnel.counts['included']}/{sample_size}] {repo['full_name']}")
 
     write_csv(out_dir / "funnel.csv", funnel.to_rows())
-    write_csv(out_dir / "repositories.csv", selected)
+    if funnel.counts["included"] < sample_size:
+        print(f"[aviso] candidatos esgotados: {funnel.counts['included']}/{sample_size} repositórios.")
+    return funnel
 
 
 def main() -> None:

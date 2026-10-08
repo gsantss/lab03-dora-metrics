@@ -55,8 +55,12 @@ com cobertura mínima de 80% do módulo `metricas.py`.
 
 Geradas em `output_dir` (por padrão `data/processed/`):
 
-- `funnel.csv`: funil de seleção;
-- `repositories.csv`: repositórios da amostra final.
+- `funnel.csv`: funil de seleção, com quantos repositórios foram descartados em cada etapa e por quê;
+- `repositories.csv`: repositórios da amostra final e seus metadados;
+- `releases.csv`: releases (deploys) de cada repositório na janela;
+- `commits.csv`: commits incluídos em cada release (base do lead time e do CFR por entrega);
+- `ignored_releases.csv`: releases fora do cálculo de lead time e o motivo;
+- `workflow_runs.csv`: workflow runs válidos do default branch (base do CFR por CI e do tempo de recuperação).
 
 O dicionário de dados de cada coluna está em [docs/dicionario-de-dados.md](docs/dicionario-de-dados.md).
 
@@ -64,10 +68,10 @@ O dicionário de dados de cada coluna está em [docs/dicionario-de-dados.md](doc
 
 ```
 metricas.py          cálculo das métricas e classificação DORA
-pipeline/            coleta (cliente REST, seleção, releases, workflow runs)
+pipeline/            coleta (cliente REST, seleção, releases, workflow runs, collect)
 tests/               testes pytest
 config.yaml          parâmetros da execução
-docs/                dicionário de dados
+docs/                dicionário de dados e introdução do artigo
 ```
 
 ## Definições operacionais
@@ -76,3 +80,7 @@ Seguem o enunciado do laboratório: deploy = release publicada (`draft = false`,
 `prerelease = false`); apenas o default branch; workflow runs com `event = push`;
 `success` é sucesso, `failure`/`timed_out`/`startup_failure` são falha e as demais
 conclusões são ignoradas.
+
+Release corretiva (CFR por entrega, heurística v1, a validar na amostra-ouro): a versão
+muda só no número de *patch* e há ao menos um commit com `revert`, `hotfix`, `bugfix` ou
+`fix` entre as duas releases. Releases dos últimos 7 dias da janela são censuradas.
