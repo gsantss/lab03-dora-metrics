@@ -1,0 +1,10 @@
+# Janela de observação (12 meses). PREENCHER com as datas fixadas pelo professor.
+window:
+  start: "2025-10-01"
+  end: "2026-09-30"
+
+sample_size: 100          # S01: 100 repositórios; S02: >= 300
+min_releases: 5
+min_runs: 50
+cache_dir: data/cache
+output_dir: data/processed
