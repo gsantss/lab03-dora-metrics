@@ -1,6 +1,8 @@
 ﻿from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import datetime
+
+import requests
 
 from .github_api import GitHubAPI
 
@@ -40,6 +42,36 @@ def collect_tags(api: GitHubAPI, owner: str, repo: str) -> list[dict]:
     return api.get_all(f"/repos/{owner}/{repo}/tags")
 
 
+def slim_compare(data: dict) -> dict:
+    # O compare traz os diffs dos arquivos em "files"; o lead time só usa sha, data e mensagem.
+    return {
+        "total_commits": data.get("total_commits", 0),
+        "commits": [
+            {
+                "sha": c.get("sha"),
+                "commit": {
+                    "author": {"date": c.get("commit", {}).get("author", {}).get("date")},
+                    "message": c.get("commit", {}).get("message", ""),
+                },
+            }
+            for c in data.get("commits", [])
+        ],
+    }
+
+
+def compare_commits(api: GitHubAPI, path: str) -> list[dict]:
+    # O compare devolve um objeto com a lista em "commits"; sem paginar, para em 250.
+    commits: list[dict] = []
+    page = 1
+    while True:
+        data, _ = api.get_json(path, {"per_page": 100, "page": page}, slim=slim_compare)
+        batch = data.get("commits", [])
+        commits.extend(batch)
+        if not batch or len(commits) >= data.get("total_commits", 0):
+            return commits
+        page += 1
+
+
 def commits_between_releases(
     api: GitHubAPI,
     owner: str,
@@ -69,13 +101,23 @@ def commits_between_releases(
         path = f"/repos/{owner}/{repo}/compare/{base}...{head}"
 
         try:
-            commits = api.get_all(path)
-        except Exception as exc:
+            commits = compare_commits(api, path)
+        except (requests.RequestException, RuntimeError) as exc:
             ignored.append(
                 {
                     "release_id": release["id"],
                     "tag_name": head,
                     "reason": f"compare_error:{type(exc).__name__}",
+                }
+            )
+            continue
+
+        if not commits:
+            ignored.append(
+                {
+                    "release_id": release["id"],
+                    "tag_name": head,
+                    "reason": "no_new_commits",
                 }
             )
             continue
@@ -93,7 +135,7 @@ def commits_between_releases(
                     "release_published_at": release["published_at"],
                     "commit_sha": commit.get("sha"),
                     "commit_author_date": author_date,
-                    "commit_message": commit.get("commit", {}).get("message", ""),
+                    "commit_message": commit.get("commit", {}).get("message", "").split("\n", 1)[0],
                 }
             )
 

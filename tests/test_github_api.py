@@ -1,6 +1,7 @@
 import time
 
 import pytest
+import requests
 
 from pipeline.github_api import GitHubAPI
 
@@ -78,6 +79,39 @@ def test_5xx_retries_with_exponential_backoff(api, monkeypatch):
     assert sleeps == [1, 2, 4]
 
 
+def test_network_error_retries_with_backoff(api, monkeypatch):
+    queue = [requests.ConnectionError("queda"), requests.Timeout("lento"), FakeResponse(data={"ok": 1})]
+
+    def fake_get(url, params=None, timeout=None):
+        item = queue.pop(0)
+        if isinstance(item, Exception):
+            raise item
+        return item
+
+    monkeypatch.setattr(api.session, "get", fake_get)
+    data, _ = api.get_json("/x")
+    assert data == {"ok": 1}
+    assert sleeps == [1, 2]
+
+
+def test_network_error_gives_up_after_max_attempts(api, monkeypatch):
+    def fake_get(url, params=None, timeout=None):
+        raise requests.ConnectionError("sem rede")
+
+    monkeypatch.setattr(api.session, "get", fake_get)
+    with pytest.raises(requests.ConnectionError):
+        api.get_json("/x", max_attempts=2)
+
+
+def test_slim_reduces_response_before_caching(api, monkeypatch, tmp_path):
+    script(api, monkeypatch, [FakeResponse(data={"keep": 1, "drop": "x" * 1000})])
+    slim = lambda d: {"keep": d["keep"]}
+    data, _ = api.get_json("/x", slim=slim)
+    assert data == {"keep": 1}
+    cached, _ = GitHubAPI(cache_dir=tmp_path, token="fake").get_json("/x")
+    assert cached == {"keep": 1}
+
+
 def test_5xx_gives_up_after_max_attempts(api, monkeypatch):
     script(api, monkeypatch, [FakeResponse(500)] * 3)
     with pytest.raises(RuntimeError):
@@ -95,6 +129,15 @@ def test_rate_limit_waits_until_reset_then_retries(api, monkeypatch):
     assert data == {"ok": 1}
     assert len(calls) == 2
     assert sleeps == [32]
+
+
+def test_secondary_rate_limit_respects_retry_after(api, monkeypatch):
+    limited = FakeResponse(403, headers={"X-RateLimit-Remaining": "4000", "Retry-After": "60"})
+    calls = script(api, monkeypatch, [limited, FakeResponse(data={"ok": 1})])
+    data, _ = api.get_json("/x")
+    assert data == {"ok": 1}
+    assert len(calls) == 2
+    assert sleeps == [60]
 
 
 def test_get_all_follows_pages_until_short_page(api, monkeypatch):

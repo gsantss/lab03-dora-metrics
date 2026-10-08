@@ -14,7 +14,7 @@ class RepositoryRecord:
     stars: int
     language: str | None
     created_at: str
-    contributors: int
+    contributors: int | None
     releases_valid: int
     workflow_runs_valid: int
 

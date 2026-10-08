@@ -5,7 +5,7 @@ import json
 import os
 import time
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 from urllib.parse import urlparse, parse_qs
 
 import requests
@@ -46,7 +46,9 @@ class GitHubAPI:
         *,
         use_cache: bool = True,
         max_attempts: int = 6,
+        slim: Callable[[Any], Any] | None = None,
     ) -> tuple[Any, dict[str, str]]:
+        """`slim` reduz a resposta antes de ir para o cache (só os campos usados)."""
         url = path_or_url if path_or_url.startswith("http") else f"{self.BASE_URL}{path_or_url}"
         cache_path = self._cache_path(url, params)
 
@@ -58,7 +60,15 @@ class GitHubAPI:
         last_error = None
 
         for attempt in range(max_attempts):
-            response = self.session.get(url, params=params, timeout=60)
+            try:
+                response = self.session.get(url, params=params, timeout=60)
+            except (requests.ConnectionError, requests.Timeout) as exc:
+                last_error = exc
+                if attempt < max_attempts - 1:
+                    time.sleep(delay)
+                    delay *= 2
+                    continue
+                raise
 
             remaining = response.headers.get("X-RateLimit-Remaining")
             reset = response.headers.get("X-RateLimit-Reset")
@@ -66,6 +76,13 @@ class GitHubAPI:
             if response.status_code in {403, 429} and remaining == "0" and reset:
                 sleep_for = max(int(reset) - int(time.time()) + 2, 1)
                 print(f"[rate-limit] aguardando {sleep_for}s...")
+                time.sleep(sleep_for)
+                continue
+
+            retry_after = response.headers.get("Retry-After")
+            if response.status_code in {403, 429} and retry_after:
+                sleep_for = max(int(retry_after), 1)
+                print(f"[rate-limit secundário] aguardando {sleep_for}s...")
                 time.sleep(sleep_for)
                 continue
 
@@ -80,6 +97,8 @@ class GitHubAPI:
 
             response.raise_for_status()
             data = response.json()
+            if slim is not None:
+                data = slim(data)
             headers = {
                 "Link": response.headers.get("Link", ""),
                 "X-RateLimit-Remaining": response.headers.get("X-RateLimit-Remaining", ""),
@@ -95,7 +114,12 @@ class GitHubAPI:
 
         raise last_error or RuntimeError("Falha desconhecida ao consultar GitHub.")
 
-    def get_all(self, path: str, params: dict[str, Any] | None = None) -> list[Any]:
+    def get_all(
+        self,
+        path: str,
+        params: dict[str, Any] | None = None,
+        slim: Callable[[Any], Any] | None = None,
+    ) -> list[Any]:
         params = dict(params or {})
         params.setdefault("per_page", 100)
         page = 1
@@ -104,7 +128,7 @@ class GitHubAPI:
         while True:
             page_params = dict(params)
             page_params["page"] = page
-            data, _ = self.get_json(path, page_params)
+            data, _ = self.get_json(path, page_params, slim=slim)
 
             if isinstance(data, dict) and "items" in data:
                 batch = data["items"]
