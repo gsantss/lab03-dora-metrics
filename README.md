@@ -58,9 +58,12 @@ Geradas em `output_dir` (por padrão `data/processed/`):
 - `funnel.csv`: funil de seleção, com quantos repositórios foram descartados em cada etapa e por quê;
 - `repositories.csv`: repositórios da amostra final e seus metadados;
 - `releases.csv`: releases (deploys) de cada repositório na janela;
-- `commits.csv`: commits incluídos em cada release (base do lead time e do CFR por entrega);
+- `commits.csv.gz`: commits incluídos em cada release (base do lead time e do CFR por entrega);
 - `ignored_releases.csv`: releases fora do cálculo de lead time e o motivo;
-- `workflow_runs.csv`: workflow runs válidos do default branch (base do CFR por CI e do tempo de recuperação).
+- `workflow_runs.csv.gz`: workflow runs válidos do default branch (base do CFR por CI e do tempo de recuperação).
+
+Os dois maiores saem comprimidos para caber no limite de 100 MB por arquivo do GitHub;
+o pandas lê direto: `pd.read_csv("data/processed/commits.csv.gz")`.
 
 O dicionário de dados de cada coluna está em [docs/dicionario-de-dados.md](docs/dicionario-de-dados.md).
 

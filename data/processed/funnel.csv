@@ -1,0 +1,6 @@
+stage,count,discarded,reasons
+candidates,241,0,
+with_actions,224,17,no_actions=17
+with_min_releases,117,107,few_releases=107
+with_min_runs,101,16,api_error=6; few_runs=10
+included,100,1,api_error=1

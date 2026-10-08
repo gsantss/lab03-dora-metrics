@@ -1,4 +1,5 @@
 import csv
+import gzip
 import sys
 from datetime import date, datetime, timedelta, timezone
 
@@ -267,7 +268,8 @@ def test_funil_registra_motivos_de_descarte():
 
 
 def read_csv(path):
-    with path.open(encoding="utf-8") as fp:
+    opener = gzip.open if path.suffix == ".gz" else open
+    with opener(path, "rt", encoding="utf-8", newline="") as fp:
         return list(csv.DictReader(fp))
 
 
@@ -297,6 +299,6 @@ def test_pipeline_com_um_unico_comando(tmp_path, monkeypatch):
 
     assert [r["full_name"] for r in read_csv(out / "repositories.csv")] == ["octo/app"]
     assert len(read_csv(out / "releases.csv")) == 3
-    assert len(read_csv(out / "commits.csv")) == 3
+    assert len(read_csv(out / "commits.csv.gz")) == 3
     assert len(read_csv(out / "ignored_releases.csv")) == 1
-    assert len(read_csv(out / "workflow_runs.csv")) == 4
+    assert len(read_csv(out / "workflow_runs.csv.gz")) == 4

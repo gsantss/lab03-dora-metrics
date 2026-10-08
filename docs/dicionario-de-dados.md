@@ -44,11 +44,17 @@ Releases da definição principal (deploys) dentro da janela, uma por linha.
 | `tag_name` | texto | — | Campo `tag_name` |
 | `published_at` | data/hora | — | Campo `published_at` (data do deploy) |
 
-## `commits.csv`
+## `commits.csv.gz`
 
 Commits incluídos em cada release da janela: `GET /repos/{o}/{r}/compare/{anterior}...{release}`,
 paginado. A release anterior é a release publicada imediatamente antes (sem pré-releases),
-mesmo que esteja fora da janela.
+mesmo que esteja fora da janela. Arquivo comprimido com gzip.
+
+> **Atenção (coleta da S01):** em projetos que mantêm linhas de versão em paralelo, a release
+> anterior por data pode ser de outra linha (ex.: `godot 3.6.3-stable` depois da `4.x`). O
+> compare então devolve milhares de commits antigos, até o teto de 10.000 da API. Na coleta de
+> 100 repositórios, 250 releases (3%) têm mais de 1.000 commits e somam 68% das linhas; a
+> mediana é de 5 commits por release. Tratar antes de calcular o lead time (S02).
 
 | Coluna | Tipo | Unidade | Origem / fórmula |
 |---|---|---|---|
@@ -74,10 +80,11 @@ Releases da janela que ficaram fora do cálculo de lead time.
 | `tag_name` | texto | — | Campo `tag_name` |
 | `reason` | texto | — | `no_previous_release` (primeira release da história), `no_new_commits` (compare sem commits) ou `compare_error:<Erro>` (ex.: tag apagada, 404) |
 
-## `workflow_runs.csv`
+## `workflow_runs.csv.gz`
 
 Workflow runs válidos (sucesso ou falha) do default branch disparados por `push` na janela.
 A janela é consultada mês a mês e subdividida quando uma consulta atinge o teto de 1000 runs.
+Arquivo comprimido com gzip.
 
 | Coluna | Tipo | Unidade | Origem / fórmula |
 |---|---|---|---|

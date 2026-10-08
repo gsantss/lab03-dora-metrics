@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import gzip
 from contextlib import ExitStack
 from dataclasses import fields
 from datetime import datetime
@@ -39,6 +40,8 @@ OUTPUTS = {
         "updated_at",
     ],
 }
+# Sem compressão passam do limite de 100 MB por arquivo do GitHub; pandas lê .csv.gz direto.
+COMPRESSED = {"commits", "workflow_runs"}
 
 
 def _contributors(api: GitHubAPI, owner: str, name: str) -> int | None:
@@ -139,9 +142,11 @@ class SampleWriter:
     def __enter__(self) -> SampleWriter:
         self.out_dir.mkdir(parents=True, exist_ok=True)
         for name, columns in OUTPUTS.items():
-            fp = self._stack.enter_context(
-                (self.out_dir / f"{name}.csv").open("w", newline="", encoding="utf-8")
-            )
+            if name in COMPRESSED:
+                fp = gzip.open(self.out_dir / f"{name}.csv.gz", "wt", newline="", encoding="utf-8")
+            else:
+                fp = (self.out_dir / f"{name}.csv").open("w", newline="", encoding="utf-8")
+            self._stack.enter_context(fp)
             writer = csv.DictWriter(fp, fieldnames=columns, extrasaction="ignore")
             writer.writeheader()
             self._writers[name] = writer
