@@ -1,0 +1,26 @@
+{
+  "tipo_projeto": {
+    "kappa": 1.0,
+    "interpretacao": "quase perfeita",
+    "itens": 60,
+    "avaliadores": 3,
+    "concordancia_observada": 1.0,
+    "concordancia_esperada": 0.30055555555555563
+  },
+  "entrega_real": {
+    "kappa": 1.0,
+    "interpretacao": "quase perfeita",
+    "itens": 60,
+    "avaliadores": 3,
+    "concordancia_observada": 1.0,
+    "concordancia_esperada": 0.7938888888888889
+  },
+  "corretiva": {
+    "kappa": 1.0,
+    "interpretacao": "quase perfeita",
+    "itens": 300,
+    "avaliadores": 3,
+    "concordancia_observada": 1.0,
+    "concordancia_esperada": 0.5256888888888889
+  }
+}
