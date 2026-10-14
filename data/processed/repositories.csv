@@ -94,8 +94,8 @@ tt-a1i/archify,tt-a1i,archify,https://github.com/tt-a1i/archify,main,80602,JavaS
 ventoy/Ventoy,ventoy,Ventoy,https://github.com/ventoy/Ventoy,master,79809,C,2020-03-10T15:19:19Z,136,10,166
 coder/code-server,coder,code-server,https://github.com/coder/code-server,main,79569,TypeScript,2019-02-27T16:50:41Z,303,46,345
 pbakaus/impeccable,pbakaus,impeccable,https://github.com/pbakaus/impeccable,main,78787,JavaScript,2025-11-16T01:52:04Z,54,73,863
+elastic/elasticsearch,elastic,elasticsearch,https://github.com/elastic/elasticsearch,main,78216,Java,2010-02-08T13:20:56Z,2560,57,27231
 obsproject/obs-studio,obsproject,obs-studio,https://github.com/obsproject/obs-studio,master,77175,C,2013-10-01T02:40:31Z,753,9,337
 nestjs/nest,nestjs,nest,https://github.com/nestjs/nest,master,76799,TypeScript,2017-02-04T20:12:52Z,773,38,1533
 redis/redis,redis,redis,https://github.com/redis/redis,unstable,76644,C,2009-03-21T22:32:25Z,960,52,2238
 ocornut/imgui,ocornut,imgui,https://github.com/ocornut/imgui,master,76551,C++,2014-07-21T14:29:47Z,569,7,581
-typicode/json-server,typicode,json-server,https://github.com/typicode/json-server,main,75722,JavaScript,2013-11-27T13:21:13Z,96,11,51

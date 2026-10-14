@@ -1,8 +1,12 @@
 ﻿from __future__ import annotations
 
+from bisect import bisect_left, insort
+from collections import defaultdict
 from datetime import datetime
 
 import requests
+
+from metricas import version_key
 
 from .github_api import GitHubAPI
 
@@ -36,6 +40,32 @@ def collect_releases(
     ]
 
     return published, main_window
+
+
+def previous_releases(history: list[dict]) -> list[dict | None]:
+    """Release anterior de cada release de `history` (em ordem de publicação).
+
+    É a maior versão menor que a da release, com o mesmo prefixo de tag, publicada antes
+    dela: assim um patch de uma linha antiga (3.6.3 publicada depois da 4.7.2) é comparado
+    com a 3.6.2, e não com uma release de outra linha. Sem versão reconhecível ou sem
+    candidata na mesma linha, vale a anterior por data.
+    """
+    output: list[dict | None] = []
+    lines: dict[str, list[tuple[tuple[int, int, int], int]]] = defaultdict(list)
+
+    for i, release in enumerate(history):
+        chosen = history[i - 1] if i else None
+        key = version_key(release["tag_name"])
+        if key is not None:
+            prefix, version = key
+            line = lines[prefix]
+            position = bisect_left(line, (version,))
+            if position:
+                chosen = history[line[position - 1][1]]
+            insort(line, (version, i))
+        output.append(chosen)
+
+    return output
 
 
 def collect_tags(api: GitHubAPI, owner: str, repo: str) -> list[dict]:
@@ -80,12 +110,13 @@ def commits_between_releases(
     releases_in_window: list[dict],
 ) -> tuple[list[dict], list[dict]]:
     index = {r["id"]: i for i, r in enumerate(all_published_releases)}
+    previous_of = previous_releases(all_published_releases)
     records: list[dict] = []
     ignored: list[dict] = []
 
     for release in releases_in_window:
-        i = index[release["id"]]
-        if i == 0:
+        previous = previous_of[index[release["id"]]]
+        if previous is None:
             ignored.append(
                 {
                     "release_id": release["id"],
@@ -95,7 +126,6 @@ def commits_between_releases(
             )
             continue
 
-        previous = all_published_releases[i - 1]
         base = previous["tag_name"]
         head = release["tag_name"]
         path = f"/repos/{owner}/{repo}/compare/{base}...{head}"

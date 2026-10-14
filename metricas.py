@@ -87,12 +87,21 @@ def cfr_ci(runs: Iterable[dict]) -> float | None:
     return failure / total if total else None
 
 
-def parse_version(tag: str) -> tuple[int, int, int] | None:
+def version_key(tag: str) -> tuple[str, tuple[int, int, int]] | None:
+    """(prefixo da tag, versão): `pkg@1.2.3` -> ("pkg@", (1, 2, 3)).
+
+    O prefixo separa os pacotes de um monorepo, que versionam de forma independente.
+    """
     match = VERSION.search(tag or "")
     if not match:
         return None
     major, minor, patch = match.groups()
-    return int(major), int(minor), int(patch or 0)
+    return tag[: match.start()], (int(major), int(minor), int(patch or 0))
+
+
+def parse_version(tag: str) -> tuple[int, int, int] | None:
+    key = version_key(tag)
+    return key[1] if key else None
 
 
 def is_patch_bump(previous_tag: str, tag: str) -> bool:

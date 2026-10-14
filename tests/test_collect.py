@@ -11,7 +11,7 @@ from metricas import cfr_delivery, median_lead_time_release
 from pipeline import workflows
 from pipeline.collect import collect_repository
 from pipeline.github_api import GitHubAPI
-from pipeline.releases import commits_between_releases, compare_commits
+from pipeline.releases import commits_between_releases, compare_commits, previous_releases
 from pipeline.selection import STAGES, Funnel
 from pipeline.workflows import month_windows, runs_in_range
 
@@ -178,6 +178,44 @@ def test_compare_commits_pagina_alem_de_100():
     assert [p["page"] for _, p in api.calls] == [1, 2]
 
 
+def history(*tags):
+    # releases em ordem de publicação, um dia de intervalo
+    return [make_release(i, tag, f"2025-10-{i + 1:02d}T00:00:00Z") for i, tag in enumerate(tags)]
+
+
+def previous_tags(releases):
+    return [p["tag_name"] if p else None for p in previous_releases(releases)]
+
+
+def test_release_anterior_e_da_mesma_linha_de_versao():
+    # godot: a 3.6.x continua sendo publicada depois da 4.x
+    releases = history("3.6.1-stable", "4.6-stable", "4.7.2-stable", "3.6.2-stable", "3.6.3-stable")
+    assert previous_tags(releases) == [None, "3.6.1-stable", "4.6-stable", "3.6.1-stable", "3.6.2-stable"]
+
+
+def test_release_anterior_separa_pacotes_de_monorepo():
+    releases = history("a@1.0.0", "b@2.0.0", "a@1.1.0", "b@2.0.1")
+    # b@2.0.0 é o primeiro do pacote b: vale a anterior por data
+    assert previous_tags(releases) == [None, "a@1.0.0", "a@1.0.0", "b@2.0.0"]
+
+
+def test_release_anterior_sem_versao_usa_a_data():
+    assert previous_tags(history("b100", "b101", "v1.0.0", "b102")) == [None, "b100", "b101", "v1.0.0"]
+
+
+def test_commits_between_releases_compara_com_a_mesma_linha():
+    releases = history("v3.6.1", "v4.7.0", "v3.6.2")
+    api = FakeAPI(
+        {
+            f"{BASE}/compare/v3.6.1...v4.7.0": compare([make_commit("n1", "2025-10-01", "feat: x")]),
+            f"{BASE}/compare/v3.6.1...v3.6.2": compare([make_commit("p1", "2025-10-02", "fix: y")]),
+        }
+    )
+    records, ignored = commits_between_releases(api, "octo", "app", releases, releases[1:])
+    assert [(r["release_tag"], r["commit_sha"]) for r in records] == [("v4.7.0", "n1"), ("v3.6.2", "p1")]
+    assert ignored == []
+
+
 def test_commits_between_releases_registra_releases_ignoradas():
     first = make_release(1, "v1.0.0", "2025-10-01T00:00:00Z")
     second = make_release(2, "v1.1.0", "2025-11-01T00:00:00Z")
@@ -201,7 +239,11 @@ def test_collect_repository_elegivel():
     assert repo["releases_valid"] == 3  # sem draft, pré-release e fora da janela
     assert repo["workflow_runs_valid"] == 4  # sem cancelled e em andamento
 
-    assert [r["tag_name"] for r in data["releases"]] == ["v1.0.0", "v1.0.1", "v1.1.0"]
+    assert [(r["tag_name"], r["previous_tag"]) for r in data["releases"]] == [
+        ("v1.0.0", "v0.9.0"),
+        ("v1.0.1", "v1.0.0"),
+        ("v1.1.0", "v1.0.1"),
+    ]
     assert [c["commit_sha"] for c in data["commits"]] == ["a1", "a2", "b1"]
     assert data["commits"][2]["commit_message"] == "fix: crash ao iniciar"
     assert [(i["tag_name"], i["reason"]) for i in data["ignored_releases"]] == [("v1.1.0", "no_new_commits")]

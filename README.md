@@ -84,6 +84,11 @@ Seguem o enunciado do laboratório: deploy = release publicada (`draft = false`,
 `success` é sucesso, `failure`/`timed_out`/`startup_failure` são falha e as demais
 conclusões são ignoradas.
 
+Release anterior (base do `compare` no lead time): a maior versão menor que a da release,
+com o mesmo prefixo de tag (`v`, `pkg@`…), publicada antes dela. Isso evita comparar um
+patch de uma linha antiga (`3.6.3`) com uma release de outra linha (`4.7.2`). Tags sem versão
+reconhecível usam a release anterior por data.
+
 Release corretiva (CFR por entrega, heurística v1, a validar na amostra-ouro): a versão
 muda só no número de *patch* e há ao menos um commit com `revert`, `hotfix`, `bugfix` ou
 `fix` entre as duas releases. Releases dos últimos 7 dias da janela são censuradas.

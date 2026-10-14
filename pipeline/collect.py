@@ -11,14 +11,14 @@ import requests
 
 from .github_api import GitHubAPI
 from .models import RepositoryRecord
-from .releases import collect_releases, commits_between_releases
+from .releases import collect_releases, commits_between_releases, previous_releases
 from .selection import Funnel, has_actions
 from .workflows import collect_workflow_runs
 
 
 OUTPUTS = {
     "repositories": [f.name for f in fields(RepositoryRecord)],
-    "releases": ["full_name", "release_id", "tag_name", "published_at"],
+    "releases": ["full_name", "release_id", "tag_name", "published_at", "previous_tag"],
     "commits": [
         "full_name",
         "release_id",
@@ -90,9 +90,12 @@ def collect_repository(
         funnel.reached(stage)
 
         stage = "included"
-        # A "release anterior" do lead time segue a definição principal (sem pré-releases)
-        # e pode estar fora da janela.
+        # A "release anterior" do lead time segue a definição principal (sem pré-releases),
+        # é da mesma linha de versão e pode estar fora da janela.
         history = [r for r in published if not r.get("prerelease")]
+        previous_tag = {
+            r["id"]: (p["tag_name"] if p else "") for r, p in zip(history, previous_releases(history))
+        }
         commits, ignored = commits_between_releases(api, owner, name, history, in_window)
         contributors = _contributors(api, owner, name)
     except (requests.RequestException, RuntimeError) as exc:
@@ -122,6 +125,7 @@ def collect_repository(
                 "release_id": r["id"],
                 "tag_name": r["tag_name"],
                 "published_at": r["published_at"],
+                "previous_tag": previous_tag[r["id"]],
             }
             for r in in_window
         ],
