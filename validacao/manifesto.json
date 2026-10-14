@@ -1,0 +1,2123 @@
+{
+  "schema": 1,
+  "seed": 42,
+  "repositories": 60,
+  "releases_per_repository": 5,
+  "population_count": 100,
+  "pilot": false,
+  "duplicate_tag_exclusions": [
+    {
+      "full_name": "thedotmack/claude-mem",
+      "release_id": "386941481",
+      "tag_name": "v13.24.20"
+    }
+  ],
+  "pandas_version": "2.2.3",
+  "numpy_version": "2.2.6",
+  "source_sha256": {
+    "repositories.csv": "5d4a2060730521cffd4560b576a0571c9e8d4b17d565de1a8eef6f9822ebea68",
+    "releases.csv": "f83ba3c45669c46f03f72ab57507b8f80e2dd23b209cbac12eb98006eebf58ae"
+  },
+  "sample": [
+    {
+      "full_name": "shadcn-ui/ui",
+      "repo_url": "https://github.com/shadcn-ui/ui",
+      "release_id": "363108689",
+      "tag_name": "shadcn@4.16.1",
+      "release_url": "https://github.com/shadcn-ui/ui/releases/tag/shadcn%404.16.1"
+    },
+    {
+      "full_name": "shadcn-ui/ui",
+      "repo_url": "https://github.com/shadcn-ui/ui",
+      "release_id": "379653049",
+      "tag_name": "@shadcn/react@0.3.1",
+      "release_url": "https://github.com/shadcn-ui/ui/releases/tag/%40shadcn%2Freact%400.3.1"
+    },
+    {
+      "full_name": "shadcn-ui/ui",
+      "repo_url": "https://github.com/shadcn-ui/ui",
+      "release_id": "252249772",
+      "tag_name": "shadcn@3.4.0",
+      "release_url": "https://github.com/shadcn-ui/ui/releases/tag/shadcn%403.4.0"
+    },
+    {
+      "full_name": "shadcn-ui/ui",
+      "repo_url": "https://github.com/shadcn-ui/ui",
+      "release_id": "346652248",
+      "tag_name": "@shadcn/react@0.2.0",
+      "release_url": "https://github.com/shadcn-ui/ui/releases/tag/%40shadcn%2Freact%400.2.0"
+    },
+    {
+      "full_name": "shadcn-ui/ui",
+      "repo_url": "https://github.com/shadcn-ui/ui",
+      "release_id": "268820217",
+      "tag_name": "shadcn@3.5.2",
+      "release_url": "https://github.com/shadcn-ui/ui/releases/tag/shadcn%403.5.2"
+    },
+    {
+      "full_name": "microsoft/playwright",
+      "repo_url": "https://github.com/microsoft/playwright",
+      "release_id": "338781187",
+      "tag_name": "v1.61.0",
+      "release_url": "https://github.com/microsoft/playwright/releases/tag/v1.61.0"
+    },
+    {
+      "full_name": "microsoft/playwright",
+      "repo_url": "https://github.com/microsoft/playwright",
+      "release_id": "359565295",
+      "tag_name": "v1.62.0",
+      "release_url": "https://github.com/microsoft/playwright/releases/tag/v1.62.0"
+    },
+    {
+      "full_name": "microsoft/playwright",
+      "repo_url": "https://github.com/microsoft/playwright",
+      "release_id": "252439687",
+      "tag_name": "v1.56.0",
+      "release_url": "https://github.com/microsoft/playwright/releases/tag/v1.56.0"
+    },
+    {
+      "full_name": "microsoft/playwright",
+      "repo_url": "https://github.com/microsoft/playwright",
+      "release_id": "362532883",
+      "tag_name": "v1.62.1",
+      "release_url": "https://github.com/microsoft/playwright/releases/tag/v1.62.1"
+    },
+    {
+      "full_name": "microsoft/playwright",
+      "repo_url": "https://github.com/microsoft/playwright",
+      "release_id": "283765338",
+      "tag_name": "v1.58.2",
+      "release_url": "https://github.com/microsoft/playwright/releases/tag/v1.58.2"
+    },
+    {
+      "full_name": "openai/codex",
+      "repo_url": "https://github.com/openai/codex",
+      "release_id": "291146451",
+      "tag_name": "rust-v0.106.0",
+      "release_url": "https://github.com/openai/codex/releases/tag/rust-v0.106.0"
+    },
+    {
+      "full_name": "openai/codex",
+      "repo_url": "https://github.com/openai/codex",
+      "release_id": "279755271",
+      "tag_name": "rust-v0.91.0",
+      "release_url": "https://github.com/openai/codex/releases/tag/rust-v0.91.0"
+    },
+    {
+      "full_name": "openai/codex",
+      "repo_url": "https://github.com/openai/codex",
+      "release_id": "267537191",
+      "tag_name": "rust-v0.65.0",
+      "release_url": "https://github.com/openai/codex/releases/tag/rust-v0.65.0"
+    },
+    {
+      "full_name": "openai/codex",
+      "repo_url": "https://github.com/openai/codex",
+      "release_id": "275597320",
+      "tag_name": "rust-v0.80.0",
+      "release_url": "https://github.com/openai/codex/releases/tag/rust-v0.80.0"
+    },
+    {
+      "full_name": "openai/codex",
+      "repo_url": "https://github.com/openai/codex",
+      "release_id": "382394608",
+      "tag_name": "rust-v0.153.2",
+      "release_url": "https://github.com/openai/codex/releases/tag/rust-v0.153.2"
+    },
+    {
+      "full_name": "langflow-ai/langflow",
+      "repo_url": "https://github.com/langflow-ai/langflow",
+      "release_id": "333238274",
+      "tag_name": "v1.9.6",
+      "release_url": "https://github.com/langflow-ai/langflow/releases/tag/v1.9.6"
+    },
+    {
+      "full_name": "langflow-ai/langflow",
+      "repo_url": "https://github.com/langflow-ai/langflow",
+      "release_id": "293693163",
+      "tag_name": "v1.8.0",
+      "release_url": "https://github.com/langflow-ai/langflow/releases/tag/v1.8.0"
+    },
+    {
+      "full_name": "langflow-ai/langflow",
+      "repo_url": "https://github.com/langflow-ai/langflow",
+      "release_id": "265076176",
+      "tag_name": "1.6.9",
+      "release_url": "https://github.com/langflow-ai/langflow/releases/tag/1.6.9"
+    },
+    {
+      "full_name": "langflow-ai/langflow",
+      "repo_url": "https://github.com/langflow-ai/langflow",
+      "release_id": "336805136",
+      "tag_name": "v1.10.0",
+      "release_url": "https://github.com/langflow-ai/langflow/releases/tag/v1.10.0"
+    },
+    {
+      "full_name": "langflow-ai/langflow",
+      "repo_url": "https://github.com/langflow-ai/langflow",
+      "release_id": "255869532",
+      "tag_name": "1.6.5",
+      "release_url": "https://github.com/langflow-ai/langflow/releases/tag/1.6.5"
+    },
+    {
+      "full_name": "langchain-ai/langchain",
+      "repo_url": "https://github.com/langchain-ai/langchain",
+      "release_id": "331117861",
+      "tag_name": "langchain-anthropic==1.4.4",
+      "release_url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-anthropic%3D%3D1.4.4"
+    },
+    {
+      "full_name": "langchain-ai/langchain",
+      "repo_url": "https://github.com/langchain-ai/langchain",
+      "release_id": "255336918",
+      "tag_name": "langchain-text-splitters==1.0.0",
+      "release_url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-text-splitters%3D%3D1.0.0"
+    },
+    {
+      "full_name": "langchain-ai/langchain",
+      "repo_url": "https://github.com/langchain-ai/langchain",
+      "release_id": "286506489",
+      "tag_name": "langchain-anthropic==1.3.2",
+      "release_url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-anthropic%3D%3D1.3.2"
+    },
+    {
+      "full_name": "langchain-ai/langchain",
+      "repo_url": "https://github.com/langchain-ai/langchain",
+      "release_id": "255186564",
+      "tag_name": "langchain==1.0.0rc2",
+      "release_url": "https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.0.0rc2"
+    },
+    {
+      "full_name": "langchain-ai/langchain",
+      "repo_url": "https://github.com/langchain-ai/langchain",
+      "release_id": "373920197",
+      "tag_name": "langchain-fireworks==1.6.0",
+      "release_url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-fireworks%3D%3D1.6.0"
+    },
+    {
+      "full_name": "immich-app/immich",
+      "repo_url": "https://github.com/immich-app/immich",
+      "release_id": "284960654",
+      "tag_name": "v2.5.6",
+      "release_url": "https://github.com/immich-app/immich/releases/tag/v2.5.6"
+    },
+    {
+      "full_name": "immich-app/immich",
+      "repo_url": "https://github.com/immich-app/immich",
+      "release_id": "301981849",
+      "tag_name": "v2.6.3",
+      "release_url": "https://github.com/immich-app/immich/releases/tag/v2.6.3"
+    },
+    {
+      "full_name": "immich-app/immich",
+      "repo_url": "https://github.com/immich-app/immich",
+      "release_id": "351693817",
+      "tag_name": "v3.0.2",
+      "release_url": "https://github.com/immich-app/immich/releases/tag/v3.0.2"
+    },
+    {
+      "full_name": "immich-app/immich",
+      "repo_url": "https://github.com/immich-app/immich",
+      "release_id": "348253747",
+      "tag_name": "v3.0.1",
+      "release_url": "https://github.com/immich-app/immich/releases/tag/v3.0.1"
+    },
+    {
+      "full_name": "immich-app/immich",
+      "repo_url": "https://github.com/immich-app/immich",
+      "release_id": "263844441",
+      "tag_name": "v2.3.1",
+      "release_url": "https://github.com/immich-app/immich/releases/tag/v2.3.1"
+    },
+    {
+      "full_name": "coder/code-server",
+      "repo_url": "https://github.com/coder/code-server",
+      "release_id": "371864433",
+      "tag_name": "v4.133.0",
+      "release_url": "https://github.com/coder/code-server/releases/tag/v4.133.0"
+    },
+    {
+      "full_name": "coder/code-server",
+      "repo_url": "https://github.com/coder/code-server",
+      "release_id": "318623446",
+      "tag_name": "v4.118.0",
+      "release_url": "https://github.com/coder/code-server/releases/tag/v4.118.0"
+    },
+    {
+      "full_name": "coder/code-server",
+      "repo_url": "https://github.com/coder/code-server",
+      "release_id": "326306939",
+      "tag_name": "v4.121.0",
+      "release_url": "https://github.com/coder/code-server/releases/tag/v4.121.0"
+    },
+    {
+      "full_name": "coder/code-server",
+      "repo_url": "https://github.com/coder/code-server",
+      "release_id": "391851165",
+      "tag_name": "v4.138.0",
+      "release_url": "https://github.com/coder/code-server/releases/tag/v4.138.0"
+    },
+    {
+      "full_name": "coder/code-server",
+      "repo_url": "https://github.com/coder/code-server",
+      "release_id": "355526588",
+      "tag_name": "v4.129.0",
+      "release_url": "https://github.com/coder/code-server/releases/tag/v4.129.0"
+    },
+    {
+      "full_name": "rust-lang/rust",
+      "repo_url": "https://github.com/rust-lang/rust",
+      "release_id": "349271259",
+      "tag_name": "1.96.1",
+      "release_url": "https://github.com/rust-lang/rust/releases/tag/1.96.1"
+    },
+    {
+      "full_name": "rust-lang/rust",
+      "repo_url": "https://github.com/rust-lang/rust",
+      "release_id": "355073850",
+      "tag_name": "1.97.1",
+      "release_url": "https://github.com/rust-lang/rust/releases/tag/1.97.1"
+    },
+    {
+      "full_name": "rust-lang/rust",
+      "repo_url": "https://github.com/rust-lang/rust",
+      "release_id": "258584176",
+      "tag_name": "1.91.0",
+      "release_url": "https://github.com/rust-lang/rust/releases/tag/1.91.0"
+    },
+    {
+      "full_name": "rust-lang/rust",
+      "repo_url": "https://github.com/rust-lang/rust",
+      "release_id": "373931400",
+      "tag_name": "1.98.0",
+      "release_url": "https://github.com/rust-lang/rust/releases/tag/1.98.0"
+    },
+    {
+      "full_name": "rust-lang/rust",
+      "repo_url": "https://github.com/rust-lang/rust",
+      "release_id": "293629082",
+      "tag_name": "1.94.0",
+      "release_url": "https://github.com/rust-lang/rust/releases/tag/1.94.0"
+    },
+    {
+      "full_name": "Panniantong/Agent-Reach",
+      "repo_url": "https://github.com/Panniantong/Agent-Reach",
+      "release_id": "290354431",
+      "tag_name": "v1.1.0",
+      "release_url": "https://github.com/Panniantong/Agent-Reach/releases/tag/v1.1.0"
+    },
+    {
+      "full_name": "Panniantong/Agent-Reach",
+      "repo_url": "https://github.com/Panniantong/Agent-Reach",
+      "release_id": "290879013",
+      "tag_name": "v1.2.0",
+      "release_url": "https://github.com/Panniantong/Agent-Reach/releases/tag/v1.2.0"
+    },
+    {
+      "full_name": "Panniantong/Agent-Reach",
+      "repo_url": "https://github.com/Panniantong/Agent-Reach",
+      "release_id": "337079415",
+      "tag_name": "v1.4.2",
+      "release_url": "https://github.com/Panniantong/Agent-Reach/releases/tag/v1.4.2"
+    },
+    {
+      "full_name": "Panniantong/Agent-Reach",
+      "repo_url": "https://github.com/Panniantong/Agent-Reach",
+      "release_id": "292911301",
+      "tag_name": "v1.3.0",
+      "release_url": "https://github.com/Panniantong/Agent-Reach/releases/tag/v1.3.0"
+    },
+    {
+      "full_name": "Panniantong/Agent-Reach",
+      "repo_url": "https://github.com/Panniantong/Agent-Reach",
+      "release_id": "336995046",
+      "tag_name": "v1.4.1",
+      "release_url": "https://github.com/Panniantong/Agent-Reach/releases/tag/v1.4.1"
+    },
+    {
+      "full_name": "2dust/v2rayN",
+      "repo_url": "https://github.com/2dust/v2rayN",
+      "release_id": "378854248",
+      "tag_name": "7.24.9",
+      "release_url": "https://github.com/2dust/v2rayN/releases/tag/7.24.9"
+    },
+    {
+      "full_name": "2dust/v2rayN",
+      "repo_url": "https://github.com/2dust/v2rayN",
+      "release_id": "320099507",
+      "tag_name": "7.21.3",
+      "release_url": "https://github.com/2dust/v2rayN/releases/tag/7.21.3"
+    },
+    {
+      "full_name": "2dust/v2rayN",
+      "repo_url": "https://github.com/2dust/v2rayN",
+      "release_id": "299336934",
+      "tag_name": "7.19.5",
+      "release_url": "https://github.com/2dust/v2rayN/releases/tag/7.19.5"
+    },
+    {
+      "full_name": "2dust/v2rayN",
+      "repo_url": "https://github.com/2dust/v2rayN",
+      "release_id": "338528744",
+      "tag_name": "7.22.7",
+      "release_url": "https://github.com/2dust/v2rayN/releases/tag/7.22.7"
+    },
+    {
+      "full_name": "2dust/v2rayN",
+      "repo_url": "https://github.com/2dust/v2rayN",
+      "release_id": "275452542",
+      "tag_name": "7.17.0",
+      "release_url": "https://github.com/2dust/v2rayN/releases/tag/7.17.0"
+    },
+    {
+      "full_name": "axios/axios",
+      "repo_url": "https://github.com/axios/axios",
+      "release_id": "302512929",
+      "tag_name": "v1.14.0",
+      "release_url": "https://github.com/axios/axios/releases/tag/v1.14.0"
+    },
+    {
+      "full_name": "axios/axios",
+      "repo_url": "https://github.com/axios/axios",
+      "release_id": "321980402",
+      "tag_name": "v1.16.1",
+      "release_url": "https://github.com/axios/axios/releases/tag/v1.16.1"
+    },
+    {
+      "full_name": "axios/axios",
+      "repo_url": "https://github.com/axios/axios",
+      "release_id": "257553251",
+      "tag_name": "v1.13.0",
+      "release_url": "https://github.com/axios/axios/releases/tag/v1.13.0"
+    },
+    {
+      "full_name": "axios/axios",
+      "repo_url": "https://github.com/axios/axios",
+      "release_id": "338961286",
+      "tag_name": "v0.33.0",
+      "release_url": "https://github.com/axios/axios/releases/tag/v0.33.0"
+    },
+    {
+      "full_name": "axios/axios",
+      "repo_url": "https://github.com/axios/axios",
+      "release_id": "310901579",
+      "tag_name": "v1.15.1",
+      "release_url": "https://github.com/axios/axios/releases/tag/v1.15.1"
+    },
+    {
+      "full_name": "firecrawl/firecrawl",
+      "repo_url": "https://github.com/firecrawl/firecrawl",
+      "release_id": "258350976",
+      "tag_name": "v2.5.0",
+      "release_url": "https://github.com/firecrawl/firecrawl/releases/tag/v2.5.0"
+    },
+    {
+      "full_name": "firecrawl/firecrawl",
+      "repo_url": "https://github.com/firecrawl/firecrawl",
+      "release_id": "307271312",
+      "tag_name": "v2.9.0",
+      "release_url": "https://github.com/firecrawl/firecrawl/releases/tag/v2.9.0"
+    },
+    {
+      "full_name": "firecrawl/firecrawl",
+      "repo_url": "https://github.com/firecrawl/firecrawl",
+      "release_id": "254106148",
+      "tag_name": "v2.4.0",
+      "release_url": "https://github.com/firecrawl/firecrawl/releases/tag/v2.4.0"
+    },
+    {
+      "full_name": "firecrawl/firecrawl",
+      "repo_url": "https://github.com/firecrawl/firecrawl",
+      "release_id": "342004247",
+      "tag_name": "v2.11.0",
+      "release_url": "https://github.com/firecrawl/firecrawl/releases/tag/v2.11.0"
+    },
+    {
+      "full_name": "firecrawl/firecrawl",
+      "repo_url": "https://github.com/firecrawl/firecrawl",
+      "release_id": "262487854",
+      "tag_name": "v2.6.0",
+      "release_url": "https://github.com/firecrawl/firecrawl/releases/tag/v2.6.0"
+    },
+    {
+      "full_name": "paperclipai/paperclip",
+      "repo_url": "https://github.com/paperclipai/paperclip",
+      "release_id": "321126661",
+      "tag_name": "v2026.512.0",
+      "release_url": "https://github.com/paperclipai/paperclip/releases/tag/v2026.512.0"
+    },
+    {
+      "full_name": "paperclipai/paperclip",
+      "repo_url": "https://github.com/paperclipai/paperclip",
+      "release_id": "350391431",
+      "tag_name": "v2026.707.0",
+      "release_url": "https://github.com/paperclipai/paperclip/releases/tag/v2026.707.0"
+    },
+    {
+      "full_name": "paperclipai/paperclip",
+      "repo_url": "https://github.com/paperclipai/paperclip",
+      "release_id": "294907892",
+      "tag_name": "v0.3.0",
+      "release_url": "https://github.com/paperclipai/paperclip/releases/tag/v0.3.0"
+    },
+    {
+      "full_name": "paperclipai/paperclip",
+      "repo_url": "https://github.com/paperclipai/paperclip",
+      "release_id": "390162220",
+      "tag_name": "v2026.916.0",
+      "release_url": "https://github.com/paperclipai/paperclip/releases/tag/v2026.916.0"
+    },
+    {
+      "full_name": "paperclipai/paperclip",
+      "repo_url": "https://github.com/paperclipai/paperclip",
+      "release_id": "328977548",
+      "tag_name": "v2026.525.0",
+      "release_url": "https://github.com/paperclipai/paperclip/releases/tag/v2026.525.0"
+    },
+    {
+      "full_name": "godotengine/godot",
+      "repo_url": "https://github.com/godotengine/godot",
+      "release_id": "304366887",
+      "tag_name": "4.6.2-stable",
+      "release_url": "https://github.com/godotengine/godot/releases/tag/4.6.2-stable"
+    },
+    {
+      "full_name": "godotengine/godot",
+      "repo_url": "https://github.com/godotengine/godot",
+      "release_id": "254738264",
+      "tag_name": "4.5.1-stable",
+      "release_url": "https://github.com/godotengine/godot/releases/tag/4.5.1-stable"
+    },
+    {
+      "full_name": "godotengine/godot",
+      "repo_url": "https://github.com/godotengine/godot",
+      "release_id": "372486926",
+      "tag_name": "4.7.2-stable",
+      "release_url": "https://github.com/godotengine/godot/releases/tag/4.7.2-stable"
+    },
+    {
+      "full_name": "godotengine/godot",
+      "repo_url": "https://github.com/godotengine/godot",
+      "release_id": "374946366",
+      "tag_name": "3.6.3-stable",
+      "release_url": "https://github.com/godotengine/godot/releases/tag/3.6.3-stable"
+    },
+    {
+      "full_name": "godotengine/godot",
+      "repo_url": "https://github.com/godotengine/godot",
+      "release_id": "279936812",
+      "tag_name": "4.6-stable",
+      "release_url": "https://github.com/godotengine/godot/releases/tag/4.6-stable"
+    },
+    {
+      "full_name": "tailwindlabs/tailwindcss",
+      "repo_url": "https://github.com/tailwindlabs/tailwindcss",
+      "release_id": "251473030",
+      "tag_name": "v3.4.18",
+      "release_url": "https://github.com/tailwindlabs/tailwindcss/releases/tag/v3.4.18"
+    },
+    {
+      "full_name": "tailwindlabs/tailwindcss",
+      "repo_url": "https://github.com/tailwindlabs/tailwindcss",
+      "release_id": "251481811",
+      "tag_name": "v4.1.14",
+      "release_url": "https://github.com/tailwindlabs/tailwindcss/releases/tag/v4.1.14"
+    },
+    {
+      "full_name": "tailwindlabs/tailwindcss",
+      "repo_url": "https://github.com/tailwindlabs/tailwindcss",
+      "release_id": "269243201",
+      "tag_name": "v3.4.19",
+      "release_url": "https://github.com/tailwindlabs/tailwindcss/releases/tag/v3.4.19"
+    },
+    {
+      "full_name": "tailwindlabs/tailwindcss",
+      "repo_url": "https://github.com/tailwindlabs/tailwindcss",
+      "release_id": "346312201",
+      "tag_name": "v4.3.2",
+      "release_url": "https://github.com/tailwindlabs/tailwindcss/releases/tag/v4.3.2"
+    },
+    {
+      "full_name": "tailwindlabs/tailwindcss",
+      "repo_url": "https://github.com/tailwindlabs/tailwindcss",
+      "release_id": "338723975",
+      "tag_name": "v4.3.1",
+      "release_url": "https://github.com/tailwindlabs/tailwindcss/releases/tag/v4.3.1"
+    },
+    {
+      "full_name": "Egonex-AI/Understand-Anything",
+      "repo_url": "https://github.com/Egonex-AI/Understand-Anything",
+      "release_id": "302660159",
+      "tag_name": "v1.3.0",
+      "release_url": "https://github.com/Egonex-AI/Understand-Anything/releases/tag/v1.3.0"
+    },
+    {
+      "full_name": "Egonex-AI/Understand-Anything",
+      "repo_url": "https://github.com/Egonex-AI/Understand-Anything",
+      "release_id": "316972427",
+      "tag_name": "v2.5.0",
+      "release_url": "https://github.com/Egonex-AI/Understand-Anything/releases/tag/v2.5.0"
+    },
+    {
+      "full_name": "Egonex-AI/Understand-Anything",
+      "repo_url": "https://github.com/Egonex-AI/Understand-Anything",
+      "release_id": "300977420",
+      "tag_name": "v1.2.0",
+      "release_url": "https://github.com/Egonex-AI/Understand-Anything/releases/tag/v1.2.0"
+    },
+    {
+      "full_name": "Egonex-AI/Understand-Anything",
+      "repo_url": "https://github.com/Egonex-AI/Understand-Anything",
+      "release_id": "352006549",
+      "tag_name": "v2.9.0",
+      "release_url": "https://github.com/Egonex-AI/Understand-Anything/releases/tag/v2.9.0"
+    },
+    {
+      "full_name": "Egonex-AI/Understand-Anything",
+      "repo_url": "https://github.com/Egonex-AI/Understand-Anything",
+      "release_id": "302704241",
+      "tag_name": "v2.0.0",
+      "release_url": "https://github.com/Egonex-AI/Understand-Anything/releases/tag/v2.0.0"
+    },
+    {
+      "full_name": "react/react",
+      "repo_url": "https://github.com/react/react",
+      "release_id": "269718915",
+      "tag_name": "v19.0.3",
+      "release_url": "https://github.com/react/react/releases/tag/v19.0.3"
+    },
+    {
+      "full_name": "react/react",
+      "repo_url": "https://github.com/react/react",
+      "release_id": "356654401",
+      "tag_name": "v19.0.8",
+      "release_url": "https://github.com/react/react/releases/tag/v19.0.8"
+    },
+    {
+      "full_name": "react/react",
+      "repo_url": "https://github.com/react/react",
+      "release_id": "269718826",
+      "tag_name": "v19.1.4",
+      "release_url": "https://github.com/react/react/releases/tag/v19.1.4"
+    },
+    {
+      "full_name": "react/react",
+      "repo_url": "https://github.com/react/react",
+      "release_id": "332434384",
+      "tag_name": "v19.2.7",
+      "release_url": "https://github.com/react/react/releases/tag/v19.2.7"
+    },
+    {
+      "full_name": "react/react",
+      "repo_url": "https://github.com/react/react",
+      "release_id": "251522936",
+      "tag_name": "v19.2.0",
+      "release_url": "https://github.com/react/react/releases/tag/v19.2.0"
+    },
+    {
+      "full_name": "react/react-native",
+      "repo_url": "https://github.com/react/react-native",
+      "release_id": "285323031",
+      "tag_name": "v0.84.0",
+      "release_url": "https://github.com/react/react-native/releases/tag/v0.84.0"
+    },
+    {
+      "full_name": "react/react-native",
+      "repo_url": "https://github.com/react/react-native",
+      "release_id": "368684190",
+      "tag_name": "v0.87.0",
+      "release_url": "https://github.com/react/react-native/releases/tag/v0.87.0"
+    },
+    {
+      "full_name": "react/react-native",
+      "repo_url": "https://github.com/react/react-native",
+      "release_id": "283518629",
+      "tag_name": "v0.83.2",
+      "release_url": "https://github.com/react/react-native/releases/tag/v0.83.2"
+    },
+    {
+      "full_name": "react/react-native",
+      "repo_url": "https://github.com/react/react-native",
+      "release_id": "317880620",
+      "tag_name": "v0.85.3",
+      "release_url": "https://github.com/react/react-native/releases/tag/v0.85.3"
+    },
+    {
+      "full_name": "react/react-native",
+      "repo_url": "https://github.com/react/react-native",
+      "release_id": "252878860",
+      "tag_name": "v0.82.0",
+      "release_url": "https://github.com/react/react-native/releases/tag/v0.82.0"
+    },
+    {
+      "full_name": "Stirling-Tools/Stirling-PDF",
+      "repo_url": "https://github.com/Stirling-Tools/Stirling-PDF",
+      "release_id": "275627194",
+      "tag_name": "v2.2.0",
+      "release_url": "https://github.com/Stirling-Tools/Stirling-PDF/releases/tag/v2.2.0"
+    },
+    {
+      "full_name": "Stirling-Tools/Stirling-PDF",
+      "repo_url": "https://github.com/Stirling-Tools/Stirling-PDF",
+      "release_id": "324931257",
+      "tag_name": "v2.11.0",
+      "release_url": "https://github.com/Stirling-Tools/Stirling-PDF/releases/tag/v2.11.0"
+    },
+    {
+      "full_name": "Stirling-Tools/Stirling-PDF",
+      "repo_url": "https://github.com/Stirling-Tools/Stirling-PDF",
+      "release_id": "296428111",
+      "tag_name": "v2.7.1",
+      "release_url": "https://github.com/Stirling-Tools/Stirling-PDF/releases/tag/v2.7.1"
+    },
+    {
+      "full_name": "Stirling-Tools/Stirling-PDF",
+      "repo_url": "https://github.com/Stirling-Tools/Stirling-PDF",
+      "release_id": "350596534",
+      "tag_name": "v2.14.1",
+      "release_url": "https://github.com/Stirling-Tools/Stirling-PDF/releases/tag/v2.14.1"
+    },
+    {
+      "full_name": "Stirling-Tools/Stirling-PDF",
+      "repo_url": "https://github.com/Stirling-Tools/Stirling-PDF",
+      "release_id": "279555164",
+      "tag_name": "v2.4.0",
+      "release_url": "https://github.com/Stirling-Tools/Stirling-PDF/releases/tag/v2.4.0"
+    },
+    {
+      "full_name": "ggml-org/llama.cpp",
+      "repo_url": "https://github.com/ggml-org/llama.cpp",
+      "release_id": "342608830",
+      "tag_name": "b9754",
+      "release_url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9754"
+    },
+    {
+      "full_name": "ggml-org/llama.cpp",
+      "repo_url": "https://github.com/ggml-org/llama.cpp",
+      "release_id": "266552292",
+      "tag_name": "b7220",
+      "release_url": "https://github.com/ggml-org/llama.cpp/releases/tag/b7220"
+    },
+    {
+      "full_name": "ggml-org/llama.cpp",
+      "repo_url": "https://github.com/ggml-org/llama.cpp",
+      "release_id": "321806438",
+      "tag_name": "b9129",
+      "release_url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9129"
+    },
+    {
+      "full_name": "ggml-org/llama.cpp",
+      "repo_url": "https://github.com/ggml-org/llama.cpp",
+      "release_id": "262740496",
+      "tag_name": "b7078",
+      "release_url": "https://github.com/ggml-org/llama.cpp/releases/tag/b7078"
+    },
+    {
+      "full_name": "ggml-org/llama.cpp",
+      "repo_url": "https://github.com/ggml-org/llama.cpp",
+      "release_id": "388619384",
+      "tag_name": "v0.4.1",
+      "release_url": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.4.1"
+    },
+    {
+      "full_name": "microsoft/vscode",
+      "repo_url": "https://github.com/microsoft/vscode",
+      "release_id": "396494632",
+      "tag_name": "1.139.1",
+      "release_url": "https://github.com/microsoft/vscode/releases/tag/1.139.1"
+    },
+    {
+      "full_name": "microsoft/vscode",
+      "repo_url": "https://github.com/microsoft/vscode",
+      "release_id": "384947215",
+      "tag_name": "1.136.2",
+      "release_url": "https://github.com/microsoft/vscode/releases/tag/1.136.2"
+    },
+    {
+      "full_name": "microsoft/vscode",
+      "repo_url": "https://github.com/microsoft/vscode",
+      "release_id": "251802178",
+      "tag_name": "1.104.3",
+      "release_url": "https://github.com/microsoft/vscode/releases/tag/1.104.3"
+    },
+    {
+      "full_name": "microsoft/vscode",
+      "repo_url": "https://github.com/microsoft/vscode",
+      "release_id": "347353206",
+      "tag_name": "1.127.0",
+      "release_url": "https://github.com/microsoft/vscode/releases/tag/1.127.0"
+    },
+    {
+      "full_name": "microsoft/vscode",
+      "repo_url": "https://github.com/microsoft/vscode",
+      "release_id": "263768428",
+      "tag_name": "1.106.2",
+      "release_url": "https://github.com/microsoft/vscode/releases/tag/1.106.2"
+    },
+    {
+      "full_name": "sveltejs/svelte",
+      "repo_url": "https://github.com/sveltejs/svelte",
+      "release_id": "292623393",
+      "tag_name": "svelte@5.53.7",
+      "release_url": "https://github.com/sveltejs/svelte/releases/tag/svelte%405.53.7"
+    },
+    {
+      "full_name": "sveltejs/svelte",
+      "repo_url": "https://github.com/sveltejs/svelte",
+      "release_id": "254158357",
+      "tag_name": "svelte@5.39.12",
+      "release_url": "https://github.com/sveltejs/svelte/releases/tag/svelte%405.39.12"
+    },
+    {
+      "full_name": "sveltejs/svelte",
+      "repo_url": "https://github.com/sveltejs/svelte",
+      "release_id": "266907910",
+      "tag_name": "svelte@5.45.4",
+      "release_url": "https://github.com/sveltejs/svelte/releases/tag/svelte%405.45.4"
+    },
+    {
+      "full_name": "sveltejs/svelte",
+      "repo_url": "https://github.com/sveltejs/svelte",
+      "release_id": "287298020",
+      "tag_name": "svelte@5.51.3",
+      "release_url": "https://github.com/sveltejs/svelte/releases/tag/svelte%405.51.3"
+    },
+    {
+      "full_name": "sveltejs/svelte",
+      "repo_url": "https://github.com/sveltejs/svelte",
+      "release_id": "255743613",
+      "tag_name": "svelte@5.41.1",
+      "release_url": "https://github.com/sveltejs/svelte/releases/tag/svelte%405.41.1"
+    },
+    {
+      "full_name": "electron/electron",
+      "repo_url": "https://github.com/electron/electron",
+      "release_id": "262283559",
+      "tag_name": "v37.10.0",
+      "release_url": "https://github.com/electron/electron/releases/tag/v37.10.0"
+    },
+    {
+      "full_name": "electron/electron",
+      "repo_url": "https://github.com/electron/electron",
+      "release_id": "284890972",
+      "tag_name": "v38.8.1",
+      "release_url": "https://github.com/electron/electron/releases/tag/v38.8.1"
+    },
+    {
+      "full_name": "electron/electron",
+      "repo_url": "https://github.com/electron/electron",
+      "release_id": "382404837",
+      "tag_name": "v44.2.0",
+      "release_url": "https://github.com/electron/electron/releases/tag/v44.2.0"
+    },
+    {
+      "full_name": "electron/electron",
+      "repo_url": "https://github.com/electron/electron",
+      "release_id": "340260951",
+      "tag_name": "v41.8.0",
+      "release_url": "https://github.com/electron/electron/releases/tag/v41.8.0"
+    },
+    {
+      "full_name": "electron/electron",
+      "repo_url": "https://github.com/electron/electron",
+      "release_id": "376038527",
+      "tag_name": "v44.0.0",
+      "release_url": "https://github.com/electron/electron/releases/tag/v44.0.0"
+    },
+    {
+      "full_name": "junegunn/fzf",
+      "repo_url": "https://github.com/junegunn/fzf",
+      "release_id": "349577561",
+      "tag_name": "v0.74.0",
+      "release_url": "https://github.com/junegunn/fzf/releases/tag/v0.74.0"
+    },
+    {
+      "full_name": "junegunn/fzf",
+      "repo_url": "https://github.com/junegunn/fzf",
+      "release_id": "363380613",
+      "tag_name": "v0.74.2",
+      "release_url": "https://github.com/junegunn/fzf/releases/tag/v0.74.2"
+    },
+    {
+      "full_name": "junegunn/fzf",
+      "repo_url": "https://github.com/junegunn/fzf",
+      "release_id": "253900165",
+      "tag_name": "v0.66.0",
+      "release_url": "https://github.com/junegunn/fzf/releases/tag/v0.66.0"
+    },
+    {
+      "full_name": "junegunn/fzf",
+      "repo_url": "https://github.com/junegunn/fzf",
+      "release_id": "371507048",
+      "tag_name": "v0.74.3",
+      "release_url": "https://github.com/junegunn/fzf/releases/tag/v0.74.3"
+    },
+    {
+      "full_name": "junegunn/fzf",
+      "repo_url": "https://github.com/junegunn/fzf",
+      "release_id": "305229378",
+      "tag_name": "v0.71.0",
+      "release_url": "https://github.com/junegunn/fzf/releases/tag/v0.71.0"
+    },
+    {
+      "full_name": "open-webui/open-webui",
+      "repo_url": "https://github.com/open-webui/open-webui",
+      "release_id": "301478856",
+      "tag_name": "v0.8.11",
+      "release_url": "https://github.com/open-webui/open-webui/releases/tag/v0.8.11"
+    },
+    {
+      "full_name": "open-webui/open-webui",
+      "repo_url": "https://github.com/open-webui/open-webui",
+      "release_id": "275747448",
+      "tag_name": "v0.7.2",
+      "release_url": "https://github.com/open-webui/open-webui/releases/tag/v0.7.2"
+    },
+    {
+      "full_name": "open-webui/open-webui",
+      "repo_url": "https://github.com/open-webui/open-webui",
+      "release_id": "266904152",
+      "tag_name": "v0.6.41",
+      "release_url": "https://github.com/open-webui/open-webui/releases/tag/v0.6.41"
+    },
+    {
+      "full_name": "open-webui/open-webui",
+      "repo_url": "https://github.com/open-webui/open-webui",
+      "release_id": "302148651",
+      "tag_name": "v0.8.12",
+      "release_url": "https://github.com/open-webui/open-webui/releases/tag/v0.8.12"
+    },
+    {
+      "full_name": "open-webui/open-webui",
+      "repo_url": "https://github.com/open-webui/open-webui",
+      "release_id": "264669867",
+      "tag_name": "v0.6.37",
+      "release_url": "https://github.com/open-webui/open-webui/releases/tag/v0.6.37"
+    },
+    {
+      "full_name": "angular/angular",
+      "repo_url": "https://github.com/angular/angular",
+      "release_id": "293157904",
+      "tag_name": "vsix-21.2.2",
+      "release_url": "https://github.com/angular/angular/releases/tag/vsix-21.2.2"
+    },
+    {
+      "full_name": "angular/angular",
+      "repo_url": "https://github.com/angular/angular",
+      "release_id": "256494767",
+      "tag_name": "20.3.7",
+      "release_url": "https://github.com/angular/angular/releases/tag/20.3.7"
+    },
+    {
+      "full_name": "angular/angular",
+      "repo_url": "https://github.com/angular/angular",
+      "release_id": "304351754",
+      "tag_name": "v21.2.7",
+      "release_url": "https://github.com/angular/angular/releases/tag/v21.2.7"
+    },
+    {
+      "full_name": "angular/angular",
+      "repo_url": "https://github.com/angular/angular",
+      "release_id": "290628709",
+      "tag_name": "vsix-21.2.1",
+      "release_url": "https://github.com/angular/angular/releases/tag/vsix-21.2.1"
+    },
+    {
+      "full_name": "angular/angular",
+      "repo_url": "https://github.com/angular/angular",
+      "release_id": "263726599",
+      "tag_name": "20.3.13",
+      "release_url": "https://github.com/angular/angular/releases/tag/20.3.13"
+    },
+    {
+      "full_name": "infiniflow/ragflow",
+      "repo_url": "https://github.com/infiniflow/ragflow",
+      "release_id": "340728553",
+      "tag_name": "v0.26.1",
+      "release_url": "https://github.com/infiniflow/ragflow/releases/tag/v0.26.1"
+    },
+    {
+      "full_name": "infiniflow/ragflow",
+      "repo_url": "https://github.com/infiniflow/ragflow",
+      "release_id": "319925109",
+      "tag_name": "v0.25.2",
+      "release_url": "https://github.com/infiniflow/ragflow/releases/tag/v0.25.2"
+    },
+    {
+      "full_name": "infiniflow/ragflow",
+      "repo_url": "https://github.com/infiniflow/ragflow",
+      "release_id": "254573810",
+      "tag_name": "v0.21.0",
+      "release_url": "https://github.com/infiniflow/ragflow/releases/tag/v0.21.0"
+    },
+    {
+      "full_name": "infiniflow/ragflow",
+      "repo_url": "https://github.com/infiniflow/ragflow",
+      "release_id": "315560746",
+      "tag_name": "v0.25.1",
+      "release_url": "https://github.com/infiniflow/ragflow/releases/tag/v0.25.1"
+    },
+    {
+      "full_name": "infiniflow/ragflow",
+      "repo_url": "https://github.com/infiniflow/ragflow",
+      "release_id": "348047194",
+      "tag_name": "v0.26.3",
+      "release_url": "https://github.com/infiniflow/ragflow/releases/tag/v0.26.3"
+    },
+    {
+      "full_name": "vitejs/vite",
+      "repo_url": "https://github.com/vitejs/vite",
+      "release_id": "298781657",
+      "tag_name": "v8.0.1",
+      "release_url": "https://github.com/vitejs/vite/releases/tag/v8.0.1"
+    },
+    {
+      "full_name": "vitejs/vite",
+      "repo_url": "https://github.com/vitejs/vite",
+      "release_id": "251633628",
+      "tag_name": "create-vite@8.0.2",
+      "release_url": "https://github.com/vitejs/vite/releases/tag/create-vite%408.0.2"
+    },
+    {
+      "full_name": "vitejs/vite",
+      "repo_url": "https://github.com/vitejs/vite",
+      "release_id": "270318867",
+      "tag_name": "v7.3.0",
+      "release_url": "https://github.com/vitejs/vite/releases/tag/v7.3.0"
+    },
+    {
+      "full_name": "vitejs/vite",
+      "repo_url": "https://github.com/vitejs/vite",
+      "release_id": "298781798",
+      "tag_name": "create-vite@9.0.3",
+      "release_url": "https://github.com/vitejs/vite/releases/tag/create-vite%409.0.3"
+    },
+    {
+      "full_name": "vitejs/vite",
+      "repo_url": "https://github.com/vitejs/vite",
+      "release_id": "263887784",
+      "tag_name": "create-vite@8.2.0",
+      "release_url": "https://github.com/vitejs/vite/releases/tag/create-vite%408.2.0"
+    },
+    {
+      "full_name": "PaddlePaddle/PaddleOCR",
+      "repo_url": "https://github.com/PaddlePaddle/PaddleOCR",
+      "release_id": "330789750",
+      "tag_name": "v3.6.0",
+      "release_url": "https://github.com/PaddlePaddle/PaddleOCR/releases/tag/v3.6.0"
+    },
+    {
+      "full_name": "PaddlePaddle/PaddleOCR",
+      "repo_url": "https://github.com/PaddlePaddle/PaddleOCR",
+      "release_id": "258133221",
+      "tag_name": "v3.3.1",
+      "release_url": "https://github.com/PaddlePaddle/PaddleOCR/releases/tag/v3.3.1"
+    },
+    {
+      "full_name": "PaddlePaddle/PaddleOCR",
+      "repo_url": "https://github.com/PaddlePaddle/PaddleOCR",
+      "release_id": "308661835",
+      "tag_name": "v3.4.1",
+      "release_url": "https://github.com/PaddlePaddle/PaddleOCR/releases/tag/v3.4.1"
+    },
+    {
+      "full_name": "PaddlePaddle/PaddleOCR",
+      "repo_url": "https://github.com/PaddlePaddle/PaddleOCR",
+      "release_id": "254998014",
+      "tag_name": "v3.3.0",
+      "release_url": "https://github.com/PaddlePaddle/PaddleOCR/releases/tag/v3.3.0"
+    },
+    {
+      "full_name": "PaddlePaddle/PaddleOCR",
+      "repo_url": "https://github.com/PaddlePaddle/PaddleOCR",
+      "release_id": "337935149",
+      "tag_name": "v3.7.0",
+      "release_url": "https://github.com/PaddlePaddle/PaddleOCR/releases/tag/v3.7.0"
+    },
+    {
+      "full_name": "oven-sh/bun",
+      "repo_url": "https://github.com/oven-sh/bun",
+      "release_id": "253627838",
+      "tag_name": "bun-v1.3.0",
+      "release_url": "https://github.com/oven-sh/bun/releases/tag/bun-v1.3.0"
+    },
+    {
+      "full_name": "oven-sh/bun",
+      "repo_url": "https://github.com/oven-sh/bun",
+      "release_id": "256252704",
+      "tag_name": "bun-v1.3.1",
+      "release_url": "https://github.com/oven-sh/bun/releases/tag/bun-v1.3.1"
+    },
+    {
+      "full_name": "oven-sh/bun",
+      "repo_url": "https://github.com/oven-sh/bun",
+      "release_id": "281034963",
+      "tag_name": "bun-v1.3.8",
+      "release_url": "https://github.com/oven-sh/bun/releases/tag/bun-v1.3.8"
+    },
+    {
+      "full_name": "oven-sh/bun",
+      "repo_url": "https://github.com/oven-sh/bun",
+      "release_id": "270982090",
+      "tag_name": "bun-v1.3.5",
+      "release_url": "https://github.com/oven-sh/bun/releases/tag/bun-v1.3.5"
+    },
+    {
+      "full_name": "oven-sh/bun",
+      "repo_url": "https://github.com/oven-sh/bun",
+      "release_id": "264245480",
+      "tag_name": "bun-v1.3.3",
+      "release_url": "https://github.com/oven-sh/bun/releases/tag/bun-v1.3.3"
+    },
+    {
+      "full_name": "Significant-Gravitas/AutoGPT",
+      "repo_url": "https://github.com/Significant-Gravitas/AutoGPT",
+      "release_id": "315329190",
+      "tag_name": "autogpt-platform-beta-v0.6.58",
+      "release_url": "https://github.com/Significant-Gravitas/AutoGPT/releases/tag/autogpt-platform-beta-v0.6.58"
+    },
+    {
+      "full_name": "Significant-Gravitas/AutoGPT",
+      "repo_url": "https://github.com/Significant-Gravitas/AutoGPT",
+      "release_id": "365570567",
+      "tag_name": "autogpt-platform-beta-v0.7.0",
+      "release_url": "https://github.com/Significant-Gravitas/AutoGPT/releases/tag/autogpt-platform-beta-v0.7.0"
+    },
+    {
+      "full_name": "Significant-Gravitas/AutoGPT",
+      "repo_url": "https://github.com/Significant-Gravitas/AutoGPT",
+      "release_id": "312311199",
+      "tag_name": "autogpt-platform-beta-v0.6.57",
+      "release_url": "https://github.com/Significant-Gravitas/AutoGPT/releases/tag/autogpt-platform-beta-v0.6.57"
+    },
+    {
+      "full_name": "Significant-Gravitas/AutoGPT",
+      "repo_url": "https://github.com/Significant-Gravitas/AutoGPT",
+      "release_id": "378304621",
+      "tag_name": "autogpt-platform-beta-v0.7.3",
+      "release_url": "https://github.com/Significant-Gravitas/AutoGPT/releases/tag/autogpt-platform-beta-v0.7.3"
+    },
+    {
+      "full_name": "Significant-Gravitas/AutoGPT",
+      "repo_url": "https://github.com/Significant-Gravitas/AutoGPT",
+      "release_id": "309386504",
+      "tag_name": "autogpt-platform-beta-v0.6.55",
+      "release_url": "https://github.com/Significant-Gravitas/AutoGPT/releases/tag/autogpt-platform-beta-v0.6.55"
+    },
+    {
+      "full_name": "laravel/laravel",
+      "repo_url": "https://github.com/laravel/laravel",
+      "release_id": "274574623",
+      "tag_name": "v12.11.1",
+      "release_url": "https://github.com/laravel/laravel/releases/tag/v12.11.1"
+    },
+    {
+      "full_name": "laravel/laravel",
+      "repo_url": "https://github.com/laravel/laravel",
+      "release_id": "368994080",
+      "tag_name": "v13.9.0",
+      "release_url": "https://github.com/laravel/laravel/releases/tag/v13.9.0"
+    },
+    {
+      "full_name": "laravel/laravel",
+      "repo_url": "https://github.com/laravel/laravel",
+      "release_id": "268785519",
+      "tag_name": "v12.11.0",
+      "release_url": "https://github.com/laravel/laravel/releases/tag/v12.11.0"
+    },
+    {
+      "full_name": "laravel/laravel",
+      "repo_url": "https://github.com/laravel/laravel",
+      "release_id": "318070055",
+      "tag_name": "v13.5.0",
+      "release_url": "https://github.com/laravel/laravel/releases/tag/v13.5.0"
+    },
+    {
+      "full_name": "laravel/laravel",
+      "repo_url": "https://github.com/laravel/laravel",
+      "release_id": "252747376",
+      "tag_name": "v12.6.0",
+      "release_url": "https://github.com/laravel/laravel/releases/tag/v12.6.0"
+    },
+    {
+      "full_name": "stablyai/orca",
+      "repo_url": "https://github.com/stablyai/orca",
+      "release_id": "337628267",
+      "tag_name": "v1.4.60",
+      "release_url": "https://github.com/stablyai/orca/releases/tag/v1.4.60"
+    },
+    {
+      "full_name": "stablyai/orca",
+      "repo_url": "https://github.com/stablyai/orca",
+      "release_id": "302597283",
+      "tag_name": "v1.0.55",
+      "release_url": "https://github.com/stablyai/orca/releases/tag/v1.0.55"
+    },
+    {
+      "full_name": "stablyai/orca",
+      "repo_url": "https://github.com/stablyai/orca",
+      "release_id": "353997233",
+      "tag_name": "v1.4.141",
+      "release_url": "https://github.com/stablyai/orca/releases/tag/v1.4.141"
+    },
+    {
+      "full_name": "stablyai/orca",
+      "repo_url": "https://github.com/stablyai/orca",
+      "release_id": "326415517",
+      "tag_name": "v1.4.15",
+      "release_url": "https://github.com/stablyai/orca/releases/tag/v1.4.15"
+    },
+    {
+      "full_name": "stablyai/orca",
+      "repo_url": "https://github.com/stablyai/orca",
+      "release_id": "304294374",
+      "tag_name": "v1.0.71",
+      "release_url": "https://github.com/stablyai/orca/releases/tag/v1.0.71"
+    },
+    {
+      "full_name": "fastapi/fastapi",
+      "repo_url": "https://github.com/fastapi/fastapi",
+      "release_id": "284007329",
+      "tag_name": "0.128.4",
+      "release_url": "https://github.com/fastapi/fastapi/releases/tag/0.128.4"
+    },
+    {
+      "full_name": "fastapi/fastapi",
+      "repo_url": "https://github.com/fastapi/fastapi",
+      "release_id": "267334458",
+      "tag_name": "0.123.6",
+      "release_url": "https://github.com/fastapi/fastapi/releases/tag/0.123.6"
+    },
+    {
+      "full_name": "fastapi/fastapi",
+      "repo_url": "https://github.com/fastapi/fastapi",
+      "release_id": "291769581",
+      "tag_name": "0.135.0",
+      "release_url": "https://github.com/fastapi/fastapi/releases/tag/0.135.0"
+    },
+    {
+      "full_name": "fastapi/fastapi",
+      "repo_url": "https://github.com/fastapi/fastapi",
+      "release_id": "355170111",
+      "tag_name": "0.139.2",
+      "release_url": "https://github.com/fastapi/fastapi/releases/tag/0.139.2"
+    },
+    {
+      "full_name": "fastapi/fastapi",
+      "repo_url": "https://github.com/fastapi/fastapi",
+      "release_id": "252960115",
+      "tag_name": "0.118.1",
+      "release_url": "https://github.com/fastapi/fastapi/releases/tag/0.118.1"
+    },
+    {
+      "full_name": "tt-a1i/archify",
+      "repo_url": "https://github.com/tt-a1i/archify",
+      "release_id": "309168024",
+      "tag_name": "v2.0.0",
+      "release_url": "https://github.com/tt-a1i/archify/releases/tag/v2.0.0"
+    },
+    {
+      "full_name": "tt-a1i/archify",
+      "repo_url": "https://github.com/tt-a1i/archify",
+      "release_id": "309178928",
+      "tag_name": "v2.3.1",
+      "release_url": "https://github.com/tt-a1i/archify/releases/tag/v2.3.1"
+    },
+    {
+      "full_name": "tt-a1i/archify",
+      "repo_url": "https://github.com/tt-a1i/archify",
+      "release_id": "354940334",
+      "tag_name": "v2.11.0",
+      "release_url": "https://github.com/tt-a1i/archify/releases/tag/v2.11.0"
+    },
+    {
+      "full_name": "tt-a1i/archify",
+      "repo_url": "https://github.com/tt-a1i/archify",
+      "release_id": "309169832",
+      "tag_name": "v2.1.0",
+      "release_url": "https://github.com/tt-a1i/archify/releases/tag/v2.1.0"
+    },
+    {
+      "full_name": "tt-a1i/archify",
+      "repo_url": "https://github.com/tt-a1i/archify",
+      "release_id": "348629786",
+      "tag_name": "v2.8.0",
+      "release_url": "https://github.com/tt-a1i/archify/releases/tag/v2.8.0"
+    },
+    {
+      "full_name": "Graphify-Labs/graphify",
+      "repo_url": "https://github.com/Graphify-Labs/graphify",
+      "release_id": "350407488",
+      "tag_name": "v0.9.9",
+      "release_url": "https://github.com/Graphify-Labs/graphify/releases/tag/v0.9.9"
+    },
+    {
+      "full_name": "Graphify-Labs/graphify",
+      "repo_url": "https://github.com/Graphify-Labs/graphify",
+      "release_id": "320018849",
+      "tag_name": "v0.7.13",
+      "release_url": "https://github.com/Graphify-Labs/graphify/releases/tag/v0.7.13"
+    },
+    {
+      "full_name": "Graphify-Labs/graphify",
+      "repo_url": "https://github.com/Graphify-Labs/graphify",
+      "release_id": "398065883",
+      "tag_name": "v0.9.71",
+      "release_url": "https://github.com/Graphify-Labs/graphify/releases/tag/v0.9.71"
+    },
+    {
+      "full_name": "Graphify-Labs/graphify",
+      "repo_url": "https://github.com/Graphify-Labs/graphify",
+      "release_id": "399427184",
+      "tag_name": "v0.9.72",
+      "release_url": "https://github.com/Graphify-Labs/graphify/releases/tag/v0.9.72"
+    },
+    {
+      "full_name": "Graphify-Labs/graphify",
+      "repo_url": "https://github.com/Graphify-Labs/graphify",
+      "release_id": "306727475",
+      "tag_name": "v0.3.13",
+      "release_url": "https://github.com/Graphify-Labs/graphify/releases/tag/v0.3.13"
+    },
+    {
+      "full_name": "nvm-sh/nvm",
+      "repo_url": "https://github.com/nvm-sh/nvm",
+      "release_id": "334482963",
+      "tag_name": "v0.40.5",
+      "release_url": "https://github.com/nvm-sh/nvm/releases/tag/v0.40.5"
+    },
+    {
+      "full_name": "nvm-sh/nvm",
+      "repo_url": "https://github.com/nvm-sh/nvm",
+      "release_id": "392658142",
+      "tag_name": "v0.40.8",
+      "release_url": "https://github.com/nvm-sh/nvm/releases/tag/v0.40.8"
+    },
+    {
+      "full_name": "nvm-sh/nvm",
+      "repo_url": "https://github.com/nvm-sh/nvm",
+      "release_id": "354713311",
+      "tag_name": "v0.40.6",
+      "release_url": "https://github.com/nvm-sh/nvm/releases/tag/v0.40.6"
+    },
+    {
+      "full_name": "nvm-sh/nvm",
+      "repo_url": "https://github.com/nvm-sh/nvm",
+      "release_id": "281303781",
+      "tag_name": "v0.40.4",
+      "release_url": "https://github.com/nvm-sh/nvm/releases/tag/v0.40.4"
+    },
+    {
+      "full_name": "nvm-sh/nvm",
+      "repo_url": "https://github.com/nvm-sh/nvm",
+      "release_id": "372127136",
+      "tag_name": "v0.40.7",
+      "release_url": "https://github.com/nvm-sh/nvm/releases/tag/v0.40.7"
+    },
+    {
+      "full_name": "nodejs/node",
+      "repo_url": "https://github.com/nodejs/node",
+      "release_id": "253836594",
+      "tag_name": "v24.10.0",
+      "release_url": "https://github.com/nodejs/node/releases/tag/v24.10.0"
+    },
+    {
+      "full_name": "nodejs/node",
+      "repo_url": "https://github.com/nodejs/node",
+      "release_id": "257943424",
+      "tag_name": "v25.1.0",
+      "release_url": "https://github.com/nodejs/node/releases/tag/v25.1.0"
+    },
+    {
+      "full_name": "nodejs/node",
+      "repo_url": "https://github.com/nodejs/node",
+      "release_id": "322058698",
+      "tag_name": "v22.22.3",
+      "release_url": "https://github.com/nodejs/node/releases/tag/v22.22.3"
+    },
+    {
+      "full_name": "nodejs/node",
+      "repo_url": "https://github.com/nodejs/node",
+      "release_id": "276372644",
+      "tag_name": "v24.13.0",
+      "release_url": "https://github.com/nodejs/node/releases/tag/v24.13.0"
+    },
+    {
+      "full_name": "nodejs/node",
+      "repo_url": "https://github.com/nodejs/node",
+      "release_id": "361798619",
+      "tag_name": "v22.23.2",
+      "release_url": "https://github.com/nodejs/node/releases/tag/v22.23.2"
+    },
+    {
+      "full_name": "google-gemini/gemini-cli",
+      "repo_url": "https://github.com/google-gemini/gemini-cli",
+      "release_id": "264200425",
+      "tag_name": "v0.19.0-nightly.20251121.5982abeff",
+      "release_url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.19.0-nightly.20251121.5982abeff"
+    },
+    {
+      "full_name": "google-gemini/gemini-cli",
+      "repo_url": "https://github.com/google-gemini/gemini-cli",
+      "release_id": "389459337",
+      "tag_name": "v0.60.0",
+      "release_url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.60.0"
+    },
+    {
+      "full_name": "google-gemini/gemini-cli",
+      "repo_url": "https://github.com/google-gemini/gemini-cli",
+      "release_id": "274690353",
+      "tag_name": "v0.23.0",
+      "release_url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.23.0"
+    },
+    {
+      "full_name": "google-gemini/gemini-cli",
+      "repo_url": "https://github.com/google-gemini/gemini-cli",
+      "release_id": "304395807",
+      "tag_name": "v0.36.0",
+      "release_url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.36.0"
+    },
+    {
+      "full_name": "google-gemini/gemini-cli",
+      "repo_url": "https://github.com/google-gemini/gemini-cli",
+      "release_id": "253444183",
+      "tag_name": "v0.9.0-preview.1",
+      "release_url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.9.0-preview.1"
+    },
+    {
+      "full_name": "ant-design/ant-design",
+      "repo_url": "https://github.com/ant-design/ant-design",
+      "release_id": "366548544",
+      "tag_name": "6.5.4",
+      "release_url": "https://github.com/ant-design/ant-design/releases/tag/6.5.4"
+    },
+    {
+      "full_name": "ant-design/ant-design",
+      "repo_url": "https://github.com/ant-design/ant-design",
+      "release_id": "303062291",
+      "tag_name": "6.3.5",
+      "release_url": "https://github.com/ant-design/ant-design/releases/tag/6.3.5"
+    },
+    {
+      "full_name": "ant-design/ant-design",
+      "repo_url": "https://github.com/ant-design/ant-design",
+      "release_id": "310229676",
+      "tag_name": "6.3.6",
+      "release_url": "https://github.com/ant-design/ant-design/releases/tag/6.3.6"
+    },
+    {
+      "full_name": "ant-design/ant-design",
+      "repo_url": "https://github.com/ant-design/ant-design",
+      "release_id": "362920593",
+      "tag_name": "6.5.3",
+      "release_url": "https://github.com/ant-design/ant-design/releases/tag/6.5.3"
+    },
+    {
+      "full_name": "ant-design/ant-design",
+      "repo_url": "https://github.com/ant-design/ant-design",
+      "release_id": "353151418",
+      "tag_name": "6.5.1",
+      "release_url": "https://github.com/ant-design/ant-design/releases/tag/6.5.1"
+    },
+    {
+      "full_name": "mattpocock/skills",
+      "repo_url": "https://github.com/mattpocock/skills",
+      "release_id": "340850294",
+      "tag_name": "mattpocock-skills@1.0.0",
+      "release_url": "https://github.com/mattpocock/skills/releases/tag/mattpocock-skills%401.0.0"
+    },
+    {
+      "full_name": "mattpocock/skills",
+      "repo_url": "https://github.com/mattpocock/skills",
+      "release_id": "340850933",
+      "tag_name": "v1.0.0",
+      "release_url": "https://github.com/mattpocock/skills/releases/tag/v1.0.0"
+    },
+    {
+      "full_name": "mattpocock/skills",
+      "repo_url": "https://github.com/mattpocock/skills",
+      "release_id": "365723949",
+      "tag_name": "v1.2.2",
+      "release_url": "https://github.com/mattpocock/skills/releases/tag/v1.2.2"
+    },
+    {
+      "full_name": "mattpocock/skills",
+      "repo_url": "https://github.com/mattpocock/skills",
+      "release_id": "341069977",
+      "tag_name": "v1.0.1",
+      "release_url": "https://github.com/mattpocock/skills/releases/tag/v1.0.1"
+    },
+    {
+      "full_name": "mattpocock/skills",
+      "repo_url": "https://github.com/mattpocock/skills",
+      "release_id": "365515660",
+      "tag_name": "v1.2.0",
+      "release_url": "https://github.com/mattpocock/skills/releases/tag/v1.2.0"
+    },
+    {
+      "full_name": "gohugoio/hugo",
+      "repo_url": "https://github.com/gohugoio/hugo",
+      "release_id": "300349711",
+      "tag_name": "v0.159.0",
+      "release_url": "https://github.com/gohugoio/hugo/releases/tag/v0.159.0"
+    },
+    {
+      "full_name": "gohugoio/hugo",
+      "repo_url": "https://github.com/gohugoio/hugo",
+      "release_id": "273720770",
+      "tag_name": "v0.154.1",
+      "release_url": "https://github.com/gohugoio/hugo/releases/tag/v0.154.1"
+    },
+    {
+      "full_name": "gohugoio/hugo",
+      "repo_url": "https://github.com/gohugoio/hugo",
+      "release_id": "272269258",
+      "tag_name": "v0.153.2",
+      "release_url": "https://github.com/gohugoio/hugo/releases/tag/v0.153.2"
+    },
+    {
+      "full_name": "gohugoio/hugo",
+      "repo_url": "https://github.com/gohugoio/hugo",
+      "release_id": "301764155",
+      "tag_name": "v0.159.1",
+      "release_url": "https://github.com/gohugoio/hugo/releases/tag/v0.159.1"
+    },
+    {
+      "full_name": "gohugoio/hugo",
+      "repo_url": "https://github.com/gohugoio/hugo",
+      "release_id": "256469555",
+      "tag_name": "v0.152.1",
+      "release_url": "https://github.com/gohugoio/hugo/releases/tag/v0.152.1"
+    },
+    {
+      "full_name": "NationalSecurityAgency/ghidra",
+      "repo_url": "https://github.com/NationalSecurityAgency/ghidra",
+      "release_id": "372490319",
+      "tag_name": "Ghidra_12.1.3_build",
+      "release_url": "https://github.com/NationalSecurityAgency/ghidra/releases/tag/Ghidra_12.1.3_build"
+    },
+    {
+      "full_name": "NationalSecurityAgency/ghidra",
+      "repo_url": "https://github.com/NationalSecurityAgency/ghidra",
+      "release_id": "268440819",
+      "tag_name": "Ghidra_12.0_build",
+      "release_url": "https://github.com/NationalSecurityAgency/ghidra/releases/tag/Ghidra_12.0_build"
+    },
+    {
+      "full_name": "NationalSecurityAgency/ghidra",
+      "repo_url": "https://github.com/NationalSecurityAgency/ghidra",
+      "release_id": "292901805",
+      "tag_name": "Ghidra_12.0.4_build",
+      "release_url": "https://github.com/NationalSecurityAgency/ghidra/releases/tag/Ghidra_12.0.4_build"
+    },
+    {
+      "full_name": "NationalSecurityAgency/ghidra",
+      "repo_url": "https://github.com/NationalSecurityAgency/ghidra",
+      "release_id": "267188111",
+      "tag_name": "Ghidra_11.4.3_build",
+      "release_url": "https://github.com/NationalSecurityAgency/ghidra/releases/tag/Ghidra_11.4.3_build"
+    },
+    {
+      "full_name": "NationalSecurityAgency/ghidra",
+      "repo_url": "https://github.com/NationalSecurityAgency/ghidra",
+      "release_id": "335090191",
+      "tag_name": "Ghidra_12.1.2_build",
+      "release_url": "https://github.com/NationalSecurityAgency/ghidra/releases/tag/Ghidra_12.1.2_build"
+    },
+    {
+      "full_name": "vercel/next.js",
+      "repo_url": "https://github.com/vercel/next.js",
+      "release_id": "280066005",
+      "tag_name": "v15.3.9",
+      "release_url": "https://github.com/vercel/next.js/releases/tag/v15.3.9"
+    },
+    {
+      "full_name": "vercel/next.js",
+      "repo_url": "https://github.com/vercel/next.js",
+      "release_id": "254137805",
+      "tag_name": "v15.5.5",
+      "release_url": "https://github.com/vercel/next.js/releases/tag/v15.5.5"
+    },
+    {
+      "full_name": "vercel/next.js",
+      "repo_url": "https://github.com/vercel/next.js",
+      "release_id": "280066109",
+      "tag_name": "v15.4.11",
+      "release_url": "https://github.com/vercel/next.js/releases/tag/v15.4.11"
+    },
+    {
+      "full_name": "vercel/next.js",
+      "repo_url": "https://github.com/vercel/next.js",
+      "release_id": "267156324",
+      "tag_name": "v15.3.6",
+      "release_url": "https://github.com/vercel/next.js/releases/tag/v15.3.6"
+    },
+    {
+      "full_name": "vercel/next.js",
+      "repo_url": "https://github.com/vercel/next.js",
+      "release_id": "267155199",
+      "tag_name": "v15.1.9",
+      "release_url": "https://github.com/vercel/next.js/releases/tag/v15.1.9"
+    },
+    {
+      "full_name": "farion1231/cc-switch",
+      "repo_url": "https://github.com/farion1231/cc-switch",
+      "release_id": "363143829",
+      "tag_name": "v3.19.1",
+      "release_url": "https://github.com/farion1231/cc-switch/releases/tag/v3.19.1"
+    },
+    {
+      "full_name": "farion1231/cc-switch",
+      "repo_url": "https://github.com/farion1231/cc-switch",
+      "release_id": "307628507",
+      "tag_name": "v3.13.0",
+      "release_url": "https://github.com/farion1231/cc-switch/releases/tag/v3.13.0"
+    },
+    {
+      "full_name": "farion1231/cc-switch",
+      "repo_url": "https://github.com/farion1231/cc-switch",
+      "release_id": "312070079",
+      "tag_name": "v3.14.0",
+      "release_url": "https://github.com/farion1231/cc-switch/releases/tag/v3.14.0"
+    },
+    {
+      "full_name": "farion1231/cc-switch",
+      "repo_url": "https://github.com/farion1231/cc-switch",
+      "release_id": "362189343",
+      "tag_name": "v3.19.0",
+      "release_url": "https://github.com/farion1231/cc-switch/releases/tag/v3.19.0"
+    },
+    {
+      "full_name": "farion1231/cc-switch",
+      "repo_url": "https://github.com/farion1231/cc-switch",
+      "release_id": "353275761",
+      "tag_name": "v3.17.0",
+      "release_url": "https://github.com/farion1231/cc-switch/releases/tag/v3.17.0"
+    },
+    {
+      "full_name": "bitcoin/bitcoin",
+      "repo_url": "https://github.com/bitcoin/bitcoin",
+      "release_id": "285200540",
+      "tag_name": "v29.3",
+      "release_url": "https://github.com/bitcoin/bitcoin/releases/tag/v29.3"
+    },
+    {
+      "full_name": "bitcoin/bitcoin",
+      "repo_url": "https://github.com/bitcoin/bitcoin",
+      "release_id": "254062644",
+      "tag_name": "v30.0",
+      "release_url": "https://github.com/bitcoin/bitcoin/releases/tag/v30.0"
+    },
+    {
+      "full_name": "bitcoin/bitcoin",
+      "repo_url": "https://github.com/bitcoin/bitcoin",
+      "release_id": "352005822",
+      "tag_name": "v30.3",
+      "release_url": "https://github.com/bitcoin/bitcoin/releases/tag/v30.3"
+    },
+    {
+      "full_name": "bitcoin/bitcoin",
+      "repo_url": "https://github.com/bitcoin/bitcoin",
+      "release_id": "352006528",
+      "tag_name": "v29.4",
+      "release_url": "https://github.com/bitcoin/bitcoin/releases/tag/v29.4"
+    },
+    {
+      "full_name": "bitcoin/bitcoin",
+      "repo_url": "https://github.com/bitcoin/bitcoin",
+      "release_id": "258480947",
+      "tag_name": "v28.3",
+      "release_url": "https://github.com/bitcoin/bitcoin/releases/tag/v28.3"
+    },
+    {
+      "full_name": "rustdesk/rustdesk",
+      "repo_url": "https://github.com/rustdesk/rustdesk",
+      "release_id": "263489239",
+      "tag_name": "1.4.4",
+      "release_url": "https://github.com/rustdesk/rustdesk/releases/tag/1.4.4"
+    },
+    {
+      "full_name": "rustdesk/rustdesk",
+      "repo_url": "https://github.com/rustdesk/rustdesk",
+      "release_id": "342295455",
+      "tag_name": "1.4.8",
+      "release_url": "https://github.com/rustdesk/rustdesk/releases/tag/1.4.8"
+    },
+    {
+      "full_name": "rustdesk/rustdesk",
+      "repo_url": "https://github.com/rustdesk/rustdesk",
+      "release_id": "255246803",
+      "tag_name": "1.4.3",
+      "release_url": "https://github.com/rustdesk/rustdesk/releases/tag/1.4.3"
+    },
+    {
+      "full_name": "rustdesk/rustdesk",
+      "repo_url": "https://github.com/rustdesk/rustdesk",
+      "release_id": "396443202",
+      "tag_name": "1.5.0",
+      "release_url": "https://github.com/rustdesk/rustdesk/releases/tag/1.5.0"
+    },
+    {
+      "full_name": "rustdesk/rustdesk",
+      "repo_url": "https://github.com/rustdesk/rustdesk",
+      "release_id": "275361901",
+      "tag_name": "1.4.5",
+      "release_url": "https://github.com/rustdesk/rustdesk/releases/tag/1.4.5"
+    },
+    {
+      "full_name": "elastic/elasticsearch",
+      "repo_url": "https://github.com/elastic/elasticsearch",
+      "release_id": "252444835",
+      "tag_name": "v9.1.5",
+      "release_url": "https://github.com/elastic/elasticsearch/releases/tag/v9.1.5"
+    },
+    {
+      "full_name": "elastic/elasticsearch",
+      "repo_url": "https://github.com/elastic/elasticsearch",
+      "release_id": "256725672",
+      "tag_name": "v8.19.6",
+      "release_url": "https://github.com/elastic/elasticsearch/releases/tag/v8.19.6"
+    },
+    {
+      "full_name": "elastic/elasticsearch",
+      "repo_url": "https://github.com/elastic/elasticsearch",
+      "release_id": "306634993",
+      "tag_name": "v8.19.14",
+      "release_url": "https://github.com/elastic/elasticsearch/releases/tag/v8.19.14"
+    },
+    {
+      "full_name": "elastic/elasticsearch",
+      "repo_url": "https://github.com/elastic/elasticsearch",
+      "release_id": "271694397",
+      "tag_name": "v8.19.9",
+      "release_url": "https://github.com/elastic/elasticsearch/releases/tag/v8.19.9"
+    },
+    {
+      "full_name": "elastic/elasticsearch",
+      "repo_url": "https://github.com/elastic/elasticsearch",
+      "release_id": "321321862",
+      "tag_name": "v9.4.1",
+      "release_url": "https://github.com/elastic/elasticsearch/releases/tag/v9.4.1"
+    },
+    {
+      "full_name": "netdata/netdata",
+      "repo_url": "https://github.com/netdata/netdata",
+      "release_id": "254697908",
+      "tag_name": "v2.7.2",
+      "release_url": "https://github.com/netdata/netdata/releases/tag/v2.7.2"
+    },
+    {
+      "full_name": "netdata/netdata",
+      "repo_url": "https://github.com/netdata/netdata",
+      "release_id": "257850012",
+      "tag_name": "v2.7.3",
+      "release_url": "https://github.com/netdata/netdata/releases/tag/v2.7.3"
+    },
+    {
+      "full_name": "netdata/netdata",
+      "repo_url": "https://github.com/netdata/netdata",
+      "release_id": "270416324",
+      "tag_name": "v2.8.3",
+      "release_url": "https://github.com/netdata/netdata/releases/tag/v2.8.3"
+    },
+    {
+      "full_name": "netdata/netdata",
+      "repo_url": "https://github.com/netdata/netdata",
+      "release_id": "390020534",
+      "tag_name": "v2.11.1",
+      "release_url": "https://github.com/netdata/netdata/releases/tag/v2.11.1"
+    },
+    {
+      "full_name": "netdata/netdata",
+      "repo_url": "https://github.com/netdata/netdata",
+      "release_id": "308857421",
+      "tag_name": "v2.10.2",
+      "release_url": "https://github.com/netdata/netdata/releases/tag/v2.10.2"
+    },
+    {
+      "full_name": "addyosmani/agent-skills",
+      "repo_url": "https://github.com/addyosmani/agent-skills",
+      "release_id": "391196722",
+      "tag_name": "0.6.10",
+      "release_url": "https://github.com/addyosmani/agent-skills/releases/tag/0.6.10"
+    },
+    {
+      "full_name": "addyosmani/agent-skills",
+      "repo_url": "https://github.com/addyosmani/agent-skills",
+      "release_id": "378812923",
+      "tag_name": "0.6.8",
+      "release_url": "https://github.com/addyosmani/agent-skills/releases/tag/0.6.8"
+    },
+    {
+      "full_name": "addyosmani/agent-skills",
+      "repo_url": "https://github.com/addyosmani/agent-skills",
+      "release_id": "307363199",
+      "tag_name": "0.5.0",
+      "release_url": "https://github.com/addyosmani/agent-skills/releases/tag/0.5.0"
+    },
+    {
+      "full_name": "addyosmani/agent-skills",
+      "repo_url": "https://github.com/addyosmani/agent-skills",
+      "release_id": "370764001",
+      "tag_name": "0.6.7",
+      "release_url": "https://github.com/addyosmani/agent-skills/releases/tag/0.6.7"
+    },
+    {
+      "full_name": "addyosmani/agent-skills",
+      "repo_url": "https://github.com/addyosmani/agent-skills",
+      "release_id": "352811383",
+      "tag_name": "0.6.4",
+      "release_url": "https://github.com/addyosmani/agent-skills/releases/tag/0.6.4"
+    },
+    {
+      "full_name": "earendil-works/pi",
+      "repo_url": "https://github.com/earendil-works/pi",
+      "release_id": "302836732",
+      "tag_name": "v0.63.2",
+      "release_url": "https://github.com/earendil-works/pi/releases/tag/v0.63.2"
+    },
+    {
+      "full_name": "earendil-works/pi",
+      "repo_url": "https://github.com/earendil-works/pi",
+      "release_id": "277560001",
+      "tag_name": "v0.48.0",
+      "release_url": "https://github.com/earendil-works/pi/releases/tag/v0.48.0"
+    },
+    {
+      "full_name": "earendil-works/pi",
+      "repo_url": "https://github.com/earendil-works/pi",
+      "release_id": "282789898",
+      "tag_name": "v0.51.5",
+      "release_url": "https://github.com/earendil-works/pi/releases/tag/v0.51.5"
+    },
+    {
+      "full_name": "earendil-works/pi",
+      "repo_url": "https://github.com/earendil-works/pi",
+      "release_id": "323992388",
+      "tag_name": "v0.75.1",
+      "release_url": "https://github.com/earendil-works/pi/releases/tag/v0.75.1"
+    },
+    {
+      "full_name": "earendil-works/pi",
+      "repo_url": "https://github.com/earendil-works/pi",
+      "release_id": "271494126",
+      "tag_name": "v0.23.4",
+      "release_url": "https://github.com/earendil-works/pi/releases/tag/v0.23.4"
+    },
+    {
+      "full_name": "DietrichGebert/ponytail",
+      "repo_url": "https://github.com/DietrichGebert/ponytail",
+      "release_id": "338344709",
+      "tag_name": "v1.0.0",
+      "release_url": "https://github.com/DietrichGebert/ponytail/releases/tag/v1.0.0"
+    },
+    {
+      "full_name": "DietrichGebert/ponytail",
+      "repo_url": "https://github.com/DietrichGebert/ponytail",
+      "release_id": "338520472",
+      "tag_name": "v4.0.0",
+      "release_url": "https://github.com/DietrichGebert/ponytail/releases/tag/v4.0.0"
+    },
+    {
+      "full_name": "DietrichGebert/ponytail",
+      "repo_url": "https://github.com/DietrichGebert/ponytail",
+      "release_id": "339285539",
+      "tag_name": "v4.4.0",
+      "release_url": "https://github.com/DietrichGebert/ponytail/releases/tag/v4.4.0"
+    },
+    {
+      "full_name": "DietrichGebert/ponytail",
+      "repo_url": "https://github.com/DietrichGebert/ponytail",
+      "release_id": "367010814",
+      "tag_name": "v4.9.0",
+      "release_url": "https://github.com/DietrichGebert/ponytail/releases/tag/v4.9.0"
+    },
+    {
+      "full_name": "DietrichGebert/ponytail",
+      "repo_url": "https://github.com/DietrichGebert/ponytail",
+      "release_id": "346077740",
+      "tag_name": "v4.8.4",
+      "release_url": "https://github.com/DietrichGebert/ponytail/releases/tag/v4.8.4"
+    },
+    {
+      "full_name": "astral-sh/uv",
+      "repo_url": "https://github.com/astral-sh/uv",
+      "release_id": "370794065",
+      "tag_name": "0.12.5",
+      "release_url": "https://github.com/astral-sh/uv/releases/tag/0.12.5"
+    },
+    {
+      "full_name": "astral-sh/uv",
+      "repo_url": "https://github.com/astral-sh/uv",
+      "release_id": "318048243",
+      "tag_name": "0.11.10",
+      "release_url": "https://github.com/astral-sh/uv/releases/tag/0.11.10"
+    },
+    {
+      "full_name": "astral-sh/uv",
+      "repo_url": "https://github.com/astral-sh/uv",
+      "release_id": "338153758",
+      "tag_name": "0.11.21",
+      "release_url": "https://github.com/astral-sh/uv/releases/tag/0.11.21"
+    },
+    {
+      "full_name": "astral-sh/uv",
+      "repo_url": "https://github.com/astral-sh/uv",
+      "release_id": "341682539",
+      "tag_name": "0.11.22",
+      "release_url": "https://github.com/astral-sh/uv/releases/tag/0.11.22"
+    },
+    {
+      "full_name": "astral-sh/uv",
+      "repo_url": "https://github.com/astral-sh/uv",
+      "release_id": "300426132",
+      "tag_name": "0.11.0",
+      "release_url": "https://github.com/astral-sh/uv/releases/tag/0.11.0"
+    },
+    {
+      "full_name": "huggingface/transformers",
+      "repo_url": "https://github.com/huggingface/transformers",
+      "release_id": "312881249",
+      "tag_name": "v5.6.2",
+      "release_url": "https://github.com/huggingface/transformers/releases/tag/v5.6.2"
+    },
+    {
+      "full_name": "huggingface/transformers",
+      "repo_url": "https://github.com/huggingface/transformers",
+      "release_id": "308458339",
+      "tag_name": "v5.5.4",
+      "release_url": "https://github.com/huggingface/transformers/releases/tag/v5.5.4"
+    },
+    {
+      "full_name": "huggingface/transformers",
+      "repo_url": "https://github.com/huggingface/transformers",
+      "release_id": "307148882",
+      "tag_name": "v5.5.3",
+      "release_url": "https://github.com/huggingface/transformers/releases/tag/v5.5.3"
+    },
+    {
+      "full_name": "huggingface/transformers",
+      "repo_url": "https://github.com/huggingface/transformers",
+      "release_id": "337351290",
+      "tag_name": "v5.11.0",
+      "release_url": "https://github.com/huggingface/transformers/releases/tag/v5.11.0"
+    },
+    {
+      "full_name": "huggingface/transformers",
+      "repo_url": "https://github.com/huggingface/transformers",
+      "release_id": "276312241",
+      "tag_name": "v4.57.4",
+      "release_url": "https://github.com/huggingface/transformers/releases/tag/v4.57.4"
+    },
+    {
+      "full_name": "OpenHands/OpenHands",
+      "repo_url": "https://github.com/OpenHands/OpenHands",
+      "release_id": "394895769",
+      "tag_name": "v1.23.0",
+      "release_url": "https://github.com/OpenHands/OpenHands/releases/tag/v1.23.0"
+    },
+    {
+      "full_name": "OpenHands/OpenHands",
+      "repo_url": "https://github.com/OpenHands/OpenHands",
+      "release_id": "390206611",
+      "tag_name": "v1.19.0",
+      "release_url": "https://github.com/OpenHands/OpenHands/releases/tag/v1.19.0"
+    },
+    {
+      "full_name": "OpenHands/OpenHands",
+      "repo_url": "https://github.com/OpenHands/OpenHands",
+      "release_id": "251502981",
+      "tag_name": "0.58.0",
+      "release_url": "https://github.com/OpenHands/OpenHands/releases/tag/0.58.0"
+    },
+    {
+      "full_name": "OpenHands/OpenHands",
+      "repo_url": "https://github.com/OpenHands/OpenHands",
+      "release_id": "362088149",
+      "tag_name": "v1.7.0",
+      "release_url": "https://github.com/OpenHands/OpenHands/releases/tag/v1.7.0"
+    },
+    {
+      "full_name": "OpenHands/OpenHands",
+      "repo_url": "https://github.com/OpenHands/OpenHands",
+      "release_id": "258282208",
+      "tag_name": "0.60.0",
+      "release_url": "https://github.com/OpenHands/OpenHands/releases/tag/0.60.0"
+    },
+    {
+      "full_name": "redis/redis",
+      "repo_url": "https://github.com/redis/redis",
+      "release_id": "289343332",
+      "tag_name": "7.2.13",
+      "release_url": "https://github.com/redis/redis/releases/tag/7.2.13"
+    },
+    {
+      "full_name": "redis/redis",
+      "repo_url": "https://github.com/redis/redis",
+      "release_id": "371817212",
+      "tag_name": "7.4.11",
+      "release_url": "https://github.com/redis/redis/releases/tag/7.4.11"
+    },
+    {
+      "full_name": "redis/redis",
+      "repo_url": "https://github.com/redis/redis",
+      "release_id": "390812671",
+      "tag_name": "8.2.10",
+      "release_url": "https://github.com/redis/redis/releases/tag/8.2.10"
+    },
+    {
+      "full_name": "redis/redis",
+      "repo_url": "https://github.com/redis/redis",
+      "release_id": "284122572",
+      "tag_name": "8.4.1",
+      "release_url": "https://github.com/redis/redis/releases/tag/8.4.1"
+    },
+    {
+      "full_name": "redis/redis",
+      "repo_url": "https://github.com/redis/redis",
+      "release_id": "371819484",
+      "tag_name": "8.4.6",
+      "release_url": "https://github.com/redis/redis/releases/tag/8.4.6"
+    },
+    {
+      "full_name": "JuliusBrussee/caveman",
+      "repo_url": "https://github.com/JuliusBrussee/caveman",
+      "release_id": "375160888",
+      "tag_name": "v2.3.0",
+      "release_url": "https://github.com/JuliusBrussee/caveman/releases/tag/v2.3.0"
+    },
+    {
+      "full_name": "JuliusBrussee/caveman",
+      "repo_url": "https://github.com/JuliusBrussee/caveman",
+      "release_id": "321393500",
+      "tag_name": "v1.8.2",
+      "release_url": "https://github.com/JuliusBrussee/caveman/releases/tag/v1.8.2"
+    },
+    {
+      "full_name": "JuliusBrussee/caveman",
+      "repo_url": "https://github.com/JuliusBrussee/caveman",
+      "release_id": "307922262",
+      "tag_name": "v1.5.1",
+      "release_url": "https://github.com/JuliusBrussee/caveman/releases/tag/v1.5.1"
+    },
+    {
+      "full_name": "JuliusBrussee/caveman",
+      "repo_url": "https://github.com/JuliusBrussee/caveman",
+      "release_id": "375162111",
+      "tag_name": "v2.3.1",
+      "release_url": "https://github.com/JuliusBrussee/caveman/releases/tag/v2.3.1"
+    },
+    {
+      "full_name": "JuliusBrussee/caveman",
+      "repo_url": "https://github.com/JuliusBrussee/caveman",
+      "release_id": "307235829",
+      "tag_name": "v1.3.5",
+      "release_url": "https://github.com/JuliusBrussee/caveman/releases/tag/v1.3.5"
+    },
+    {
+      "full_name": "nexu-io/open-design",
+      "repo_url": "https://github.com/nexu-io/open-design",
+      "release_id": "385495816",
+      "tag_name": "open-design-v0.22.1",
+      "release_url": "https://github.com/nexu-io/open-design/releases/tag/open-design-v0.22.1"
+    },
+    {
+      "full_name": "nexu-io/open-design",
+      "repo_url": "https://github.com/nexu-io/open-design",
+      "release_id": "393947317",
+      "tag_name": "open-design-v0.24.0",
+      "release_url": "https://github.com/nexu-io/open-design/releases/tag/open-design-v0.24.0"
+    },
+    {
+      "full_name": "nexu-io/open-design",
+      "repo_url": "https://github.com/nexu-io/open-design",
+      "release_id": "318321911",
+      "tag_name": "open-design-v0.4.1",
+      "release_url": "https://github.com/nexu-io/open-design/releases/tag/open-design-v0.4.1"
+    },
+    {
+      "full_name": "nexu-io/open-design",
+      "repo_url": "https://github.com/nexu-io/open-design",
+      "release_id": "345343782",
+      "tag_name": "open-design-v0.12.0",
+      "release_url": "https://github.com/nexu-io/open-design/releases/tag/open-design-v0.12.0"
+    },
+    {
+      "full_name": "nexu-io/open-design",
+      "repo_url": "https://github.com/nexu-io/open-design",
+      "release_id": "376459888",
+      "tag_name": "open-design-v0.21.0",
+      "release_url": "https://github.com/nexu-io/open-design/releases/tag/open-design-v0.21.0"
+    },
+    {
+      "full_name": "harry0703/MoneyPrinterTurbo",
+      "repo_url": "https://github.com/harry0703/MoneyPrinterTurbo",
+      "release_id": "352710217",
+      "tag_name": "v1.3.2",
+      "release_url": "https://github.com/harry0703/MoneyPrinterTurbo/releases/tag/v1.3.2"
+    },
+    {
+      "full_name": "harry0703/MoneyPrinterTurbo",
+      "repo_url": "https://github.com/harry0703/MoneyPrinterTurbo",
+      "release_id": "305041941",
+      "tag_name": "v1.2.7",
+      "release_url": "https://github.com/harry0703/MoneyPrinterTurbo/releases/tag/v1.2.7"
+    },
+    {
+      "full_name": "harry0703/MoneyPrinterTurbo",
+      "repo_url": "https://github.com/harry0703/MoneyPrinterTurbo",
+      "release_id": "381310525",
+      "tag_name": "v1.3.6",
+      "release_url": "https://github.com/harry0703/MoneyPrinterTurbo/releases/tag/v1.3.6"
+    },
+    {
+      "full_name": "harry0703/MoneyPrinterTurbo",
+      "repo_url": "https://github.com/harry0703/MoneyPrinterTurbo",
+      "release_id": "387890481",
+      "tag_name": "v1.3.7",
+      "release_url": "https://github.com/harry0703/MoneyPrinterTurbo/releases/tag/v1.3.7"
+    },
+    {
+      "full_name": "harry0703/MoneyPrinterTurbo",
+      "repo_url": "https://github.com/harry0703/MoneyPrinterTurbo",
+      "release_id": "331908879",
+      "tag_name": "v1.2.9",
+      "release_url": "https://github.com/harry0703/MoneyPrinterTurbo/releases/tag/v1.2.9"
+    },
+    {
+      "full_name": "syncthing/syncthing",
+      "repo_url": "https://github.com/syncthing/syncthing",
+      "release_id": "306139185",
+      "tag_name": "v2.0.16",
+      "release_url": "https://github.com/syncthing/syncthing/releases/tag/v2.0.16"
+    },
+    {
+      "full_name": "syncthing/syncthing",
+      "repo_url": "https://github.com/syncthing/syncthing",
+      "release_id": "259492006",
+      "tag_name": "v2.0.11",
+      "release_url": "https://github.com/syncthing/syncthing/releases/tag/v2.0.11"
+    },
+    {
+      "full_name": "syncthing/syncthing",
+      "repo_url": "https://github.com/syncthing/syncthing",
+      "release_id": "365532506",
+      "tag_name": "v2.1.3",
+      "release_url": "https://github.com/syncthing/syncthing/releases/tag/v2.1.3"
+    },
+    {
+      "full_name": "syncthing/syncthing",
+      "repo_url": "https://github.com/syncthing/syncthing",
+      "release_id": "384523550",
+      "tag_name": "v2.1.5",
+      "release_url": "https://github.com/syncthing/syncthing/releases/tag/v2.1.5"
+    },
+    {
+      "full_name": "syncthing/syncthing",
+      "repo_url": "https://github.com/syncthing/syncthing",
+      "release_id": "274499750",
+      "tag_name": "v2.0.13",
+      "release_url": "https://github.com/syncthing/syncthing/releases/tag/v2.0.13"
+    }
+  ]
+}

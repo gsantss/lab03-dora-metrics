@@ -113,8 +113,9 @@ python amostra_ouro.py analisar
 python amostra_ouro.py verificar
 ```
 
-Com apenas 100 repositórios, `preparar --piloto --saida validacao-piloto` permite ensaio,
-mas não autoriza fechar a Issue. Leia `docs/protocolo-amostra-ouro.md` antes de rotular.
+Esta versão permite preparar e concluir com população de 100 repositórios, sem `--piloto`.
+A mudança adapta o fluxo por solicitação do usuário; não substitui o mínimo de 300 do enunciado.
+A opção `--piloto` continua reservada a ensaios e não autoriza fechamento. Leia `docs/protocolo-amostra-ouro.md` antes de rotular.
 Os três CSVs ficam em arquivos separados, sem predições ou rótulos dos demais.
 Conserve a população e as versões fixas do ambiente para reproduzir o mesmo sorteio.
 Não regenerar uma planilha preenchida nem colocar rótulos fictícios para cumprir aceite.

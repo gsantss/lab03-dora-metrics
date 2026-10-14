@@ -56,7 +56,7 @@ def test_dataset_change_rejected(data):
     with pytest.raises(ValueError,match='mudou'):prepare(rp,lp,directory)
 
 def test_pilot_never_final(data):
-    rp,lp,directory=data;read_csv(rp).head(100).to_csv(rp,index=False)
+    rp,lp,directory=data;read_csv(rp).head(99).to_csv(rp,index=False)
     with pytest.raises(Pending):prepare(rp,lp,directory)
     prepare(rp,lp,directory,pilot=True);fill(directory)
     with pytest.raises(Pending,match='piloto'):analyze(directory,require_final=True)
@@ -128,3 +128,17 @@ def test_duplicate_tags_with_different_ids_are_audited(data):
     assert manifest['duplicate_tag_exclusions'][0]['release_id']!='999999999'
     sample=manifest['sample']
     assert len({(r['full_name'],r['tag_name']) for r in sample})==300
+
+
+def test_final_with_100_repositories_records_adaptation(data):
+    rp,lp,directory=data
+    read_csv(rp).head(100).to_csv(rp,index=False)
+    prepare(rp,lp,directory)
+    fill(directory)
+    result=analyze(directory,require_final=True)
+    summary=json.loads((directory/'conclusao.json').read_text())
+    assert summary['final'] and summary['population_count']==100
+    assert summary['configured_minimum']==100 and summary['assignment_minimum']==300
+    assert summary['assignment_population_requirement_met'] is False
+    assert result['tipo_projeto']['itens']==60
+    assert result['corretiva']['itens']==300

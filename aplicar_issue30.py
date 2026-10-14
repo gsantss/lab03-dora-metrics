@@ -22,9 +22,9 @@ if '-r requirements-validacao.txt' not in text.splitlines():
 method=Path('docs/metodologia.md')
 content=method.read_text(encoding='utf-8-sig') if method.exists() else '# Metodologia\n'
 placeholder='*A cargo da issue #30: sorteio, protocolo de rotulagem e desempate, kappa de Fleiss e consenso.*'
-body='''A validação manual usa 60 repositórios da amostra final de pelo menos 300, sorteados
+body='''Nesta execução adaptada, a validação manual usa 60 repositórios de uma população de pelo menos 100, sorteados
 com semente 42 após ordenação por full_name. Para cada repositório são sorteadas cinco
-releases com a mesma semente, totalizando 300 itens. O manifesto congela identificadores,
+releases com a mesma semente, totalizando 300 itens. A redução da população para 100 foi solicitada pelo usuário; o enunciado S02 continua exigindo pelo menos 300 repositórios. O manifesto congela identificadores,
 hashes dos dados e versões do ambiente. O protocolo detalhado está em
 [protocolo-amostra-ouro.md](protocolo-amostra-ouro.md).
 
@@ -61,8 +61,9 @@ python amostra_ouro.py analisar
 python amostra_ouro.py verificar
 ```
 
-Com apenas 100 repositórios, `preparar --piloto --saida validacao-piloto` permite ensaio,
-mas não autoriza fechar a Issue. Leia `docs/protocolo-amostra-ouro.md` antes de rotular.
+Esta versão permite preparar e concluir com população de 100 repositórios, sem `--piloto`.
+A mudança adapta o fluxo por solicitação do usuário; não substitui o mínimo de 300 do enunciado.
+A opção `--piloto` continua reservada a ensaios e não autoriza fechamento. Leia `docs/protocolo-amostra-ouro.md` antes de rotular.
 Os três CSVs ficam em arquivos separados, sem predições ou rótulos dos demais.
 Conserve a população e as versões fixas do ambiente para reproduzir o mesmo sorteio.
 Não regenerar uma planilha preenchida nem colocar rótulos fictícios para cumprir aceite.

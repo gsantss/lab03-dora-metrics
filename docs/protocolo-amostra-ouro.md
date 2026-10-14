@@ -2,11 +2,11 @@
 
 ## Sorteio e reprodução
 
-A população é `data/processed/repositories.csv` da amostra final S02 (>=300 repositórios), e as releases estão em `data/processed/releases.csv`. Ordenamos repositórios por `full_name` e executamos `df.sample(n=60, random_state=42)`. Para cada selecionado, ordenamos suas releases por `release_id` e `tag_name` como strings e sorteamos cinco com `sample(n=5, random_state=42)`. Sem reposição em ambos os níveis. Não substituímos silenciosamente repositórios com menos de cinco releases. Se o snapshot trouxer o mesmo tag em IDs diferentes, mantemos o maior ID (ordenação por comprimento e valor do ID) para não sortear o mesmo link duas vezes; as exclusões ficam registradas em `duplicate_tag_exclusions` do manifesto. IDs repetidos são erro de integridade.
+A população é `data/processed/repositories.csv` de uma população configurada com mínimo de 100 repositórios, e as releases estão em `data/processed/releases.csv`. Ordenamos repositórios por `full_name` e executamos `df.sample(n=60, random_state=42)`. Para cada selecionado, ordenamos suas releases por `release_id` e `tag_name` como strings e sorteamos cinco com `sample(n=5, random_state=42)`. Sem reposição em ambos os níveis. Não substituímos silenciosamente repositórios com menos de cinco releases. Se o snapshot trouxer o mesmo tag em IDs diferentes, mantemos o maior ID (ordenação por comprimento e valor do ID) para não sortear o mesmo link duas vezes; as exclusões ficam registradas em `duplicate_tag_exclusions` do manifesto. IDs repetidos são erro de integridade.
 
 `validacao/manifesto.json` congela os 300 itens, os hashes SHA256 dos datasets, a semente 42 e as versões do pandas/numpy. As três planilhas são CSVs UTF-8 com BOM. Reexecutar preparação preserva todos os rótulos existentes e recusa mudança na amostra. Para nova coleta ou outro ambiente, use outra pasta de saída e refaça as avaliações; não reutilize os rótulos da amostra anterior. Fixe o ambiente usando `requirements-validacao.txt`.
 
-`--piloto` permite testar com a amostra de 100 da S01; saídas são identificadas como piloto e não autorizam o encerramento da Issue. Para finalizar, use os dados de >=300 e gere a amostra final em uma pasta nova, ou arquive/mova integralmente a pasta piloto antes de gerar a final.
+Esta versão aceita população de 100 repositórios no modo definitivo por solicitação do usuário, mantendo 60 repositórios e cinco releases por repositório na amostra-ouro. O requisito original S02 de população >=300 não foi atendido por essa redução. `--piloto` continua indicando ensaio e não autoriza o encerramento; para concluir, prepare sem `--piloto`. A conclusão registra o mínimo configurado, o mínimo do enunciado e se este último foi atendido. Planilhas piloto permanecem separadas das definitivas.
 
 ## Avaliação independente
 
@@ -39,7 +39,7 @@ Aplicar maioria simples. Um empate 1-1-1 (possível em tipo do projeto e entrega
 ```powershell
 python -m pip install -r requirements.txt -r requirements-validacao.txt
 python amostra_ouro.py preparar
-# Somente ensaio com os 100 atuais: python amostra_ouro.py preparar --piloto
+# Opcional, somente para ensaio: python amostra_ouro.py preparar --piloto
 # Cada integrante preenche seu CSV de forma independente.
 python amostra_ouro.py analisar
 # Resolver eventuais empates em validacao/desempates.csv e repetir.

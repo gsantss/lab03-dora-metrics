@@ -90,8 +90,8 @@ def draw(repositories, releases, seed=SEED, n=60, per_repo=5):
 def prepare(repositories, releases, directory, pilot=False):
     directory = Path(directory)
     repos = read_csv(repositories); rels = read_csv(releases)
-    if len(repos) < 300 and not pilot:
-        raise Pending(f'Amostra S02 exige pelo menos 300 repositórios; recebidos {len(repos)}. Use --piloto apenas para ensaio.')
+    if len(repos) < 100 and not pilot:
+        raise Pending(f'Configuração adaptada exige pelo menos 100 repositórios; recebidos {len(repos)}. Use --piloto apenas para ensaio.')
     old_manifest = directory/'manifesto.json'
     if old_manifest.exists():
         old = json.loads(old_manifest.read_text(encoding='utf-8'))
@@ -252,15 +252,15 @@ def analyze(directory, require_final=False):
     hashes={str(Path('rotulos')/f'{a}.csv'):digest(directory/'rotulos'/f'{a}.csv') for a in RATERS}
     for name in ('manifesto.json','desempates.csv','kappa.json','consenso.csv','auditoria_consenso.csv'):
         hashes[name]=digest(directory/name)
-    final = not manifest['pilot'] and manifest['population_count']>=300
-    write_json(directory/'conclusao.json',{'final':final,'population_count':manifest['population_count'],'repositories':60,'releases':300,'pending':0,'sha256':hashes})
-    lines=['# Concordância da amostra-ouro', '', f'População: {manifest["population_count"]} repositórios. Piloto: {manifest["pilot"]}.', '', '| Dimensão | Itens | Kappa | Interpretação |', '|---|---:|---:|---|']
+    final = not manifest['pilot'] and manifest['population_count']>=100
+    write_json(directory/'conclusao.json',{'final':final,'configured_minimum':100,'assignment_minimum':300,'assignment_population_requirement_met':manifest['population_count']>=300,'population_count':manifest['population_count'],'repositories':60,'releases':300,'pending':0,'sha256':hashes})
+    lines=['# Concordância da amostra-ouro', '', 'Configuração adaptada: mínimo de 100 repositórios por solicitação do usuário. O enunciado S02 exige 300; esta adaptação não altera o enunciado.', '', f'População: {manifest["population_count"]} repositórios. Piloto: {manifest["pilot"]}.', '', '| Dimensão | Itens | Kappa | Interpretação |', '|---|---:|---:|---|']
     for dim, result in report.items():
         number = 'indefinido' if result['kappa'] is None else f"{result['kappa']:.6f}"
         lines.append(f"| {dim} | {result['itens']} | {number} | {result['interpretacao']} |")
     lines += ['', 'Valores calculados nos votos independentes antes da consolidação. Maioria simples e reunião para empates 1-1-1. Nenhum caso aberto no consenso gerado. A origem humana dos rótulos deve ser atestada pelos próprios participantes.']
     (directory/'relatorio.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
-    if require_final and not final: raise Pending('Amostra piloto: repita o sorteio após obter a amostra final S02 (>=300 repositórios)')
+    if require_final and not final: raise Pending('Amostra piloto: gere a amostra definitiva sem --piloto (mínimo configurado: 100 repositórios)')
     return report
 
 def verify(directory):

@@ -104,9 +104,9 @@ unidade e fórmula, em `docs/dicionario-de-dados.md`.
 <!-- issue30-metodologia -->
 ## Validação manual e concordância
 
-A validação manual usa 60 repositórios da amostra final de pelo menos 300, sorteados
+Nesta execução adaptada, a validação manual usa 60 repositórios de uma população de pelo menos 100, sorteados
 com semente 42 após ordenação por full_name. Para cada repositório são sorteadas cinco
-releases com a mesma semente, totalizando 300 itens. O manifesto congela identificadores,
+releases com a mesma semente, totalizando 300 itens. A redução da população para 100 foi solicitada pelo usuário; o enunciado S02 continua exigindo pelo menos 300 repositórios. O manifesto congela identificadores,
 hashes dos dados e versões do ambiente. O protocolo detalhado está em
 [protocolo-amostra-ouro.md](protocolo-amostra-ouro.md).
 
