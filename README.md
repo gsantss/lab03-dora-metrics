@@ -100,3 +100,23 @@ reconhecível usam a release anterior por data.
 Release corretiva (CFR por entrega, heurística v1, a validar na amostra-ouro): a versão
 muda só no número de *patch* e há ao menos um commit com `revert`, `hotfix`, `bugfix` ou
 `fix` entre as duas releases. Releases dos últimos 7 dias da janela são censuradas.
+
+<!-- issue30-comandos -->
+## Amostra-ouro e concordância — Issue #30
+
+```powershell
+python -m pip install -r requirements.txt
+python amostra_ouro.py preparar
+# Preencher individualmente validacao/rotulos/{avaliador}.csv
+python amostra_ouro.py analisar
+# Se houver empates, preencher validacao/desempates.csv após reunião e repetir.
+python amostra_ouro.py verificar
+```
+
+Com apenas 100 repositórios, `preparar --piloto --saida validacao-piloto` permite ensaio,
+mas não autoriza fechar a Issue. Leia `docs/protocolo-amostra-ouro.md` antes de rotular.
+Os três CSVs ficam em arquivos separados, sem predições ou rótulos dos demais.
+Conserve a população e as versões fixas do ambiente para reproduzir o mesmo sorteio.
+Não regenerar uma planilha preenchida nem colocar rótulos fictícios para cumprir aceite.
+A Issue fecha pelo merge do PR somente após análise final sem pendências e CI aprovado.
+<!-- /issue30-comandos -->

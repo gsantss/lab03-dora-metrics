@@ -101,7 +101,32 @@ unidade e fórmula, em `docs/dicionario-de-dados.md`.
 
 ## 2.6 Validação manual (amostra-ouro)
 
-*A cargo da issue #30: sorteio, protocolo de rotulagem e desempate, kappa de Fleiss e consenso.*
+<!-- issue30-metodologia -->
+## Validação manual e concordância
+
+A validação manual usa 60 repositórios da amostra final de pelo menos 300, sorteados
+com semente 42 após ordenação por full_name. Para cada repositório são sorteadas cinco
+releases com a mesma semente, totalizando 300 itens. O manifesto congela identificadores,
+hashes dos dados e versões do ambiente. O protocolo detalhado está em
+[protocolo-amostra-ouro.md](protocolo-amostra-ouro.md).
+
+Três avaliadores (gsantss, arthies2323 e PortoPedro) recebem arquivos separados sem a
+saída da heurística. Cada um registra independentemente tipo de projeto, se as releases
+representam entregas reais e se cada uma das cinco releases é corretiva. Os dois primeiros
+rótulos têm como unidade o repositório (60 itens); o terceiro, a release (300 itens).
+
+A concordância é calculada nos votos originais por aggregate_raters e fleiss_kappa do
+statsmodels, com interpretação pela escala de Landis e Koch (1977). Casos sem variabilidade
+são reportados como kappa indefinido, com justificativa. O consenso segue maioria simples;
+empates 1-1-1 exigem reunião dos três, com decisão, justificativa, participantes e data
+registrados. Rótulos originais não são alterados. Resultados de kappa ficam em
+validacao/kappa.json e validacao/relatorio.md; consenso e auditoria só podem ser considerados
+finais após verificar todos os critérios. Arquivos piloto não representam a amostra final.
+
+O módulo valida reprodutibilidade, completude e consistência; a independência do julgamento
+é uma condição do protocolo humano. A implementação, por si só, não comprova que a
+rotulagem foi realizada. A avaliação da heurística frente ao consenso pertence à Issue #35.
+<!-- /issue30-metodologia -->
 
 ## 2.7 Validação da heurística de release corretiva
 

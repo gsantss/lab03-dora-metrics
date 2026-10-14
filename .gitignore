@@ -1,4 +1,4 @@
-﻿.venv/
+.venv/
 __pycache__/
 .pytest_cache/
 .coverage
@@ -8,3 +8,8 @@ htmlcov/
 data/raw/
 data/cache/
 data/processed/*.json
+
+# issue30-historico
+validacao/historico/
+validacao-piloto/historico/
+# /issue30-historico
