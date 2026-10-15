@@ -21,7 +21,7 @@ resistente a interrupções:
 - as funções de cálculo têm testes automatizados (pytest), com cobertura de 100% do módulo de
   métricas, executados no GitHub Actions a cada push.
 
-A coleta da amostra final foi realizada em TODO-DATAS.
+A coleta da amostra final foi realizada entre 14 e 15 de outubro de 2026.
 
 ## 2.2 Seleção de repositórios
 
@@ -37,10 +37,18 @@ ordem até a amostra atingir 300 repositórios. Um repositório é incluído se:
 
 **Tabela 1. Funil de seleção.**
 
-TODO-FUNIL
+| Etapa | Repositórios | Descartados | Motivo do descarte |
+|---|---|---|---|
+| Candidatos avaliados | 707 | — | — |
+| Usam GitHub Actions | 639 | 68 | nenhum workflow |
+| ≥ 5 releases na janela | 346 | 293 | menos de 5 releases publicadas |
+| ≥ 50 workflow runs válidos | 300 | 46 | menos de 50 runs válidos |
+| **Amostra final** | **300** | — | — |
+
+Nenhum candidato foi descartado por erro de coleta.
 
 Como os candidatos são avaliados do mais para o menos popular, a amostra é formada pelos
-repositórios elegíveis mais populares do GitHub: todos têm TODO-ESTRELAS estrelas ou mais.
+repositórios elegíveis mais populares do GitHub: todos têm 40.642 estrelas ou mais (mediana de 62.121).
 Isso limita a generalização dos resultados para projetos menos populares (validade externa).
 
 ## 2.3 Janela de observação
@@ -59,9 +67,9 @@ releases publicadas e os workflow runs criados dentro dela.
   demais (`cancelled`, `skipped`, `neutral`, `action_required`, `stale` ou em andamento) são
   ignoradas. Os runs são consultados mês a mês, e um período é subdividido, se preciso até
   frações de um dia, quando atinge o teto de 1.000 resultados por consulta. Sem essa subdivisão,
-  os 12 repositórios com mais de 1.000 runs num único dia (entre eles `pytorch/pytorch`,
-  `grafana/grafana` e `getsentry/sentry`) ficariam fora da amostra, o que excluiria justamente
-  os projetos mais ativos.
+  12 candidatos com mais de 1.000 runs num único dia seriam descartados, e com eles justamente
+  os projetos mais ativos. Onze deles estão na amostra final, entre eles `pytorch/pytorch`
+  (206 mil runs válidos na janela), `getsentry/sentry` e `grafana/grafana`.
 - **Commits de uma release.** São os commits devolvidos por `compare/{anterior}...{R}`. A
   release anterior de R é a de **maior versão menor que a de R, com o mesmo prefixo de tag**
   (como `v` ou `pkg@`, que separa os pacotes de um monorepo), publicada antes de R. Tags sem
