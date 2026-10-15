@@ -1,7 +1,7 @@
 ﻿from __future__ import annotations
 
 import calendar
-from datetime import date, datetime, timedelta
+from datetime import datetime, time, timedelta
 
 from .github_api import GitHubAPI
 
@@ -10,6 +10,7 @@ VALID_SUCCESS = {"success"}
 VALID_FAILURE = {"failure", "timed_out", "startup_failure"}
 IGNORED = {"cancelled", "skipped", "neutral", "action_required", "stale", None, ""}
 RUNS_CAP = 1000  # a API devolve no máximo 1000 runs por consulta filtrada
+MIN_SPLIT = timedelta(minutes=1)
 RUN_FIELDS = (
     "id",
     "workflow_id",
@@ -44,29 +45,39 @@ def month_windows(start: datetime, end: datetime):
         cursor = month_end + timedelta(seconds=1)
 
 
+def _created(first: datetime, last: datetime) -> str:
+    # Dias inteiros vão só com a data: mantém as chaves de cache das coletas anteriores.
+    if first.time() == time(0) and last.time() == time(23, 59, 59):
+        return f"{first.date().isoformat()}..{last.date().isoformat()}"
+    return f"{first:%Y-%m-%dT%H:%M:%SZ}..{last:%Y-%m-%dT%H:%M:%SZ}"
+
+
 def runs_in_range(
     api: GitHubAPI,
     path: str,
     default_branch: str,
-    first_day: date,
-    last_day: date,
+    first: datetime,
+    last: datetime,
 ) -> list[dict]:
-    params = {
-        "branch": default_branch,
-        "event": "push",
-        "created": f"{first_day.isoformat()}..{last_day.isoformat()}",
-    }
+    params = {"branch": default_branch, "event": "push", "created": _created(first, last)}
     # Mesma chave de cache da 1ª página do get_all: a checagem do teto não gasta cota extra.
     first_page, _ = api.get_json(path, {**params, "per_page": 100, "page": 1}, slim=slim_runs)
     if int(first_page.get("total_count", 0)) < RUNS_CAP:
         return api.get_all(path, params, slim=slim_runs)
 
-    if first_day == last_day:
-        raise RuntimeError(f"{path}: {first_day} atingiu {RUNS_CAP} workflow runs em um único dia.")
+    days = (last.date() - first.date()).days
+    if days:
+        # Vários dias: divide em dias inteiros.
+        middle_day = first.date() + timedelta(days=days // 2)
+        split = datetime.combine(middle_day, time(23, 59, 59), tzinfo=first.tzinfo)
+    elif last - first >= MIN_SPLIT:
+        # Um dia com 1000+ runs (pytorch, sentry…): divide o dia em horas, minutos.
+        split = first + timedelta(seconds=int((last - first).total_seconds()) // 2)
+    else:
+        raise RuntimeError(f"{path}: {first:%Y-%m-%d %H:%M} atingiu {RUNS_CAP} workflow runs em menos de um minuto.")
 
-    middle = first_day + (last_day - first_day) // 2
-    return runs_in_range(api, path, default_branch, first_day, middle) + runs_in_range(
-        api, path, default_branch, middle + timedelta(days=1), last_day
+    return runs_in_range(api, path, default_branch, first, split) + runs_in_range(
+        api, path, default_branch, split + timedelta(seconds=1), last
     )
 
 
@@ -84,7 +95,7 @@ def collect_workflow_runs(
     path = f"/repos/{owner}/{repo}/actions/runs"
 
     for chunk_start, chunk_end in month_windows(start, end):
-        runs = runs_in_range(api, path, default_branch, chunk_start.date(), chunk_end.date())
+        runs = runs_in_range(api, path, default_branch, chunk_start, chunk_end)
 
         for run in runs:
             run_id = int(run["id"])
