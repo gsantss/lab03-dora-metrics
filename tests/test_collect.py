@@ -53,13 +53,15 @@ def _page(payload, params):
 def runs_route(runs):
     def route(params):
         first, last = params["created"].split("..")
-        selected = [r for r in runs if first <= r["created_at"][:10] <= last]
+        # "AAAA-MM-DD..AAAA-MM-DD" compara só a data; com hora, o instante completo
+        size = 10 if len(first) == 10 else 20
+        selected = [r for r in runs if first <= r["created_at"][:size] <= last]
         return {"total_count": len(selected), "workflow_runs": selected}
 
     return route
 
 
-def make_run(run_id, day, conclusion="success"):
+def make_run(run_id, day, conclusion="success", at="10:00:00"):
     return {
         "id": run_id,
         "workflow_id": 1,
@@ -67,9 +69,9 @@ def make_run(run_id, day, conclusion="success"):
         "conclusion": conclusion,
         "event": "push",
         "head_branch": "main",
-        "created_at": f"{day}T10:00:00Z",
-        "run_started_at": f"{day}T10:00:00Z",
-        "updated_at": f"{day}T10:05:00Z",
+        "created_at": f"{day}T{at}Z",
+        "run_started_at": f"{day}T{at}Z",
+        "updated_at": f"{day}T{at[:3]}05{at[5:]}Z",  # 5 min depois do início
         "html_url": f"https://github.com/octo/app/actions/runs/{run_id}",
     }
 
@@ -155,20 +157,40 @@ def test_month_windows_cobre_a_janela_sem_sobreposicao():
         assert next_start - previous_end == timedelta(seconds=1)
 
 
+def day_range(first, last):
+    return (
+        datetime.combine(first, datetime.min.time(), tzinfo=timezone.utc),
+        datetime.combine(last, datetime.max.time().replace(microsecond=0), tzinfo=timezone.utc),
+    )
+
+
 def test_runs_in_range_subdivide_quando_atinge_o_teto(monkeypatch):
     monkeypatch.setattr(workflows, "RUNS_CAP", 3)
     runs = [make_run(i, f"2025-10-{i:02d}") for i in range(1, 8)]
     api = FakeAPI({f"{BASE}/actions/runs": runs_route(runs)})
-    collected = runs_in_range(api, f"{BASE}/actions/runs", "main", date(2025, 10, 1), date(2025, 10, 31))
+    collected = runs_in_range(api, f"{BASE}/actions/runs", "main", *day_range(date(2025, 10, 1), date(2025, 10, 31)))
     assert sorted(r["id"] for r in collected) == list(range(1, 8))
+    # dias inteiros continuam só com a data: mesmas chaves de cache das coletas anteriores
+    assert api.calls[0][1]["created"] == "2025-10-01..2025-10-31"
+    assert all(len(p["created"]) == 22 for _, p in api.calls)
 
 
-def test_runs_in_range_falha_se_um_dia_atinge_o_teto(monkeypatch):
+def test_runs_in_range_divide_o_dia_em_horas(monkeypatch):
+    # pytorch, sentry e outros passam de 1000 runs em um único dia
+    monkeypatch.setattr(workflows, "RUNS_CAP", 2)
+    runs = [make_run(i, "2025-10-01", at=f"{h:02d}:00:00") for i, h in enumerate((1, 7, 13, 19), start=1)]
+    api = FakeAPI({f"{BASE}/actions/runs": runs_route(runs)})
+    collected = runs_in_range(api, f"{BASE}/actions/runs", "main", *day_range(date(2025, 10, 1), date(2025, 10, 1)))
+    assert sorted(r["id"] for r in collected) == [1, 2, 3, 4]
+    assert "2025-10-01T00:00:00Z..2025-10-01T11:59:59Z" in [p["created"] for _, p in api.calls]
+
+
+def test_runs_in_range_falha_se_um_minuto_atinge_o_teto(monkeypatch):
     monkeypatch.setattr(workflows, "RUNS_CAP", 2)
     runs = [make_run(1, "2025-10-01"), make_run(2, "2025-10-01")]
     api = FakeAPI({f"{BASE}/actions/runs": runs_route(runs)})
-    with pytest.raises(RuntimeError):
-        runs_in_range(api, f"{BASE}/actions/runs", "main", date(2025, 10, 1), date(2025, 10, 1))
+    with pytest.raises(RuntimeError, match="menos de um minuto"):
+        runs_in_range(api, f"{BASE}/actions/runs", "main", *day_range(date(2025, 10, 1), date(2025, 10, 1)))
 
 
 def test_compare_commits_pagina_alem_de_100():
@@ -341,6 +363,27 @@ def test_pipeline_com_um_unico_comando(tmp_path, monkeypatch):
 
     assert [r["full_name"] for r in read_csv(out / "repositories.csv")] == ["octo/app"]
     assert len(read_csv(out / "releases.csv")) == 3
-    assert len(read_csv(out / "commits.csv.gz")) == 3
+    # commits e runs: um arquivo por repositório
+    assert len(read_csv(out / "commits" / "octo__app.csv.gz")) == 3
     assert len(read_csv(out / "ignored_releases.csv")) == 1
-    assert len(read_csv(out / "workflow_runs.csv.gz")) == 4
+    assert len(read_csv(out / "workflow_runs" / "octo__app.csv.gz")) == 4
+    assert [p.name for p in (out / "commits").iterdir()] == ["octo__app.csv.gz"]
+
+    # metrics.csv sai do mesmo comando, calculado a partir dos CSVs acima
+    [metrics] = read_csv(out / "metrics.csv")
+    assert float(metrics["deployment_frequency"]) == pytest.approx(3 / (365 / 7), rel=1e-4)
+    assert float(metrics["lead_time_release_h"]) == 244.0  # mediana de 472 h e 16 h
+    assert float(metrics["lead_time_commit_h"]) == 40.0  # mediana de 472, 40 e 16 h
+    assert metrics["lead_time_releases"] == "2" and metrics["lead_time_ignored"] == "1"
+    assert float(metrics["cfr_ci"]) == 0.5
+    assert float(metrics["cfr_delivery"]) == pytest.approx(1 / 3, abs=1e-6)
+    # falha em 03/10 recuperada em 02/11 (720 h e 5 min); timed_out de 02/12 censurado
+    assert float(metrics["recovery_h"]) == pytest.approx(720 + 5 / 60, abs=1e-6)
+    assert float(metrics["recovery_censored_ratio"]) == 0.5
+    assert [metrics[k] for k in ("class_deployment_frequency", "class_lead_time", "class_cfr", "class_recovery")] == [
+        "Low",
+        "Medium",
+        "Low",
+        "Low",
+    ]
+    assert metrics["class_overall"] == "Low"
