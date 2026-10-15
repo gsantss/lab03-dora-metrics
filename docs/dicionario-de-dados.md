@@ -43,12 +43,23 @@ Releases da definição principal (deploys) dentro da janela, uma por linha.
 | `release_id` | inteiro | — | Campo `id` da release |
 | `tag_name` | texto | — | Campo `tag_name` |
 | `published_at` | data/hora | — | Campo `published_at` (data do deploy) |
+| `previous_tag` | texto | — | Release anterior usada no `compare` do lead time (ver `commits.csv.gz`); vazio na primeira release da história |
 
-## `commits.csv`
+## `commits.csv.gz`
 
 Commits incluídos em cada release da janela: `GET /repos/{o}/{r}/compare/{anterior}...{release}`,
-paginado. A release anterior é a release publicada imediatamente antes (sem pré-releases),
-mesmo que esteja fora da janela.
+paginado. A release anterior (`previous_tag` em `releases.csv`) é a maior versão menor que a
+da release, com o mesmo prefixo de tag, publicada antes dela e sem pré-releases, mesmo que
+esteja fora da janela. Tags sem versão reconhecível usam a release anterior por data.
+Arquivo comprimido com gzip.
+
+> **Por que a mesma linha de versão (#27):** na coleta da S01 a release anterior era a
+> anterior por data. Em projetos com linhas de versão em paralelo, a `godot 3.6.3-stable` era
+> comparada com a `4.7.2-stable` e trazia 9.545 commits antigos; 250 releases (3%) tinham mais
+> de 1.000 commits e somavam 68% das linhas. Com a regra atual, a 3.6.3 é comparada com a
+> 3.6.2 (28 commits), o total cai de 1,19 milhão para 533 mil commits e as releases com mais
+> de 1.000 commits passam a 84 (1%). As que restam são, em geral, releases de ciclo longo
+> (ex.: `rust 1.95.0`, `vscode 1.116.0`).
 
 | Coluna | Tipo | Unidade | Origem / fórmula |
 |---|---|---|---|
@@ -74,10 +85,11 @@ Releases da janela que ficaram fora do cálculo de lead time.
 | `tag_name` | texto | — | Campo `tag_name` |
 | `reason` | texto | — | `no_previous_release` (primeira release da história), `no_new_commits` (compare sem commits) ou `compare_error:<Erro>` (ex.: tag apagada, 404) |
 
-## `workflow_runs.csv`
+## `workflow_runs.csv.gz`
 
 Workflow runs válidos (sucesso ou falha) do default branch disparados por `push` na janela.
 A janela é consultada mês a mês e subdividida quando uma consulta atinge o teto de 1000 runs.
+Arquivo comprimido com gzip.
 
 | Coluna | Tipo | Unidade | Origem / fórmula |
 |---|---|---|---|

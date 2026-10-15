@@ -21,6 +21,7 @@ from metricas import (
     overall_classification,
     parse_version,
     recovery_episodes,
+    version_key,
 )
 
 WINDOW_END = "2026-09-30T23:59:59Z"
@@ -123,6 +124,19 @@ def test_cfr_ci_conta_timed_out_e_startup_failure_como_falha():
 )
 def test_parse_version(tag, expected):
     assert parse_version(tag) == expected
+
+
+@pytest.mark.parametrize(
+    "tag,expected",
+    [
+        ("v2.3.1", ("v", (2, 3, 1))),
+        ("3.6.3-stable", ("", (3, 6, 3))),
+        ("n8n@2.40.7", ("n8n@", (2, 40, 7))),
+        ("b1234", None),
+    ],
+)
+def test_version_key_separa_prefixo(tag, expected):
+    assert version_key(tag) == expected
 
 
 @pytest.mark.parametrize(

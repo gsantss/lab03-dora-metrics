@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import gzip
 from contextlib import ExitStack
 from dataclasses import fields
 from datetime import datetime
@@ -10,14 +11,14 @@ import requests
 
 from .github_api import GitHubAPI
 from .models import RepositoryRecord
-from .releases import collect_releases, commits_between_releases
+from .releases import collect_releases, commits_between_releases, previous_releases
 from .selection import Funnel, has_actions
 from .workflows import collect_workflow_runs
 
 
 OUTPUTS = {
     "repositories": [f.name for f in fields(RepositoryRecord)],
-    "releases": ["full_name", "release_id", "tag_name", "published_at"],
+    "releases": ["full_name", "release_id", "tag_name", "published_at", "previous_tag"],
     "commits": [
         "full_name",
         "release_id",
@@ -39,6 +40,8 @@ OUTPUTS = {
         "updated_at",
     ],
 }
+# Sem compressão passam do limite de 100 MB por arquivo do GitHub; pandas lê .csv.gz direto.
+COMPRESSED = {"commits", "workflow_runs"}
 
 
 def _contributors(api: GitHubAPI, owner: str, name: str) -> int | None:
@@ -87,9 +90,12 @@ def collect_repository(
         funnel.reached(stage)
 
         stage = "included"
-        # A "release anterior" do lead time segue a definição principal (sem pré-releases)
-        # e pode estar fora da janela.
+        # A "release anterior" do lead time segue a definição principal (sem pré-releases),
+        # é da mesma linha de versão e pode estar fora da janela.
         history = [r for r in published if not r.get("prerelease")]
+        previous_tag = {
+            r["id"]: (p["tag_name"] if p else "") for r, p in zip(history, previous_releases(history))
+        }
         commits, ignored = commits_between_releases(api, owner, name, history, in_window)
         contributors = _contributors(api, owner, name)
     except (requests.RequestException, RuntimeError) as exc:
@@ -119,6 +125,7 @@ def collect_repository(
                 "release_id": r["id"],
                 "tag_name": r["tag_name"],
                 "published_at": r["published_at"],
+                "previous_tag": previous_tag[r["id"]],
             }
             for r in in_window
         ],
@@ -139,9 +146,11 @@ class SampleWriter:
     def __enter__(self) -> SampleWriter:
         self.out_dir.mkdir(parents=True, exist_ok=True)
         for name, columns in OUTPUTS.items():
-            fp = self._stack.enter_context(
-                (self.out_dir / f"{name}.csv").open("w", newline="", encoding="utf-8")
-            )
+            if name in COMPRESSED:
+                fp = gzip.open(self.out_dir / f"{name}.csv.gz", "wt", newline="", encoding="utf-8")
+            else:
+                fp = (self.out_dir / f"{name}.csv").open("w", newline="", encoding="utf-8")
+            self._stack.enter_context(fp)
             writer = csv.DictWriter(fp, fieldnames=columns, extrasaction="ignore")
             writer.writeheader()
             self._writers[name] = writer

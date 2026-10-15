@@ -58,9 +58,12 @@ Geradas em `output_dir` (por padrão `data/processed/`):
 - `funnel.csv`: funil de seleção, com quantos repositórios foram descartados em cada etapa e por quê;
 - `repositories.csv`: repositórios da amostra final e seus metadados;
 - `releases.csv`: releases (deploys) de cada repositório na janela;
-- `commits.csv`: commits incluídos em cada release (base do lead time e do CFR por entrega);
+- `commits.csv.gz`: commits incluídos em cada release (base do lead time e do CFR por entrega);
 - `ignored_releases.csv`: releases fora do cálculo de lead time e o motivo;
-- `workflow_runs.csv`: workflow runs válidos do default branch (base do CFR por CI e do tempo de recuperação).
+- `workflow_runs.csv.gz`: workflow runs válidos do default branch (base do CFR por CI e do tempo de recuperação).
+
+Os dois maiores saem comprimidos para caber no limite de 100 MB por arquivo do GitHub;
+o pandas lê direto: `pd.read_csv("data/processed/commits.csv.gz")`.
 
 O dicionário de dados de cada coluna está em [docs/dicionario-de-dados.md](docs/dicionario-de-dados.md).
 
@@ -80,6 +83,11 @@ Seguem o enunciado do laboratório: deploy = release publicada (`draft = false`,
 `prerelease = false`); apenas o default branch; workflow runs com `event = push`;
 `success` é sucesso, `failure`/`timed_out`/`startup_failure` são falha e as demais
 conclusões são ignoradas.
+
+Release anterior (base do `compare` no lead time): a maior versão menor que a da release,
+com o mesmo prefixo de tag (`v`, `pkg@`…), publicada antes dela. Isso evita comparar um
+patch de uma linha antiga (`3.6.3`) com uma release de outra linha (`4.7.2`). Tags sem versão
+reconhecível usam a release anterior por data.
 
 Release corretiva (CFR por entrega, heurística v1, a validar na amostra-ouro): a versão
 muda só no número de *patch* e há ao menos um commit com `revert`, `hotfix`, `bugfix` ou
