@@ -67,8 +67,8 @@ def evaluate(y_true: list[int], y_pred: list[int]) -> dict[str, float | int]:
 
 def _open(path: str):
     if path.endswith(".gz"):
-        return gzip.open(path, "rt", encoding="utf-8", newline="")
-    return open(path, encoding="utf-8", newline="")
+        return gzip.open(path, "rt", encoding="utf-8-sig", newline="")
+    return open(path, encoding="utf-8-sig", newline="")  # aceita CSV com BOM
 
 
 def load_rows(path: str) -> list[dict]:

@@ -78,3 +78,13 @@ def test_compare_variants_reports_f1_and_target():
     v3 = table["v3 só fix"]
     assert v3["f1"] == 1.0 and v3["atinge_alvo"] is True
     assert table["v1 patch E fix"]["atinge_alvo"] is False
+
+
+def test_load_rows_accepts_csv_with_bom(tmp_path):
+    from validacao import load_rows
+
+    path = tmp_path / "consenso.csv"
+    path.write_bytes("full_name,tag_name,corretiva\no/r,v1.0.1,sim\n".encode("utf-8-sig"))
+    rows = load_rows(str(path))
+    assert rows[0]["full_name"] == "o/r"
+    assert rows[0]["corretiva"] == "sim"
