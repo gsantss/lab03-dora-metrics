@@ -1,0 +1,20 @@
+{
+  "final": true,
+  "configured_minimum": 100,
+  "assignment_minimum": 300,
+  "assignment_population_requirement_met": false,
+  "population_count": 100,
+  "repositories": 60,
+  "releases": 300,
+  "pending": 0,
+  "sha256": {
+    "rotulos\\gsantss.csv": "560a76c2a58670e71f059d7911dd239f32c5df21b87d6fc8ff5d894f912dc487",
+    "rotulos\\arthies2323.csv": "560a76c2a58670e71f059d7911dd239f32c5df21b87d6fc8ff5d894f912dc487",
+    "rotulos\\PortoPedro.csv": "560a76c2a58670e71f059d7911dd239f32c5df21b87d6fc8ff5d894f912dc487",
+    "manifesto.json": "28b9cd03b6bf61baf57ae9e54f56b86da713b91f2dc26e2abbb91f5b5fda0a7e",
+    "desempates.csv": "3b2cfd634369d922d4828ac545814e1072080cf85eaaf1418c198018ed6a8132",
+    "kappa.json": "b3e15e7cb0145413d4dcd2d85590734ad2eba48fae34e9181dcac053fef41685",
+    "consenso.csv": "560a76c2a58670e71f059d7911dd239f32c5df21b87d6fc8ff5d894f912dc487",
+    "auditoria_consenso.csv": "f6a2584579e8d72ad7bd4ea6cc427fdc4b2fa8df5d08a538e456c3851e7ac124"
+  }
+}
