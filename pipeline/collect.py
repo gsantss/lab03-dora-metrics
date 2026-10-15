@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import gzip
+import io
 from contextlib import ExitStack
 from dataclasses import fields
 from datetime import datetime
@@ -40,8 +41,22 @@ OUTPUTS = {
         "updated_at",
     ],
 }
-# Sem compressão passam do limite de 100 MB por arquivo do GitHub; pandas lê .csv.gz direto.
-COMPRESSED = {"commits", "workflow_runs"}
+# Um .csv.gz por repositório em data/processed/<nome>/: num arquivo só, passam do limite de
+# 100 MB por arquivo do GitHub. pandas: pd.concat(map(pd.read_csv, glob(".../commits/*.csv.gz")))
+PER_REPOSITORY = {"commits", "workflow_runs"}
+
+
+def repository_file(directory: Path, full_name: str) -> Path:
+    return directory / (full_name.replace("/", "__") + ".csv.gz")
+
+
+def _write_gzip_csv(path: Path, columns: list[str], rows: list[dict]) -> None:
+    # mtime=0: a mesma coleta gera os mesmos bytes, e o git não vê mudança à toa.
+    with path.open("wb") as raw, gzip.GzipFile(fileobj=raw, mode="wb", mtime=0) as gz:
+        with io.TextIOWrapper(gz, encoding="utf-8", newline="") as fp:
+            writer = csv.DictWriter(fp, fieldnames=columns, extrasaction="ignore")
+            writer.writeheader()
+            writer.writerows(rows)
 
 
 def _contributors(api: GitHubAPI, owner: str, name: str) -> int | None:
@@ -146,19 +161,27 @@ class SampleWriter:
     def __enter__(self) -> SampleWriter:
         self.out_dir.mkdir(parents=True, exist_ok=True)
         for name, columns in OUTPUTS.items():
-            if name in COMPRESSED:
-                fp = gzip.open(self.out_dir / f"{name}.csv.gz", "wt", newline="", encoding="utf-8")
-            else:
-                fp = (self.out_dir / f"{name}.csv").open("w", newline="", encoding="utf-8")
-            self._stack.enter_context(fp)
+            if name in PER_REPOSITORY:
+                directory = self.out_dir / name
+                directory.mkdir(exist_ok=True)
+                for stale in directory.glob("*.csv.gz"):  # repositórios de uma execução anterior
+                    stale.unlink()
+                continue
+            fp = self._stack.enter_context(
+                (self.out_dir / f"{name}.csv").open("w", newline="", encoding="utf-8")
+            )
             writer = csv.DictWriter(fp, fieldnames=columns, extrasaction="ignore")
             writer.writeheader()
             self._writers[name] = writer
         return self
 
     def write(self, data: dict[str, list[dict]]) -> None:
+        full_name = data["repositories"][0]["full_name"]
         for name, rows in data.items():
-            self._writers[name].writerows(rows)
+            if name not in PER_REPOSITORY:
+                self._writers[name].writerows(rows)
+            elif rows:
+                _write_gzip_csv(repository_file(self.out_dir / name, full_name), OUTPUTS[name], rows)
 
     def __exit__(self, *exc_info) -> None:
         self._stack.close()

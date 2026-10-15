@@ -58,12 +58,20 @@ Geradas em `output_dir` (por padrão `data/processed/`):
 - `funnel.csv`: funil de seleção, com quantos repositórios foram descartados em cada etapa e por quê;
 - `repositories.csv`: repositórios da amostra final e seus metadados;
 - `releases.csv`: releases (deploys) de cada repositório na janela;
-- `commits.csv.gz`: commits incluídos em cada release (base do lead time e do CFR por entrega);
+- `commits/<owner>__<repo>.csv.gz`: commits incluídos em cada release (base do lead time e do CFR por entrega);
 - `ignored_releases.csv`: releases fora do cálculo de lead time e o motivo;
-- `workflow_runs.csv.gz`: workflow runs válidos do default branch (base do CFR por CI e do tempo de recuperação).
+- `workflow_runs/<owner>__<repo>.csv.gz`: workflow runs válidos do default branch (base do CFR por CI e do tempo de recuperação);
+- `metrics.csv`: métricas DORA por repositório, com todas as variantes e a classificação de referência.
 
-Os dois maiores saem comprimidos para caber no limite de 100 MB por arquivo do GitHub;
-o pandas lê direto: `pd.read_csv("data/processed/commits.csv.gz")`.
+Para recalcular só o `metrics.csv` a partir dos CSVs já coletados (sem token nem API):
+
+```bash
+python -m pipeline --config config.yaml --metrics-only
+```
+
+Commits e runs ficam em um arquivo comprimido por repositório: num arquivo só, passariam do
+limite de 100 MB por arquivo do GitHub. Para ler todos com pandas:
+`pd.concat(map(pd.read_csv, glob.glob("data/processed/commits/*.csv.gz")))`.
 
 O dicionário de dados de cada coluna está em [docs/dicionario-de-dados.md](docs/dicionario-de-dados.md).
 
@@ -74,7 +82,7 @@ metricas.py          cálculo das métricas e classificação DORA
 pipeline/            coleta (cliente REST, seleção, releases, workflow runs, collect)
 tests/               testes pytest
 config.yaml          parâmetros da execução
-docs/                dicionário de dados e introdução do artigo
+docs/                dicionário de dados e seções do artigo (introdução, metodologia)
 ```
 
 ## Definições operacionais
