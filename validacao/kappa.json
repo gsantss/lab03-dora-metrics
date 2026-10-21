@@ -1,26 +1,26 @@
 {
   "tipo_projeto": {
-    "kappa": 1.0,
+    "kappa": 0.8272100532332665,
     "interpretacao": "quase perfeita",
     "itens": 60,
     "avaliadores": 3,
-    "concordancia_observada": 1.0,
-    "concordancia_esperada": 0.30055555555555563
+    "concordancia_observada": 0.8777777777777778,
+    "concordancia_esperada": 0.2926543209876543
   },
   "entrega_real": {
-    "kappa": 1.0,
-    "interpretacao": "quase perfeita",
+    "kappa": -0.008676789587852441,
+    "interpretacao": "pobre",
     "itens": 60,
     "avaliadores": 3,
-    "concordancia_observada": 1.0,
-    "concordancia_esperada": 0.7938888888888889
+    "concordancia_observada": 0.6555555555555556,
+    "concordancia_esperada": 0.6585185185185185
   },
   "corretiva": {
-    "kappa": 1.0,
-    "interpretacao": "quase perfeita",
+    "kappa": 0.6476805637110981,
+    "interpretacao": "substancial",
     "itens": 300,
     "avaliadores": 3,
-    "concordancia_observada": 1.0,
-    "concordancia_esperada": 0.5256888888888889
+    "concordancia_observada": 0.8266666666666667,
+    "concordancia_esperada": 0.5080222222222223
   }
 }

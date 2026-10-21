@@ -8,13 +8,13 @@
   "releases": 300,
   "pending": 0,
   "sha256": {
-    "rotulos\\gsantss.csv": "560a76c2a58670e71f059d7911dd239f32c5df21b87d6fc8ff5d894f912dc487",
+    "rotulos\\gsantss.csv": "151607656a8d093f1ab05c16817ae5ef9484a0ff071423a129ca438c73c55c92",
     "rotulos\\arthies2323.csv": "560a76c2a58670e71f059d7911dd239f32c5df21b87d6fc8ff5d894f912dc487",
-    "rotulos\\PortoPedro.csv": "560a76c2a58670e71f059d7911dd239f32c5df21b87d6fc8ff5d894f912dc487",
+    "rotulos\\PortoPedro.csv": "bf2214640be562db90c339ba57317533c1e727694159102eaea7c443d99ffe8c",
     "manifesto.json": "28b9cd03b6bf61baf57ae9e54f56b86da713b91f2dc26e2abbb91f5b5fda0a7e",
     "desempates.csv": "3b2cfd634369d922d4828ac545814e1072080cf85eaaf1418c198018ed6a8132",
-    "kappa.json": "b3e15e7cb0145413d4dcd2d85590734ad2eba48fae34e9181dcac053fef41685",
-    "consenso.csv": "560a76c2a58670e71f059d7911dd239f32c5df21b87d6fc8ff5d894f912dc487",
-    "auditoria_consenso.csv": "f6a2584579e8d72ad7bd4ea6cc427fdc4b2fa8df5d08a538e456c3851e7ac124"
+    "kappa.json": "91da6d9730b00b0d4e09b5a47b8e114c5c68da64209aa68853e4f73968811018",
+    "consenso.csv": "a2ab84dd0244adb6c7dbf9affd9ea657380859effdf9ed4da9995a51399047e5",
+    "auditoria_consenso.csv": "b60ef5ca9b819a0c388fee760b73398b558a59099dee9ca8f9e3b3b30feb205c"
   }
 }
