@@ -50,7 +50,24 @@ class GitHubAPI:
     ) -> tuple[Any, dict[str, str]]:
         """`slim` reduz a resposta antes de ir para o cache (só os campos usados)."""
         url = path_or_url if path_or_url.startswith("http") else f"{self.BASE_URL}{path_or_url}"
-        cache_path = self._cache_path(url, params)
+        return self._fetch(url, params, None, use_cache, max_attempts, slim)
+
+    def graphql(self, query: str, variables: dict[str, Any], *, max_attempts: int = 6) -> Any:
+        """Consulta a API GraphQL com o mesmo cache, novas tentativas e espera de rate limit do REST."""
+        body = {"query": query, "variables": variables}
+        data, _ = self._fetch(f"{self.BASE_URL}/graphql", body, body, True, max_attempts, None)
+        return data["data"]
+
+    def _fetch(
+        self,
+        url: str,
+        cache_params: dict[str, Any] | None,
+        graphql_body: dict[str, Any] | None,
+        use_cache: bool,
+        max_attempts: int,
+        slim: Callable[[Any], Any] | None,
+    ) -> tuple[Any, dict[str, str]]:
+        cache_path = self._cache_path(url, cache_params)
 
         if use_cache and cache_path.exists():
             cached = json.loads(cache_path.read_text(encoding="utf-8"))
@@ -61,7 +78,10 @@ class GitHubAPI:
 
         for attempt in range(max_attempts):
             try:
-                response = self.session.get(url, params=params, timeout=60)
+                if graphql_body is None:
+                    response = self.session.get(url, params=cache_params, timeout=60)
+                else:
+                    response = self.session.post(url, json=graphql_body, timeout=60)
             except (requests.ConnectionError, requests.Timeout) as exc:
                 last_error = exc
                 if attempt < max_attempts - 1:
@@ -97,6 +117,14 @@ class GitHubAPI:
 
             response.raise_for_status()
             data = response.json()
+            if graphql_body is not None and data.get("errors"):
+                # GraphQL responde 200 com "errors": nada disso vai para o cache.
+                if any(e.get("type") == "RATE_LIMITED" for e in data["errors"]) and reset:
+                    sleep_for = max(int(reset) - int(time.time()) + 2, 1)
+                    print(f"[rate-limit graphql] aguardando {sleep_for}s...")
+                    time.sleep(sleep_for)
+                    continue
+                raise RuntimeError(f"GraphQL: {data['errors'][0].get('message', data['errors'])}")
             if slim is not None:
                 data = slim(data)
             headers = {

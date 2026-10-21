@@ -10,6 +10,7 @@ from .collect import SampleWriter, collect_repository
 from .dataset import build_metrics
 from .github_api import GitHubAPI
 from .selection import Funnel, candidate_repositories, write_csv
+from .variantes import collect_all_variants
 
 
 def _parse_day(value: str, end_of_day: bool = False) -> datetime:
@@ -17,11 +18,16 @@ def _parse_day(value: str, end_of_day: bool = False) -> datetime:
     return day.replace(hour=23, minute=59, second=59) if end_of_day else day
 
 
-def run(config_path: str, metrics_only: bool = False) -> Funnel | None:
+def run(config_path: str, metrics_only: bool = False, variants: bool = False) -> Funnel | None:
     config = yaml.safe_load(Path(config_path).read_text(encoding="utf-8"))
     start = _parse_day(config["window"]["start"])
     end = _parse_day(config["window"]["end"], end_of_day=True)
     out_dir = Path(config["output_dir"])
+
+    if variants:
+        failures = collect_all_variants(GitHubAPI(cache_dir=config["cache_dir"]), out_dir, start, end)
+        print(f"[variantes] concluído, {failures} repositório(s) com erro em {out_dir / 'variantes'}")
+        return None
 
     funnel = None if metrics_only else collect(config, start, end, out_dir)
     count = build_metrics(out_dir, start, end)
@@ -67,8 +73,13 @@ def main() -> None:
         action="store_true",
         help="só recalcula metrics.csv a partir dos CSVs já coletados (sem API)",
     )
+    parser.add_argument(
+        "--variants",
+        action="store_true",
+        help="coleta as unidades de deploy da RQ 07 (releases + pré-releases e tags) da amostra final",
+    )
     args = parser.parse_args()
-    run(args.config, metrics_only=args.metrics_only)
+    run(args.config, metrics_only=args.metrics_only, variants=args.variants)
 
 
 if __name__ == "__main__":

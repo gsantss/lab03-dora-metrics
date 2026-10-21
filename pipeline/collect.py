@@ -153,15 +153,22 @@ def collect_repository(
 class SampleWriter:
     """Grava os CSVs da amostra repositório a repositório, sem acumular tudo em memória."""
 
-    def __init__(self, out_dir: str | Path):
+    def __init__(
+        self,
+        out_dir: str | Path,
+        outputs: dict[str, list[str]] = OUTPUTS,
+        per_repository: set[str] = PER_REPOSITORY,
+    ):
         self.out_dir = Path(out_dir)
+        self.outputs = outputs
+        self.per_repository = per_repository
         self._stack = ExitStack()
         self._writers: dict[str, csv.DictWriter] = {}
 
     def __enter__(self) -> SampleWriter:
         self.out_dir.mkdir(parents=True, exist_ok=True)
-        for name, columns in OUTPUTS.items():
-            if name in PER_REPOSITORY:
+        for name, columns in self.outputs.items():
+            if name in self.per_repository:
                 directory = self.out_dir / name
                 directory.mkdir(exist_ok=True)
                 for stale in directory.glob("*.csv.gz"):  # repositórios de uma execução anterior
@@ -175,13 +182,13 @@ class SampleWriter:
             self._writers[name] = writer
         return self
 
-    def write(self, data: dict[str, list[dict]]) -> None:
-        full_name = data["repositories"][0]["full_name"]
+    def write(self, data: dict[str, list[dict]], full_name: str | None = None) -> None:
+        full_name = full_name or data["repositories"][0]["full_name"]
         for name, rows in data.items():
-            if name not in PER_REPOSITORY:
+            if name not in self.per_repository:
                 self._writers[name].writerows(rows)
             elif rows:
-                _write_gzip_csv(repository_file(self.out_dir / name, full_name), OUTPUTS[name], rows)
+                _write_gzip_csv(repository_file(self.out_dir / name, full_name), self.outputs[name], rows)
 
     def __exit__(self, *exc_info) -> None:
         self._stack.close()
