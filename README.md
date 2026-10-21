@@ -75,14 +75,27 @@ limite de 100 MB por arquivo do GitHub. Para ler todos com pandas:
 
 O dicionário de dados de cada coluna está em [docs/dicionario-de-dados.md](docs/dicionario-de-dados.md).
 
+## Análise de sensibilidade (RQ 07) e rework rate (RQ 08)
+
+A RQ 07 compara a classificação DORA em três definições operacionais: C1 (release, lead
+time (a), CFR (a)), C2 (release + pré-release, lead time (b), CFR (b)) e C3 (tag, lead time (b),
+CFR (a)). As unidades de deploy de C2 e C3 são coletadas da amostra final (tags datadas pelo
+commit apontado, via API GraphQL) e a análise roda a partir dos CSVs:
+
+```bash
+python -m pipeline --config config.yaml --variants   # gera data/processed/variantes/ (usa a API)
+python -m analises.rq07 --config config.yaml         # gera analises/resultados/ (sem API)
+```
+
 ## Estrutura
 
 ```
 metricas.py          cálculo das métricas e classificação DORA
-pipeline/            coleta (cliente REST, seleção, releases, workflow runs, collect)
+pipeline/            coleta (cliente REST/GraphQL, seleção, releases, workflow runs, variantes da RQ 07)
+analises/            análises das RQs, reexecutáveis a partir dos CSVs
 tests/               testes pytest
 config.yaml          parâmetros da execução
-docs/                dicionário de dados e seções do artigo (introdução, metodologia)
+docs/                dicionário de dados e seções do artigo
 ```
 
 ## Definições operacionais

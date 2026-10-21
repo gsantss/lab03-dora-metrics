@@ -1,6 +1,6 @@
 ﻿from __future__ import annotations
 
-from bisect import bisect_left, insort
+from bisect import bisect_left, bisect_right, insort
 from collections import defaultdict
 from datetime import datetime
 
@@ -42,13 +42,16 @@ def collect_releases(
     return published, main_window
 
 
-def previous_releases(history: list[dict]) -> list[dict | None]:
+def previous_releases(history: list[dict], ties_to_latest: bool = False) -> list[dict | None]:
     """Release anterior de cada release de `history` (em ordem de publicação).
 
     É a maior versão menor que a da release, com o mesmo prefixo de tag, publicada antes
     dela: assim um patch de uma linha antiga (3.6.3 publicada depois da 4.7.2) é comparado
     com a 3.6.2, e não com uma release de outra linha. Sem versão reconhecível ou sem
     candidata na mesma linha, vale a anterior por data.
+
+    `ties_to_latest` (variantes com pré-releases e tags): versões iguais contam como
+    anteriores, e vale a mais recente; `2.0.0` é comparada com `2.0.0-rc2`, não com `1.9.x`.
     """
     output: list[dict | None] = []
     lines: dict[str, list[tuple[tuple[int, int, int], int]]] = defaultdict(list)
@@ -59,7 +62,7 @@ def previous_releases(history: list[dict]) -> list[dict | None]:
         if key is not None:
             prefix, version = key
             line = lines[prefix]
-            position = bisect_left(line, (version,))
+            position = bisect_right(line, (version, i)) if ties_to_latest else bisect_left(line, (version,))
             if position:
                 chosen = history[line[position - 1][1]]
             insort(line, (version, i))
@@ -108,9 +111,10 @@ def commits_between_releases(
     repo: str,
     all_published_releases: list[dict],
     releases_in_window: list[dict],
+    ties_to_latest: bool = False,
 ) -> tuple[list[dict], list[dict]]:
     index = {r["id"]: i for i, r in enumerate(all_published_releases)}
-    previous_of = previous_releases(all_published_releases)
+    previous_of = previous_releases(all_published_releases, ties_to_latest)
     records: list[dict] = []
     ignored: list[dict] = []
 

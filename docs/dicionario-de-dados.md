@@ -134,3 +134,30 @@ Medianas são calculadas dentro de cada repositório; para a amostra, reporte me
 | `class_cfr` | texto | — | Sobre `cfr_ci`: Elite (≤ 15%), High (≤ 30%), Medium (≤ 45%), Low |
 | `class_recovery` | texto | — | Sobre `recovery_h`: Elite (< 1 h), High (< 1 dia), Medium (< 1 semana), Low |
 | `class_overall` | texto | — | **Classificação de referência C1** (release, lead time (a), CFR (a)): mediana das quatro notas (Elite 4 … Low 1), arredondada para baixo; vazio se faltar alguma métrica |
+
+## `variantes/` (RQ 07)
+
+Unidades de deploy alternativas da amostra final, geradas por
+`python -m pipeline --config config.yaml --variants`. Em ambas, a release anterior segue a
+regra da mesma linha de versão, mas versões iguais contam como anteriores e vale a mais
+recente: `2.0.0` é comparada com `2.0.0-rc2`, para que os commits já entregues numa
+pré-release não sejam contados de novo.
+
+| Arquivo | Conteúdo |
+|---|---|
+| `c2_units.csv` | **C2**: releases e pré-releases publicadas na janela. Colunas: `full_name`, `release_id`, `tag_name`, `published_at`, `previous_tag`, `prerelease` (verdadeiro para pré-release) |
+| `c3_units.csv` | **C3**: tags cuja data cai na janela. Mesmas colunas; `release_id` é o nome da tag e `published_at` é a data do commit apontado pela tag (`committedDate` da API GraphQL; tags anotadas usam o commit de destino) |
+| `c2_commits/` | Commits de cada unidade da C2, um `.csv.gz` por repositório: `release_id`, `commit_author_date`, `commit_message` (primeira linha; entra no CFR (b)). A data de publicação vem de `c2_units.csv` |
+| `c3_commits/` | Commits de cada tag da C3, um `.csv.gz` por repositório: `release_id` (nome da tag) e `commit_author_date`. A C3 usa o CFR (a), então a mensagem não é guardada |
+| `errors.csv` | Repositórios cuja coleta das variantes falhou (`full_name`, `error`); ficam fora de C2 e C3 |
+
+## `analises/resultados/` (RQ 07 e RQ 08)
+
+Gerados por `python -m analises.rq07 --config config.yaml`, sem API.
+
+| Arquivo | Conteúdo |
+|---|---|
+| `rq07_classificacoes.csv` | Uma linha por repositório: categoria de cada métrica (`deployment_frequency`, `lead_time`, `cfr`, `recovery`) e geral (`overall`) em C1, C2 e C3, e os valores usados (`*_valor`: deploys por semana, lead time em horas e CFR como fração; lead time (a) em C1 e (b) em C2 e C3) |
+| `rq07_comparacoes.csv` | Uma linha por par de combinações: `n` (classificados nas duas), `mudaram` e `mudaram_pct` (mudança da categoria geral), `subiram` e `desceram` (categoria melhor ou pior na segunda combinação), `vizinhas` (mudanças de uma só categoria), `kappa_linear` (kappa de Cohen ponderado linear) e a % de mudança em cada métrica |
+| `rq08_rework.csv` | Uma linha por repositório: `releases`, `corretivas` (heurística do CFR b aplicada a cada release e à sua anterior), `rework_rate = corretivas ÷ releases` e `cfr_delivery` para comparação |
+| `rq07_rq08_resumo.md` | Tabelas-resumo para o artigo |

@@ -52,12 +52,12 @@ METRIC_FIELDS = [
 ]
 
 
-def _grouped(path: Path) -> dict[str, list[dict]]:
+def grouped_by_repository(path: Path) -> dict[str, list[dict]]:
     with path.open(newline="", encoding="utf-8") as fp:
         return {name: list(rows) for name, rows in groupby(csv.DictReader(fp), key=itemgetter("full_name"))}
 
 
-def _repository_rows(directory: Path, full_name: str) -> list[dict]:
+def repository_rows(directory: Path, full_name: str) -> list[dict]:
     # Commits e runs ficam num .csv.gz por repositório; sem arquivo, o repositório não tem linhas.
     path = repository_file(directory, full_name)
     if not path.exists():
@@ -126,16 +126,16 @@ def build_metrics(out_dir: str | Path, start: datetime, end: datetime) -> int:
             raise FileNotFoundError(f"{out_dir / directory} não existe; rode a coleta com esta versão do pipeline.")
     with (out_dir / "repositories.csv").open(newline="", encoding="utf-8") as fp:
         names = [row["full_name"] for row in csv.DictReader(fp)]
-    releases = _grouped(out_dir / "releases.csv")
-    ignored = _grouped(out_dir / "ignored_releases.csv")
+    releases = grouped_by_repository(out_dir / "releases.csv")
+    ignored = grouped_by_repository(out_dir / "ignored_releases.csv")
 
     rows = [
         repository_metrics(
             name,
             releases.get(name, []),
-            _repository_rows(out_dir / "commits", name),
+            repository_rows(out_dir / "commits", name),
             ignored.get(name, []),
-            _repository_rows(out_dir / "workflow_runs", name),
+            repository_rows(out_dir / "workflow_runs", name),
             start,
             end,
         )

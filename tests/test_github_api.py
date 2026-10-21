@@ -112,6 +112,48 @@ def test_slim_reduces_response_before_caching(api, monkeypatch, tmp_path):
     assert cached == {"keep": 1}
 
 
+def script_post(api, monkeypatch, responses):
+    calls = []
+    queue = list(responses)
+
+    def fake_post(url, json=None, timeout=None):
+        calls.append((url, json))
+        return queue.pop(0)
+
+    monkeypatch.setattr(api.session, "post", fake_post)
+    return calls
+
+
+def test_graphql_returns_data_and_uses_cache(api, monkeypatch):
+    calls = script_post(api, monkeypatch, [FakeResponse(data={"data": {"repository": {"ok": 1}}})])
+    first = api.graphql("query { x }", {"owner": "o"})
+    second = api.graphql("query { x }", {"owner": "o"})
+    assert first == second == {"repository": {"ok": 1}}
+    assert len(calls) == 1
+    assert calls[0][1] == {"query": "query { x }", "variables": {"owner": "o"}}
+
+
+def test_graphql_errors_raise_and_are_not_cached(api, monkeypatch):
+    error = FakeResponse(data={"errors": [{"type": "NOT_FOUND", "message": "repo sumiu"}]})
+    calls = script_post(api, monkeypatch, [error, FakeResponse(data={"data": {"ok": 1}})])
+    with pytest.raises(RuntimeError, match="repo sumiu"):
+        api.graphql("query { x }", {})
+    assert api.graphql("query { x }", {}) == {"ok": 1}
+    assert len(calls) == 2
+
+
+def test_graphql_rate_limited_waits_until_reset(api, monkeypatch):
+    now = 1_000_000
+    monkeypatch.setattr(time, "time", lambda: now)
+    limited = FakeResponse(
+        data={"errors": [{"type": "RATE_LIMITED", "message": "cota"}]},
+        headers={"X-RateLimit-Remaining": "0", "X-RateLimit-Reset": str(now + 10)},
+    )
+    script_post(api, monkeypatch, [limited, FakeResponse(data={"data": {"ok": 1}})])
+    assert api.graphql("query { x }", {}) == {"ok": 1}
+    assert sleeps == [12]
+
+
 def test_5xx_gives_up_after_max_attempts(api, monkeypatch):
     script(api, monkeypatch, [FakeResponse(500)] * 3)
     with pytest.raises(RuntimeError):
