@@ -3,7 +3,7 @@ shadcn-ui/ui,https://github.com/shadcn-ui/ui,363108689,shadcn@4.16.1,https://git
 shadcn-ui/ui,https://github.com/shadcn-ui/ui,379653049,@shadcn/react@0.3.1,https://github.com/shadcn-ui/ui/releases/tag/%40shadcn%2Freact%400.3.1,biblioteca/framework,sim,sim
 shadcn-ui/ui,https://github.com/shadcn-ui/ui,252249772,shadcn@3.4.0,https://github.com/shadcn-ui/ui/releases/tag/shadcn%403.4.0,biblioteca/framework,sim,nao
 shadcn-ui/ui,https://github.com/shadcn-ui/ui,346652248,@shadcn/react@0.2.0,https://github.com/shadcn-ui/ui/releases/tag/%40shadcn%2Freact%400.2.0,biblioteca/framework,sim,nao
-shadcn-ui/ui,https://github.com/shadcn-ui/ui,268820217,shadcn@3.5.2,https://github.com/shadcn-ui/ui/releases/tag/shadcn%403.5.2,biblioteca/framework,sim,nao
+shadcn-ui/ui,https://github.com/shadcn-ui/ui,268820217,shadcn@3.5.2,https://github.com/shadcn-ui/ui/releases/tag/shadcn%403.5.2,biblioteca/framework,sim,sim
 microsoft/playwright,https://github.com/microsoft/playwright,338781187,v1.61.0,https://github.com/microsoft/playwright/releases/tag/v1.61.0,biblioteca/framework,sim,nao
 microsoft/playwright,https://github.com/microsoft/playwright,359565295,v1.62.0,https://github.com/microsoft/playwright/releases/tag/v1.62.0,biblioteca/framework,sim,nao
 microsoft/playwright,https://github.com/microsoft/playwright,252439687,v1.56.0,https://github.com/microsoft/playwright/releases/tag/v1.56.0,biblioteca/framework,sim,nao
@@ -18,16 +18,16 @@ langflow-ai/langflow,https://github.com/langflow-ai/langflow,333238274,v1.9.6,ht
 langflow-ai/langflow,https://github.com/langflow-ai/langflow,293693163,v1.8.0,https://github.com/langflow-ai/langflow/releases/tag/v1.8.0,aplicacao/servico,sim,nao
 langflow-ai/langflow,https://github.com/langflow-ai/langflow,265076176,1.6.9,https://github.com/langflow-ai/langflow/releases/tag/1.6.9,aplicacao/servico,sim,nao
 langflow-ai/langflow,https://github.com/langflow-ai/langflow,336805136,v1.10.0,https://github.com/langflow-ai/langflow/releases/tag/v1.10.0,aplicacao/servico,sim,nao
-langflow-ai/langflow,https://github.com/langflow-ai/langflow,255869532,1.6.5,https://github.com/langflow-ai/langflow/releases/tag/1.6.5,aplicacao/servico,sim,nao
-langchain-ai/langchain,https://github.com/langchain-ai/langchain,331117861,langchain-anthropic==1.4.4,https://github.com/langchain-ai/langchain/releases/tag/langchain-anthropic%3D%3D1.4.4,biblioteca/framework,incerto,sim
-langchain-ai/langchain,https://github.com/langchain-ai/langchain,255336918,langchain-text-splitters==1.0.0,https://github.com/langchain-ai/langchain/releases/tag/langchain-text-splitters%3D%3D1.0.0,biblioteca/framework,incerto,sim
-langchain-ai/langchain,https://github.com/langchain-ai/langchain,286506489,langchain-anthropic==1.3.2,https://github.com/langchain-ai/langchain/releases/tag/langchain-anthropic%3D%3D1.3.2,biblioteca/framework,incerto,nao
-langchain-ai/langchain,https://github.com/langchain-ai/langchain,255186564,langchain==1.0.0rc2,https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.0.0rc2,biblioteca/framework,incerto,nao
-langchain-ai/langchain,https://github.com/langchain-ai/langchain,373920197,langchain-fireworks==1.6.0,https://github.com/langchain-ai/langchain/releases/tag/langchain-fireworks%3D%3D1.6.0,biblioteca/framework,incerto,nao
+langflow-ai/langflow,https://github.com/langflow-ai/langflow,255869532,1.6.5,https://github.com/langflow-ai/langflow/releases/tag/1.6.5,aplicacao/servico,sim,sim
+langchain-ai/langchain,https://github.com/langchain-ai/langchain,331117861,langchain-anthropic==1.4.4,https://github.com/langchain-ai/langchain/releases/tag/langchain-anthropic%3D%3D1.4.4,biblioteca/framework,sim,sim
+langchain-ai/langchain,https://github.com/langchain-ai/langchain,255336918,langchain-text-splitters==1.0.0,https://github.com/langchain-ai/langchain/releases/tag/langchain-text-splitters%3D%3D1.0.0,biblioteca/framework,sim,nao
+langchain-ai/langchain,https://github.com/langchain-ai/langchain,286506489,langchain-anthropic==1.3.2,https://github.com/langchain-ai/langchain/releases/tag/langchain-anthropic%3D%3D1.3.2,biblioteca/framework,sim,nao
+langchain-ai/langchain,https://github.com/langchain-ai/langchain,255186564,langchain==1.0.0rc2,https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.0.0rc2,biblioteca/framework,sim,nao
+langchain-ai/langchain,https://github.com/langchain-ai/langchain,373920197,langchain-fireworks==1.6.0,https://github.com/langchain-ai/langchain/releases/tag/langchain-fireworks%3D%3D1.6.0,biblioteca/framework,sim,nao
 immich-app/immich,https://github.com/immich-app/immich,284960654,v2.5.6,https://github.com/immich-app/immich/releases/tag/v2.5.6,aplicacao/servico,sim,sim
 immich-app/immich,https://github.com/immich-app/immich,301981849,v2.6.3,https://github.com/immich-app/immich/releases/tag/v2.6.3,aplicacao/servico,sim,sim
 immich-app/immich,https://github.com/immich-app/immich,351693817,v3.0.2,https://github.com/immich-app/immich/releases/tag/v3.0.2,aplicacao/servico,sim,sim
-immich-app/immich,https://github.com/immich-app/immich,348253747,v3.0.1,https://github.com/immich-app/immich/releases/tag/v3.0.1,aplicacao/servico,sim,nao
+immich-app/immich,https://github.com/immich-app/immich,348253747,v3.0.1,https://github.com/immich-app/immich/releases/tag/v3.0.1,aplicacao/servico,sim,sim
 immich-app/immich,https://github.com/immich-app/immich,263844441,v2.3.1,https://github.com/immich-app/immich/releases/tag/v2.3.1,aplicacao/servico,sim,sim
 coder/code-server,https://github.com/coder/code-server,371864433,v4.133.0,https://github.com/coder/code-server/releases/tag/v4.133.0,aplicacao/servico,sim,nao
 coder/code-server,https://github.com/coder/code-server,318623446,v4.118.0,https://github.com/coder/code-server/releases/tag/v4.118.0,aplicacao/servico,sim,nao
@@ -43,13 +43,13 @@ Panniantong/Agent-Reach,https://github.com/Panniantong/Agent-Reach,290354431,v1.
 Panniantong/Agent-Reach,https://github.com/Panniantong/Agent-Reach,290879013,v1.2.0,https://github.com/Panniantong/Agent-Reach/releases/tag/v1.2.0,ferramenta cli,sim,nao
 Panniantong/Agent-Reach,https://github.com/Panniantong/Agent-Reach,337079415,v1.4.2,https://github.com/Panniantong/Agent-Reach/releases/tag/v1.4.2,ferramenta cli,sim,nao
 Panniantong/Agent-Reach,https://github.com/Panniantong/Agent-Reach,292911301,v1.3.0,https://github.com/Panniantong/Agent-Reach/releases/tag/v1.3.0,ferramenta cli,sim,nao
-Panniantong/Agent-Reach,https://github.com/Panniantong/Agent-Reach,336995046,v1.4.1,https://github.com/Panniantong/Agent-Reach/releases/tag/v1.4.1,ferramenta cli,sim,nao
+Panniantong/Agent-Reach,https://github.com/Panniantong/Agent-Reach,336995046,v1.4.1,https://github.com/Panniantong/Agent-Reach/releases/tag/v1.4.1,ferramenta cli,sim,sim
 2dust/v2rayN,https://github.com/2dust/v2rayN,378854248,7.24.9,https://github.com/2dust/v2rayN/releases/tag/7.24.9,aplicacao/servico,sim,sim
 2dust/v2rayN,https://github.com/2dust/v2rayN,320099507,7.21.3,https://github.com/2dust/v2rayN/releases/tag/7.21.3,aplicacao/servico,sim,nao
 2dust/v2rayN,https://github.com/2dust/v2rayN,299336934,7.19.5,https://github.com/2dust/v2rayN/releases/tag/7.19.5,aplicacao/servico,sim,nao
 2dust/v2rayN,https://github.com/2dust/v2rayN,338528744,7.22.7,https://github.com/2dust/v2rayN/releases/tag/7.22.7,aplicacao/servico,sim,nao
 2dust/v2rayN,https://github.com/2dust/v2rayN,275452542,7.17.0,https://github.com/2dust/v2rayN/releases/tag/7.17.0,aplicacao/servico,sim,nao
-axios/axios,https://github.com/axios/axios,302512929,v1.14.0,https://github.com/axios/axios/releases/tag/v1.14.0,biblioteca/framework,sim,nao
+axios/axios,https://github.com/axios/axios,302512929,v1.14.0,https://github.com/axios/axios/releases/tag/v1.14.0,biblioteca/framework,sim,sim
 axios/axios,https://github.com/axios/axios,321980402,v1.16.1,https://github.com/axios/axios/releases/tag/v1.16.1,biblioteca/framework,sim,sim
 axios/axios,https://github.com/axios/axios,257553251,v1.13.0,https://github.com/axios/axios/releases/tag/v1.13.0,biblioteca/framework,sim,nao
 axios/axios,https://github.com/axios/axios,338961286,v0.33.0,https://github.com/axios/axios/releases/tag/v0.33.0,biblioteca/framework,sim,nao
@@ -86,12 +86,12 @@ react/react,https://github.com/react/react,332434384,v19.2.7,https://github.com/
 react/react,https://github.com/react/react,251522936,v19.2.0,https://github.com/react/react/releases/tag/v19.2.0,biblioteca/framework,sim,nao
 react/react-native,https://github.com/react/react-native,285323031,v0.84.0,https://github.com/react/react-native/releases/tag/v0.84.0,biblioteca/framework,sim,nao
 react/react-native,https://github.com/react/react-native,368684190,v0.87.0,https://github.com/react/react-native/releases/tag/v0.87.0,biblioteca/framework,sim,nao
-react/react-native,https://github.com/react/react-native,283518629,v0.83.2,https://github.com/react/react-native/releases/tag/v0.83.2,biblioteca/framework,sim,nao
+react/react-native,https://github.com/react/react-native,283518629,v0.83.2,https://github.com/react/react-native/releases/tag/v0.83.2,biblioteca/framework,sim,sim
 react/react-native,https://github.com/react/react-native,317880620,v0.85.3,https://github.com/react/react-native/releases/tag/v0.85.3,biblioteca/framework,sim,sim
 react/react-native,https://github.com/react/react-native,252878860,v0.82.0,https://github.com/react/react-native/releases/tag/v0.82.0,biblioteca/framework,sim,nao
 Stirling-Tools/Stirling-PDF,https://github.com/Stirling-Tools/Stirling-PDF,275627194,v2.2.0,https://github.com/Stirling-Tools/Stirling-PDF/releases/tag/v2.2.0,aplicacao/servico,sim,nao
 Stirling-Tools/Stirling-PDF,https://github.com/Stirling-Tools/Stirling-PDF,324931257,v2.11.0,https://github.com/Stirling-Tools/Stirling-PDF/releases/tag/v2.11.0,aplicacao/servico,sim,nao
-Stirling-Tools/Stirling-PDF,https://github.com/Stirling-Tools/Stirling-PDF,296428111,v2.7.1,https://github.com/Stirling-Tools/Stirling-PDF/releases/tag/v2.7.1,aplicacao/servico,sim,nao
+Stirling-Tools/Stirling-PDF,https://github.com/Stirling-Tools/Stirling-PDF,296428111,v2.7.1,https://github.com/Stirling-Tools/Stirling-PDF/releases/tag/v2.7.1,aplicacao/servico,sim,sim
 Stirling-Tools/Stirling-PDF,https://github.com/Stirling-Tools/Stirling-PDF,350596534,v2.14.1,https://github.com/Stirling-Tools/Stirling-PDF/releases/tag/v2.14.1,aplicacao/servico,sim,sim
 Stirling-Tools/Stirling-PDF,https://github.com/Stirling-Tools/Stirling-PDF,279555164,v2.4.0,https://github.com/Stirling-Tools/Stirling-PDF/releases/tag/v2.4.0,aplicacao/servico,sim,nao
 ggml-org/llama.cpp,https://github.com/ggml-org/llama.cpp,342608830,b9754,https://github.com/ggml-org/llama.cpp/releases/tag/b9754,biblioteca/framework,sim,nao
@@ -117,7 +117,7 @@ electron/electron,https://github.com/electron/electron,376038527,v44.0.0,https:/
 junegunn/fzf,https://github.com/junegunn/fzf,349577561,v0.74.0,https://github.com/junegunn/fzf/releases/tag/v0.74.0,ferramenta cli,sim,nao
 junegunn/fzf,https://github.com/junegunn/fzf,363380613,v0.74.2,https://github.com/junegunn/fzf/releases/tag/v0.74.2,ferramenta cli,sim,sim
 junegunn/fzf,https://github.com/junegunn/fzf,253900165,v0.66.0,https://github.com/junegunn/fzf/releases/tag/v0.66.0,ferramenta cli,sim,nao
-junegunn/fzf,https://github.com/junegunn/fzf,371507048,v0.74.3,https://github.com/junegunn/fzf/releases/tag/v0.74.3,ferramenta cli,sim,sim
+junegunn/fzf,https://github.com/junegunn/fzf,371507048,v0.74.3,https://github.com/junegunn/fzf/releases/tag/v0.74.3,ferramenta cli,sim,nao
 junegunn/fzf,https://github.com/junegunn/fzf,305229378,v0.71.0,https://github.com/junegunn/fzf/releases/tag/v0.71.0,ferramenta cli,sim,nao
 open-webui/open-webui,https://github.com/open-webui/open-webui,301478856,v0.8.11,https://github.com/open-webui/open-webui/releases/tag/v0.8.11,aplicacao/servico,sim,nao
 open-webui/open-webui,https://github.com/open-webui/open-webui,275747448,v0.7.2,https://github.com/open-webui/open-webui/releases/tag/v0.7.2,aplicacao/servico,sim,sim
@@ -130,7 +130,7 @@ angular/angular,https://github.com/angular/angular,304351754,v21.2.7,https://git
 angular/angular,https://github.com/angular/angular,290628709,vsix-21.2.1,https://github.com/angular/angular/releases/tag/vsix-21.2.1,biblioteca/framework,sim,nao
 angular/angular,https://github.com/angular/angular,263726599,20.3.13,https://github.com/angular/angular/releases/tag/20.3.13,biblioteca/framework,sim,nao
 infiniflow/ragflow,https://github.com/infiniflow/ragflow,340728553,v0.26.1,https://github.com/infiniflow/ragflow/releases/tag/v0.26.1,aplicacao/servico,sim,nao
-infiniflow/ragflow,https://github.com/infiniflow/ragflow,319925109,v0.25.2,https://github.com/infiniflow/ragflow/releases/tag/v0.25.2,aplicacao/servico,sim,nao
+infiniflow/ragflow,https://github.com/infiniflow/ragflow,319925109,v0.25.2,https://github.com/infiniflow/ragflow/releases/tag/v0.25.2,aplicacao/servico,sim,sim
 infiniflow/ragflow,https://github.com/infiniflow/ragflow,254573810,v0.21.0,https://github.com/infiniflow/ragflow/releases/tag/v0.21.0,aplicacao/servico,sim,nao
 infiniflow/ragflow,https://github.com/infiniflow/ragflow,315560746,v0.25.1,https://github.com/infiniflow/ragflow/releases/tag/v0.25.1,aplicacao/servico,sim,nao
 infiniflow/ragflow,https://github.com/infiniflow/ragflow,348047194,v0.26.3,https://github.com/infiniflow/ragflow/releases/tag/v0.26.3,aplicacao/servico,sim,nao
@@ -140,7 +140,7 @@ vitejs/vite,https://github.com/vitejs/vite,270318867,v7.3.0,https://github.com/v
 vitejs/vite,https://github.com/vitejs/vite,298781798,create-vite@9.0.3,https://github.com/vitejs/vite/releases/tag/create-vite%409.0.3,ferramenta cli,sim,nao
 vitejs/vite,https://github.com/vitejs/vite,263887784,create-vite@8.2.0,https://github.com/vitejs/vite/releases/tag/create-vite%408.2.0,ferramenta cli,sim,nao
 PaddlePaddle/PaddleOCR,https://github.com/PaddlePaddle/PaddleOCR,330789750,v3.6.0,https://github.com/PaddlePaddle/PaddleOCR/releases/tag/v3.6.0,biblioteca/framework,sim,nao
-PaddlePaddle/PaddleOCR,https://github.com/PaddlePaddle/PaddleOCR,258133221,v3.3.1,https://github.com/PaddlePaddle/PaddleOCR/releases/tag/v3.3.1,biblioteca/framework,sim,nao
+PaddlePaddle/PaddleOCR,https://github.com/PaddlePaddle/PaddleOCR,258133221,v3.3.1,https://github.com/PaddlePaddle/PaddleOCR/releases/tag/v3.3.1,biblioteca/framework,sim,sim
 PaddlePaddle/PaddleOCR,https://github.com/PaddlePaddle/PaddleOCR,308661835,v3.4.1,https://github.com/PaddlePaddle/PaddleOCR/releases/tag/v3.4.1,biblioteca/framework,sim,nao
 PaddlePaddle/PaddleOCR,https://github.com/PaddlePaddle/PaddleOCR,254998014,v3.3.0,https://github.com/PaddlePaddle/PaddleOCR/releases/tag/v3.3.0,biblioteca/framework,sim,nao
 PaddlePaddle/PaddleOCR,https://github.com/PaddlePaddle/PaddleOCR,337935149,v3.7.0,https://github.com/PaddlePaddle/PaddleOCR/releases/tag/v3.7.0,biblioteca/framework,sim,nao
@@ -169,31 +169,31 @@ fastapi/fastapi,https://github.com/fastapi/fastapi,267334458,0.123.6,https://git
 fastapi/fastapi,https://github.com/fastapi/fastapi,291769581,0.135.0,https://github.com/fastapi/fastapi/releases/tag/0.135.0,biblioteca/framework,sim,nao
 fastapi/fastapi,https://github.com/fastapi/fastapi,355170111,0.139.2,https://github.com/fastapi/fastapi/releases/tag/0.139.2,biblioteca/framework,sim,sim
 fastapi/fastapi,https://github.com/fastapi/fastapi,252960115,0.118.1,https://github.com/fastapi/fastapi/releases/tag/0.118.1,biblioteca/framework,sim,nao
-tt-a1i/archify,https://github.com/tt-a1i/archify,309168024,v2.0.0,https://github.com/tt-a1i/archify/releases/tag/v2.0.0,outro,incerto,nao
-tt-a1i/archify,https://github.com/tt-a1i/archify,309178928,v2.3.1,https://github.com/tt-a1i/archify/releases/tag/v2.3.1,outro,incerto,nao
-tt-a1i/archify,https://github.com/tt-a1i/archify,354940334,v2.11.0,https://github.com/tt-a1i/archify/releases/tag/v2.11.0,outro,incerto,sim
-tt-a1i/archify,https://github.com/tt-a1i/archify,309169832,v2.1.0,https://github.com/tt-a1i/archify/releases/tag/v2.1.0,outro,incerto,nao
-tt-a1i/archify,https://github.com/tt-a1i/archify,348629786,v2.8.0,https://github.com/tt-a1i/archify/releases/tag/v2.8.0,outro,incerto,nao
+tt-a1i/archify,https://github.com/tt-a1i/archify,309168024,v2.0.0,https://github.com/tt-a1i/archify/releases/tag/v2.0.0,outro,sim,nao
+tt-a1i/archify,https://github.com/tt-a1i/archify,309178928,v2.3.1,https://github.com/tt-a1i/archify/releases/tag/v2.3.1,outro,sim,sim
+tt-a1i/archify,https://github.com/tt-a1i/archify,354940334,v2.11.0,https://github.com/tt-a1i/archify/releases/tag/v2.11.0,outro,sim,sim
+tt-a1i/archify,https://github.com/tt-a1i/archify,309169832,v2.1.0,https://github.com/tt-a1i/archify/releases/tag/v2.1.0,outro,sim,nao
+tt-a1i/archify,https://github.com/tt-a1i/archify,348629786,v2.8.0,https://github.com/tt-a1i/archify/releases/tag/v2.8.0,outro,sim,nao
 Graphify-Labs/graphify,https://github.com/Graphify-Labs/graphify,350407488,v0.9.9,https://github.com/Graphify-Labs/graphify/releases/tag/v0.9.9,ferramenta cli,sim,sim
 Graphify-Labs/graphify,https://github.com/Graphify-Labs/graphify,320018849,v0.7.13,https://github.com/Graphify-Labs/graphify/releases/tag/v0.7.13,ferramenta cli,sim,nao
 Graphify-Labs/graphify,https://github.com/Graphify-Labs/graphify,398065883,v0.9.71,https://github.com/Graphify-Labs/graphify/releases/tag/v0.9.71,ferramenta cli,sim,nao
-Graphify-Labs/graphify,https://github.com/Graphify-Labs/graphify,399427184,v0.9.72,https://github.com/Graphify-Labs/graphify/releases/tag/v0.9.72,ferramenta cli,sim,nao
+Graphify-Labs/graphify,https://github.com/Graphify-Labs/graphify,399427184,v0.9.72,https://github.com/Graphify-Labs/graphify/releases/tag/v0.9.72,ferramenta cli,sim,sim
 Graphify-Labs/graphify,https://github.com/Graphify-Labs/graphify,306727475,v0.3.13,https://github.com/Graphify-Labs/graphify/releases/tag/v0.3.13,ferramenta cli,sim,sim
-nvm-sh/nvm,https://github.com/nvm-sh/nvm,334482963,v0.40.5,https://github.com/nvm-sh/nvm/releases/tag/v0.40.5,ferramenta cli,sim,nao
+nvm-sh/nvm,https://github.com/nvm-sh/nvm,334482963,v0.40.5,https://github.com/nvm-sh/nvm/releases/tag/v0.40.5,ferramenta cli,sim,sim
 nvm-sh/nvm,https://github.com/nvm-sh/nvm,392658142,v0.40.8,https://github.com/nvm-sh/nvm/releases/tag/v0.40.8,ferramenta cli,sim,sim
 nvm-sh/nvm,https://github.com/nvm-sh/nvm,354713311,v0.40.6,https://github.com/nvm-sh/nvm/releases/tag/v0.40.6,ferramenta cli,sim,nao
-nvm-sh/nvm,https://github.com/nvm-sh/nvm,281303781,v0.40.4,https://github.com/nvm-sh/nvm/releases/tag/v0.40.4,ferramenta cli,sim,nao
+nvm-sh/nvm,https://github.com/nvm-sh/nvm,281303781,v0.40.4,https://github.com/nvm-sh/nvm/releases/tag/v0.40.4,ferramenta cli,sim,sim
 nvm-sh/nvm,https://github.com/nvm-sh/nvm,372127136,v0.40.7,https://github.com/nvm-sh/nvm/releases/tag/v0.40.7,ferramenta cli,sim,nao
 nodejs/node,https://github.com/nodejs/node,253836594,v24.10.0,https://github.com/nodejs/node/releases/tag/v24.10.0,outro,sim,nao
 nodejs/node,https://github.com/nodejs/node,257943424,v25.1.0,https://github.com/nodejs/node/releases/tag/v25.1.0,outro,sim,nao
 nodejs/node,https://github.com/nodejs/node,322058698,v22.22.3,https://github.com/nodejs/node/releases/tag/v22.22.3,outro,sim,nao
 nodejs/node,https://github.com/nodejs/node,276372644,v24.13.0,https://github.com/nodejs/node/releases/tag/v24.13.0,outro,sim,sim
 nodejs/node,https://github.com/nodejs/node,361798619,v22.23.2,https://github.com/nodejs/node/releases/tag/v22.23.2,outro,sim,sim
-google-gemini/gemini-cli,https://github.com/google-gemini/gemini-cli,264200425,v0.19.0-nightly.20251121.5982abeff,https://github.com/google-gemini/gemini-cli/releases/tag/v0.19.0-nightly.20251121.5982abeff,ferramenta cli,incerto,nao
-google-gemini/gemini-cli,https://github.com/google-gemini/gemini-cli,389459337,v0.60.0,https://github.com/google-gemini/gemini-cli/releases/tag/v0.60.0,ferramenta cli,incerto,sim
-google-gemini/gemini-cli,https://github.com/google-gemini/gemini-cli,274690353,v0.23.0,https://github.com/google-gemini/gemini-cli/releases/tag/v0.23.0,ferramenta cli,incerto,nao
-google-gemini/gemini-cli,https://github.com/google-gemini/gemini-cli,304395807,v0.36.0,https://github.com/google-gemini/gemini-cli/releases/tag/v0.36.0,ferramenta cli,incerto,nao
-google-gemini/gemini-cli,https://github.com/google-gemini/gemini-cli,253444183,v0.9.0-preview.1,https://github.com/google-gemini/gemini-cli/releases/tag/v0.9.0-preview.1,ferramenta cli,incerto,sim
+google-gemini/gemini-cli,https://github.com/google-gemini/gemini-cli,264200425,v0.19.0-nightly.20251121.5982abeff,https://github.com/google-gemini/gemini-cli/releases/tag/v0.19.0-nightly.20251121.5982abeff,ferramenta cli,sim,nao
+google-gemini/gemini-cli,https://github.com/google-gemini/gemini-cli,389459337,v0.60.0,https://github.com/google-gemini/gemini-cli/releases/tag/v0.60.0,ferramenta cli,sim,sim
+google-gemini/gemini-cli,https://github.com/google-gemini/gemini-cli,274690353,v0.23.0,https://github.com/google-gemini/gemini-cli/releases/tag/v0.23.0,ferramenta cli,sim,nao
+google-gemini/gemini-cli,https://github.com/google-gemini/gemini-cli,304395807,v0.36.0,https://github.com/google-gemini/gemini-cli/releases/tag/v0.36.0,ferramenta cli,sim,nao
+google-gemini/gemini-cli,https://github.com/google-gemini/gemini-cli,253444183,v0.9.0-preview.1,https://github.com/google-gemini/gemini-cli/releases/tag/v0.9.0-preview.1,ferramenta cli,sim,sim
 ant-design/ant-design,https://github.com/ant-design/ant-design,366548544,6.5.4,https://github.com/ant-design/ant-design/releases/tag/6.5.4,biblioteca/framework,sim,sim
 ant-design/ant-design,https://github.com/ant-design/ant-design,303062291,6.3.5,https://github.com/ant-design/ant-design/releases/tag/6.3.5,biblioteca/framework,sim,sim
 ant-design/ant-design,https://github.com/ant-design/ant-design,310229676,6.3.6,https://github.com/ant-design/ant-design/releases/tag/6.3.6,biblioteca/framework,sim,sim
@@ -215,7 +215,7 @@ NationalSecurityAgency/ghidra,https://github.com/NationalSecurityAgency/ghidra,2
 NationalSecurityAgency/ghidra,https://github.com/NationalSecurityAgency/ghidra,267188111,Ghidra_11.4.3_build,https://github.com/NationalSecurityAgency/ghidra/releases/tag/Ghidra_11.4.3_build,aplicacao/servico,sim,sim
 NationalSecurityAgency/ghidra,https://github.com/NationalSecurityAgency/ghidra,335090191,Ghidra_12.1.2_build,https://github.com/NationalSecurityAgency/ghidra/releases/tag/Ghidra_12.1.2_build,aplicacao/servico,sim,sim
 vercel/next.js,https://github.com/vercel/next.js,280066005,v15.3.9,https://github.com/vercel/next.js/releases/tag/v15.3.9,biblioteca/framework,sim,sim
-vercel/next.js,https://github.com/vercel/next.js,254137805,v15.5.5,https://github.com/vercel/next.js/releases/tag/v15.5.5,biblioteca/framework,sim,nao
+vercel/next.js,https://github.com/vercel/next.js,254137805,v15.5.5,https://github.com/vercel/next.js/releases/tag/v15.5.5,biblioteca/framework,sim,sim
 vercel/next.js,https://github.com/vercel/next.js,280066109,v15.4.11,https://github.com/vercel/next.js/releases/tag/v15.4.11,biblioteca/framework,sim,sim
 vercel/next.js,https://github.com/vercel/next.js,267156324,v15.3.6,https://github.com/vercel/next.js/releases/tag/v15.3.6,biblioteca/framework,sim,sim
 vercel/next.js,https://github.com/vercel/next.js,267155199,v15.1.9,https://github.com/vercel/next.js/releases/tag/v15.1.9,biblioteca/framework,sim,sim
@@ -230,20 +230,20 @@ bitcoin/bitcoin,https://github.com/bitcoin/bitcoin,352005822,v30.3,https://githu
 bitcoin/bitcoin,https://github.com/bitcoin/bitcoin,352006528,v29.4,https://github.com/bitcoin/bitcoin/releases/tag/v29.4,aplicacao/servico,sim,sim
 bitcoin/bitcoin,https://github.com/bitcoin/bitcoin,258480947,v28.3,https://github.com/bitcoin/bitcoin/releases/tag/v28.3,aplicacao/servico,sim,sim
 rustdesk/rustdesk,https://github.com/rustdesk/rustdesk,263489239,1.4.4,https://github.com/rustdesk/rustdesk/releases/tag/1.4.4,aplicacao/servico,sim,nao
-rustdesk/rustdesk,https://github.com/rustdesk/rustdesk,342295455,1.4.8,https://github.com/rustdesk/rustdesk/releases/tag/1.4.8,aplicacao/servico,sim,nao
+rustdesk/rustdesk,https://github.com/rustdesk/rustdesk,342295455,1.4.8,https://github.com/rustdesk/rustdesk/releases/tag/1.4.8,aplicacao/servico,sim,sim
 rustdesk/rustdesk,https://github.com/rustdesk/rustdesk,255246803,1.4.3,https://github.com/rustdesk/rustdesk/releases/tag/1.4.3,aplicacao/servico,sim,nao
 rustdesk/rustdesk,https://github.com/rustdesk/rustdesk,396443202,1.5.0,https://github.com/rustdesk/rustdesk/releases/tag/1.5.0,aplicacao/servico,sim,nao
-rustdesk/rustdesk,https://github.com/rustdesk/rustdesk,275361901,1.4.5,https://github.com/rustdesk/rustdesk/releases/tag/1.4.5,aplicacao/servico,sim,nao
+rustdesk/rustdesk,https://github.com/rustdesk/rustdesk,275361901,1.4.5,https://github.com/rustdesk/rustdesk/releases/tag/1.4.5,aplicacao/servico,sim,sim
 elastic/elasticsearch,https://github.com/elastic/elasticsearch,252444835,v9.1.5,https://github.com/elastic/elasticsearch/releases/tag/v9.1.5,aplicacao/servico,sim,sim
 elastic/elasticsearch,https://github.com/elastic/elasticsearch,256725672,v8.19.6,https://github.com/elastic/elasticsearch/releases/tag/v8.19.6,aplicacao/servico,sim,sim
 elastic/elasticsearch,https://github.com/elastic/elasticsearch,306634993,v8.19.14,https://github.com/elastic/elasticsearch/releases/tag/v8.19.14,aplicacao/servico,sim,sim
 elastic/elasticsearch,https://github.com/elastic/elasticsearch,271694397,v8.19.9,https://github.com/elastic/elasticsearch/releases/tag/v8.19.9,aplicacao/servico,sim,sim
 elastic/elasticsearch,https://github.com/elastic/elasticsearch,321321862,v9.4.1,https://github.com/elastic/elasticsearch/releases/tag/v9.4.1,aplicacao/servico,sim,nao
-netdata/netdata,https://github.com/netdata/netdata,254697908,v2.7.2,https://github.com/netdata/netdata/releases/tag/v2.7.2,aplicacao/servico,sim,nao
-netdata/netdata,https://github.com/netdata/netdata,257850012,v2.7.3,https://github.com/netdata/netdata/releases/tag/v2.7.3,aplicacao/servico,sim,nao
-netdata/netdata,https://github.com/netdata/netdata,270416324,v2.8.3,https://github.com/netdata/netdata/releases/tag/v2.8.3,aplicacao/servico,sim,nao
-netdata/netdata,https://github.com/netdata/netdata,390020534,v2.11.1,https://github.com/netdata/netdata/releases/tag/v2.11.1,aplicacao/servico,sim,nao
-netdata/netdata,https://github.com/netdata/netdata,308857421,v2.10.2,https://github.com/netdata/netdata/releases/tag/v2.10.2,aplicacao/servico,sim,nao
+netdata/netdata,https://github.com/netdata/netdata,254697908,v2.7.2,https://github.com/netdata/netdata/releases/tag/v2.7.2,aplicacao/servico,sim,sim
+netdata/netdata,https://github.com/netdata/netdata,257850012,v2.7.3,https://github.com/netdata/netdata/releases/tag/v2.7.3,aplicacao/servico,sim,sim
+netdata/netdata,https://github.com/netdata/netdata,270416324,v2.8.3,https://github.com/netdata/netdata/releases/tag/v2.8.3,aplicacao/servico,sim,sim
+netdata/netdata,https://github.com/netdata/netdata,390020534,v2.11.1,https://github.com/netdata/netdata/releases/tag/v2.11.1,aplicacao/servico,sim,sim
+netdata/netdata,https://github.com/netdata/netdata,308857421,v2.10.2,https://github.com/netdata/netdata/releases/tag/v2.10.2,aplicacao/servico,sim,sim
 addyosmani/agent-skills,https://github.com/addyosmani/agent-skills,391196722,0.6.10,https://github.com/addyosmani/agent-skills/releases/tag/0.6.10,outro,incerto,sim
 addyosmani/agent-skills,https://github.com/addyosmani/agent-skills,378812923,0.6.8,https://github.com/addyosmani/agent-skills/releases/tag/0.6.8,outro,incerto,nao
 addyosmani/agent-skills,https://github.com/addyosmani/agent-skills,307363199,0.5.0,https://github.com/addyosmani/agent-skills/releases/tag/0.5.0,outro,incerto,nao
@@ -281,7 +281,7 @@ redis/redis,https://github.com/redis/redis,284122572,8.4.1,https://github.com/re
 redis/redis,https://github.com/redis/redis,371819484,8.4.6,https://github.com/redis/redis/releases/tag/8.4.6,aplicacao/servico,sim,sim
 JuliusBrussee/caveman,https://github.com/JuliusBrussee/caveman,375160888,v2.3.0,https://github.com/JuliusBrussee/caveman/releases/tag/v2.3.0,outro,incerto,nao
 JuliusBrussee/caveman,https://github.com/JuliusBrussee/caveman,321393500,v1.8.2,https://github.com/JuliusBrussee/caveman/releases/tag/v1.8.2,outro,incerto,sim
-JuliusBrussee/caveman,https://github.com/JuliusBrussee/caveman,307922262,v1.5.1,https://github.com/JuliusBrussee/caveman/releases/tag/v1.5.1,outro,incerto,sim
+JuliusBrussee/caveman,https://github.com/JuliusBrussee/caveman,307922262,v1.5.1,https://github.com/JuliusBrussee/caveman/releases/tag/v1.5.1,outro,incerto,nao
 JuliusBrussee/caveman,https://github.com/JuliusBrussee/caveman,375162111,v2.3.1,https://github.com/JuliusBrussee/caveman/releases/tag/v2.3.1,outro,incerto,sim
 JuliusBrussee/caveman,https://github.com/JuliusBrussee/caveman,307235829,v1.3.5,https://github.com/JuliusBrussee/caveman/releases/tag/v1.3.5,outro,incerto,nao
 nexu-io/open-design,https://github.com/nexu-io/open-design,385495816,open-design-v0.22.1,https://github.com/nexu-io/open-design/releases/tag/open-design-v0.22.1,aplicacao/servico,sim,sim
@@ -298,4 +298,4 @@ syncthing/syncthing,https://github.com/syncthing/syncthing,306139185,v2.0.16,htt
 syncthing/syncthing,https://github.com/syncthing/syncthing,259492006,v2.0.11,https://github.com/syncthing/syncthing/releases/tag/v2.0.11,aplicacao/servico,sim,sim
 syncthing/syncthing,https://github.com/syncthing/syncthing,365532506,v2.1.3,https://github.com/syncthing/syncthing/releases/tag/v2.1.3,aplicacao/servico,sim,sim
 syncthing/syncthing,https://github.com/syncthing/syncthing,384523550,v2.1.5,https://github.com/syncthing/syncthing/releases/tag/v2.1.5,aplicacao/servico,sim,nao
-syncthing/syncthing,https://github.com/syncthing/syncthing,274499750,v2.0.13,https://github.com/syncthing/syncthing/releases/tag/v2.0.13,aplicacao/servico,sim,sim
+syncthing/syncthing,https://github.com/syncthing/syncthing,274499750,v2.0.13,https://github.com/syncthing/syncthing/releases/tag/v2.0.13,aplicacao/servico,sim,nao
