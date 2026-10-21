@@ -8,6 +8,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{longtable,booktabs,array}
+\usepackage{calc}
 
 % Símbolos que aparecem nos textos em markdown convertidos
 \usepackage{newunicodechar}
@@ -44,14 +45,17 @@
 
 \maketitle
 
-% RASCUNHO do resumo e do abstract: usa só os resultados já disponíveis (RQ 05 a RQ 08 e validação manual).
-% Revisar quando as RQ 01 a 04 (issue #42) estiverem prontas e acrescentar os números de frequência, lead time, CFR e recuperação.
+% Resumo e abstract incluem os resultados das RQ01-04.
 \begin{abstract}
 DORA metrics have become the standard for measuring software delivery performance, but GitHub does not record production deploys or failures. We compute the four metrics from proxies (published releases and GitHub Actions runs) for 300 popular open-source repositories over a 12-month window, and we measure how much the values and the conclusions depend on the definitions adopted. We validated the heuristic that flags corrective releases with three independent raters (Fleiss' kappa of 0.65; F1 of 0.73) and compared three combinations of operational definitions: between 24\% and 26\% of the repositories change DORA category depending on the combination. The delivery-based failure rate grows with deploy frequency ($\rho=0.48$), largely as an effect of the proxy itself, and repository age is the factor most associated with lead time. We conclude that per-metric classifications are sensitive to the definition, and that release frequency measures version publishing rather than production deploys.
+% gabriel-resumo-abstract
+The descriptive analysis found medians of 0.518 releases/week, 239.152 h and 263.645 h for the two lead-time variants, 4.6\% and 18.1\% for CI and delivery failure rates, and 2.621 h for observed recovery. 
 \end{abstract}
 
 \begin{resumo}
 As métricas DORA tornaram-se o padrão para medir o desempenho de entrega de software, mas o GitHub não registra deploys nem falhas em produção. Neste trabalho, calculamos as quatro métricas a partir de proxies (releases publicadas e execuções do GitHub Actions) em 300 repositórios populares de código aberto, em uma janela de 12 meses, e medimos o quanto os valores e as conclusões dependem das definições adotadas. Validamos a heurística que identifica releases corretivas com três avaliadores independentes (kappa de Fleiss de 0,65; F1 de 0,73) e comparamos três combinações de definições operacionais: entre 24\% e 26\% dos repositórios mudam de categoria DORA conforme a combinação. A taxa de falha por entrega cresce com a frequência de deploy ($\rho=0{,}48$), em boa parte como efeito do próprio proxy, e a idade do repositório é o fator mais associado ao lead time. Concluímos que a classificação por métrica é sensível à definição, e que a frequência de releases mede a publicação de versões, e não o deploy em produção.
+% gabriel-resumo-resumo
+A análise descritiva encontrou medianas de 0,518 releases/semana, 239,152 h e 263,645 h nas duas variantes de lead time, 4,6\% e 18,1\% nos proxies de falha de CI e de entrega, e 2,621 h na recuperação observada. 
 \end{resumo}
 
 \section{Introdução}
@@ -289,9 +293,9 @@ v4: só \emph{patch}                   & 0,67 & 0,89 & 0,76 \\
 \subsection{RQ 01 a RQ 04: estatística descritiva e classificação DORA de referência}
 \label{sec:rq0104}
 
-% issue42-rq01-04
-\input{resultados_rq01_04.tex}
-% /issue42-rq01-04
+% gabriel-rq01-04
+\input{resultados_rq01_04_artigo.tex}
+% /gabriel-rq01-04
 
 \subsection{RQ 05: frequência de deploy e taxa de falha}
 \label{sec:rq05}
@@ -547,18 +551,31 @@ Os dois resultados dependem da validade da heurística de release corretiva (Se�
 \section{Discussão}
 \label{sec:discussao}
 
-% RASCUNHO: a tabela cobre H5 a H8, que já têm resultado. As linhas de H1 a H4 dependem das RQ 01 a 04 (issue #42).
-A Tabela~\ref{tab:hipoteses} confronta cada hipótese da Seção~\ref{sec:intro} com o resultado obtido. Os detalhes de cada questão estão nas Seções~\ref{sec:rq05}, \ref{sec:rq06}, \ref{sec:rq07} e na RQ 08.
+% Tabela integrada com as contribuicoes H1 a H8.
+A Tabela~\ref{tab:hipoteses} confronta cada hipótese da Seção~\ref{sec:intro} com o resultado obtido. Os detalhes de cada questão estão nas Seções~\ref{sec:rq0104}, \ref{sec:rq05}, \ref{sec:rq06}, \ref{sec:rq07} e na RQ 08.
 
-\begin{table}[ht]
-\centering
+\begingroup
 \small
-\caption{Hipóteses frente aos resultados (H5 a H8).}
-\label{tab:hipoteses}
-\begin{tabular}{p{1.1cm}p{5cm}p{6.4cm}p{1.9cm}}
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.11\linewidth}>{\raggedright\arraybackslash}p{0.245\linewidth}>{\raggedright\arraybackslash}p{0.40\linewidth}>{\raggedright\arraybackslash}p{0.15\linewidth}}
+\caption{Hipóteses frente aos resultados (H1 a H8).}\label{tab:hipoteses}\\
 \hline
 Hipótese & Previsão & Resultado & Situação \\
 \hline
+\endfirsthead
+\hline
+Hipótese & Previsão & Resultado & Situação \\
+\hline
+\endhead
+\hline
+\endfoot
+
+% gabriel-h1-h4
+H1 & Mediana abaixo de uma release/semana, maioria Medium e cauda longa. & Mediana 0,518; Medium: 137/300 (45,7\%), sem maioria absoluta. Máximo: 49,556 releases/semana. Automação de publicação não foi testada. & Em parte \\
+H2 & (b) em dias a poucas semanas; (a) sistematicamente maior, sobretudo com publicações menos frequentes. & Medianas de 239,152 h (a) e 263,645 h (b). Em 178/299 pares, (a) supera (b); diferença pareada mediana de 24,491 h. Associação frequência--diferença: $\rho=-0{,}289$. & Em parte \\
+H3 & CI mediano de 10\% a 25\%; entrega menor, maioria abaixo de 15\% e correlação fraca entre proxies. & Medianas de 4,6\% (CI) e 18,1\% (entrega); 139/298 abaixo de 15\%. Entre proxies, $\rho=0{,}126$. As magnitudes previstas não se confirmam; associacao fraca e compatível. & Em parte \\
+H4 & Mediana de recuperação entre 1 h e 24 h, cauda longa e alguma censura. & Mediana de 2,621 h; maximo de 181,768 h. São 307/64.677 episódios censurados (0,475\%). Relação com workflows auxiliares não testada. & Compatível em parte \\
+% /gabriel-h1-h4
 H5 (CFR de CI) & Correlação com a frequência fraca ou nula, talvez negativa. & $\rho=0{,}15$: fraca, mas positiva. & Em parte \\
 H5 (CFR de entrega) & Correlação fraca e positiva, em parte artefato do proxy. & $\rho=0{,}48$: positiva e moderada, mais forte que o previsto. & Em parte \\
 H6 (i) & Mais contribuidores, maior frequência e menor lead time. & Frequência sem diferença; lead time \emph{maior} com mais contribuidores. & Refutada \\
@@ -567,13 +584,12 @@ H6 (iii) & JS/TS, Go e Rust publicam mais que C/C++ e Java. & Frequência sem di
 H6 (iv) & Repositórios mais antigos têm lead time maior. & Confirmada, com efeito grande ($\varepsilon^2=0{,}31$). & Confirmada \\
 H7 & Pelo menos 30\% mudam de categoria; $\kappa$ ponderado de 0,4 a 0,6; mudanças entre vizinhas. & 24\% a 26\% mudam; $\kappa$ de 0,58 a 0,65; 93\% a 97\% das mudanças entre vizinhas. & Em parte \\
 H8 & \emph{Rework rate} maior que o CFR (b), mesma ordem de grandeza e fortemente correlacionada. & Maior em 88\% dos repositórios, mas com mediana de 0,60 contra 0,18 e $\rho=0{,}32$. & Em parte \\
-\hline
-\end{tabular}
-\end{table}
+\end{longtable}
+\endgroup
 
 \paragraph{O que surpreendeu.} Três resultados contrariaram a intuição. Primeiro, projetos com mais contribuidores têm lead time \emph{maior}, e não menor, o que sugere que o tamanho da comunidade acompanha um processo de release mais cauteloso. Segundo, a correlação positiva entre frequência e CFR de entrega foi mais forte que a prevista, e a análise de sensibilidade (RQ 07) e a rework rate (RQ 08) apontam a mesma causa: o proxy de release corretiva mede em boa parte a política de versionamento do projeto. Terceiro, a classificação geral é mais estável do que as classificações por métrica, em parte por efeito da agregação pela mediana das quatro notas. A conclusão comum é que as métricas DORA calculadas por proxies em código aberto devem ser lidas por variante, e a frequência de releases como publicação de versões, e não como deploy em produção.
 
-\textbf{[TODO -- issue \#42]} Linhas de H1 a H4 da tabela, com os resultados das RQ 01 a 04.
+
 
 \section{Ameaças à validade}
 \label{sec:ameacas}
