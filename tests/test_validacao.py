@@ -88,3 +88,15 @@ def test_load_rows_accepts_csv_with_bom(tmp_path):
     rows = load_rows(str(path))
     assert rows[0]["full_name"] == "o/r"
     assert rows[0]["corretiva"] == "sim"
+
+
+def test_load_rows_reads_every_file_of_a_directory(tmp_path):
+    import gzip
+
+    from validacao import load_rows
+
+    for name, repo in (("a__x.csv.gz", "a/x"), ("b__y.csv.gz", "b/y")):
+        with gzip.open(tmp_path / name, "wt", encoding="utf-8", newline="") as fp:
+            fp.write(f"full_name,release_id,commit_message\n{repo},1,fix: bug\n")
+    rows = load_rows(str(tmp_path))
+    assert sorted(r["full_name"] for r in rows) == ["a/x", "b/y"]

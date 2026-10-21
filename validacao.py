@@ -2,7 +2,7 @@
 
 Uso:
     python validacao.py --consenso validacao/consenso.csv \
-        --releases data/processed/releases.csv --commits data/processed/commits.csv.gz
+        --releases data/processed/releases.csv --commits data/processed/commits
 
 `consenso.csv` precisa das colunas `full_name`, `tag_name` e `corretiva` (sim/nao).
 """
@@ -12,6 +12,7 @@ import argparse
 import csv
 import gzip
 from collections import defaultdict
+from pathlib import Path
 from typing import Callable, Iterable
 
 from sklearn.metrics import precision_recall_fscore_support
@@ -72,6 +73,14 @@ def _open(path: str):
 
 
 def load_rows(path: str) -> list[dict]:
+    """Lê um CSV (opcionalmente .gz) ou todos os CSVs de uma pasta (um arquivo por repositório)."""
+    target = Path(path)
+    if target.is_dir():
+        rows: list[dict] = []
+        for file in sorted(target.glob("*.csv*")):
+            with _open(str(file)) as fp:
+                rows.extend(csv.DictReader(fp))
+        return rows
     with _open(path) as fp:
         return list(csv.DictReader(fp))
 
@@ -114,7 +123,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--consenso", required=True)
     parser.add_argument("--releases", default="data/processed/releases.csv")
-    parser.add_argument("--commits", default="data/processed/commits.csv.gz")
+    parser.add_argument("--commits", default="data/processed/commits")
     args = parser.parse_args()
 
     samples = build_samples(
