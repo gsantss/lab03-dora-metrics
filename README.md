@@ -185,3 +185,27 @@ Conserve a população e as versões fixas do ambiente para reproduzir o mesmo s
 Não regenerar uma planilha preenchida nem colocar rótulos fictícios para cumprir aceite.
 A Issue fecha pelo merge do PR somente após análise final sem pendências e CI aprovado.
 <!-- /issue30-comandos -->
+
+<!-- issue42-rq01-04 -->
+## RQ 01 a 04 e classificação C1 — Issue #42
+
+Requer Python 3.12 e as dependências de `requirements.txt`. Não consulta a API nem refaz a mineração.
+
+```bash
+python -m analises.rq01_04
+pytest tests/test_rq01_04.py tests/test_integracao_issue42.py
+```
+
+Entrada única: `data/processed/metrics.csv`. Saídas em `analises/resultados/rq01_04/`:
+estatísticas (mediana, Q1, Q3 e IQR), categorias C1 com ausentes explícitos,
+comparações pareadas, censura por repositório, cinco PNGs e manifesto SHA-256.
+O comando também atualiza `docs/resultados-rq01-rq04.md`,
+`artigo/resultados_rq01_04.tex` e as cinco figuras correspondentes em `artigo/figuras/`.
+Ao enviar ao Overleaf, inclua esse `.tex` gerado junto de `main.tex` e `figuras/`.
+
+Zeros são preservados e ausentes não são imputados. IQR é Q3-Q1, com quantis lineares.
+C1 usa as colunas do CSV, com lead time (a) e CFR (a); não recalibra os limiares.
+As unidades de análise são repositórios: a mediana das medianas não é a mediana de todos os episódios.
+O relatório confronta H1 a H4 com os dados e separa censura de recuperação observada.
+Repetições são byte a byte iguais no mesmo ambiente; versões e hashes são registrados no manifesto.
+<!-- /issue42-rq01-04 -->
