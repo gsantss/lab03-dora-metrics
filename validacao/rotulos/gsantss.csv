@@ -39,7 +39,7 @@ rust-lang/rust,https://github.com/rust-lang/rust,355073850,1.97.1,https://github
 rust-lang/rust,https://github.com/rust-lang/rust,258584176,1.91.0,https://github.com/rust-lang/rust/releases/tag/1.91.0,,,nao
 rust-lang/rust,https://github.com/rust-lang/rust,373931400,1.98.0,https://github.com/rust-lang/rust/releases/tag/1.98.0,,,nao
 rust-lang/rust,https://github.com/rust-lang/rust,293629082,1.94.0,https://github.com/rust-lang/rust/releases/tag/1.94.0,,,nao
-Panniantong/Agent-Reach,https://github.com/Panniantong/Agent-Reach,290354431,v1.1.0,https://github.com/Panniantong/Agent-Reach/releases/tag/v1.1.0,ferramenta cli,sim,nao
+Panniantong/Agent-Reach,https://github.com/Panniantong/Agent-Reach,290354431,v1.1.0,https://github.com/Panniantong/Agent-Reach/releases/tag/v1.1.0,ferramenta cli,incerto,nao
 Panniantong/Agent-Reach,https://github.com/Panniantong/Agent-Reach,290879013,v1.2.0,https://github.com/Panniantong/Agent-Reach/releases/tag/v1.2.0,,,nao
 Panniantong/Agent-Reach,https://github.com/Panniantong/Agent-Reach,337079415,v1.4.2,https://github.com/Panniantong/Agent-Reach/releases/tag/v1.4.2,,,nao
 Panniantong/Agent-Reach,https://github.com/Panniantong/Agent-Reach,292911301,v1.3.0,https://github.com/Panniantong/Agent-Reach/releases/tag/v1.3.0,,,sim
@@ -74,7 +74,7 @@ tailwindlabs/tailwindcss,https://github.com/tailwindlabs/tailwindcss,251481811,v
 tailwindlabs/tailwindcss,https://github.com/tailwindlabs/tailwindcss,269243201,v3.4.19,https://github.com/tailwindlabs/tailwindcss/releases/tag/v3.4.19,,,sim
 tailwindlabs/tailwindcss,https://github.com/tailwindlabs/tailwindcss,346312201,v4.3.2,https://github.com/tailwindlabs/tailwindcss/releases/tag/v4.3.2,,,sim
 tailwindlabs/tailwindcss,https://github.com/tailwindlabs/tailwindcss,338723975,v4.3.1,https://github.com/tailwindlabs/tailwindcss/releases/tag/v4.3.1,,,sim
-Egonex-AI/Understand-Anything,https://github.com/Egonex-AI/Understand-Anything,302660159,v1.3.0,https://github.com/Egonex-AI/Understand-Anything/releases/tag/v1.3.0,outro,sim,nao
+Egonex-AI/Understand-Anything,https://github.com/Egonex-AI/Understand-Anything,302660159,v1.3.0,https://github.com/Egonex-AI/Understand-Anything/releases/tag/v1.3.0,outro,incerto,nao
 Egonex-AI/Understand-Anything,https://github.com/Egonex-AI/Understand-Anything,316972427,v2.5.0,https://github.com/Egonex-AI/Understand-Anything/releases/tag/v2.5.0,,,nao
 Egonex-AI/Understand-Anything,https://github.com/Egonex-AI/Understand-Anything,300977420,v1.2.0,https://github.com/Egonex-AI/Understand-Anything/releases/tag/v1.2.0,,,nao
 Egonex-AI/Understand-Anything,https://github.com/Egonex-AI/Understand-Anything,352006549,v2.9.0,https://github.com/Egonex-AI/Understand-Anything/releases/tag/v2.9.0,,,nao
@@ -99,7 +99,7 @@ ggml-org/llama.cpp,https://github.com/ggml-org/llama.cpp,266552292,b7220,https:/
 ggml-org/llama.cpp,https://github.com/ggml-org/llama.cpp,321806438,b9129,https://github.com/ggml-org/llama.cpp/releases/tag/b9129,,,nao
 ggml-org/llama.cpp,https://github.com/ggml-org/llama.cpp,262740496,b7078,https://github.com/ggml-org/llama.cpp/releases/tag/b7078,,,sim
 ggml-org/llama.cpp,https://github.com/ggml-org/llama.cpp,388619384,v0.4.1,https://github.com/ggml-org/llama.cpp/releases/tag/v0.4.1,,,nao
-microsoft/vscode,https://github.com/microsoft/vscode,396494632,1.139.1,https://github.com/microsoft/vscode/releases/tag/1.139.1,aplicacao/servico,sim,sim
+microsoft/vscode,https://github.com/microsoft/vscode,396494632,1.139.1,https://github.com/microsoft/vscode/releases/tag/1.139.1,aplicacao/servico,incerto,sim
 microsoft/vscode,https://github.com/microsoft/vscode,384947215,1.136.2,https://github.com/microsoft/vscode/releases/tag/1.136.2,,,sim
 microsoft/vscode,https://github.com/microsoft/vscode,251802178,1.104.3,https://github.com/microsoft/vscode/releases/tag/1.104.3,,,sim
 microsoft/vscode,https://github.com/microsoft/vscode,347353206,1.127.0,https://github.com/microsoft/vscode/releases/tag/1.127.0,,,nao
@@ -149,7 +149,7 @@ oven-sh/bun,https://github.com/oven-sh/bun,256252704,bun-v1.3.1,https://github.c
 oven-sh/bun,https://github.com/oven-sh/bun,281034963,bun-v1.3.8,https://github.com/oven-sh/bun/releases/tag/bun-v1.3.8,,,nao
 oven-sh/bun,https://github.com/oven-sh/bun,270982090,bun-v1.3.5,https://github.com/oven-sh/bun/releases/tag/bun-v1.3.5,,,nao
 oven-sh/bun,https://github.com/oven-sh/bun,264245480,bun-v1.3.3,https://github.com/oven-sh/bun/releases/tag/bun-v1.3.3,,,sim
-Significant-Gravitas/AutoGPT,https://github.com/Significant-Gravitas/AutoGPT,315329190,autogpt-platform-beta-v0.6.58,https://github.com/Significant-Gravitas/AutoGPT/releases/tag/autogpt-platform-beta-v0.6.58,aplicacao/servico,sim,nao
+Significant-Gravitas/AutoGPT,https://github.com/Significant-Gravitas/AutoGPT,315329190,autogpt-platform-beta-v0.6.58,https://github.com/Significant-Gravitas/AutoGPT/releases/tag/autogpt-platform-beta-v0.6.58,aplicacao/servico,incerto,nao
 Significant-Gravitas/AutoGPT,https://github.com/Significant-Gravitas/AutoGPT,365570567,autogpt-platform-beta-v0.7.0,https://github.com/Significant-Gravitas/AutoGPT/releases/tag/autogpt-platform-beta-v0.7.0,,,nao
 Significant-Gravitas/AutoGPT,https://github.com/Significant-Gravitas/AutoGPT,312311199,autogpt-platform-beta-v0.6.57,https://github.com/Significant-Gravitas/AutoGPT/releases/tag/autogpt-platform-beta-v0.6.57,,,nao
 Significant-Gravitas/AutoGPT,https://github.com/Significant-Gravitas/AutoGPT,378304621,autogpt-platform-beta-v0.7.3,https://github.com/Significant-Gravitas/AutoGPT/releases/tag/autogpt-platform-beta-v0.7.3,,,nao
@@ -179,7 +179,7 @@ Graphify-Labs/graphify,https://github.com/Graphify-Labs/graphify,320018849,v0.7.
 Graphify-Labs/graphify,https://github.com/Graphify-Labs/graphify,398065883,v0.9.71,https://github.com/Graphify-Labs/graphify/releases/tag/v0.9.71,,,sim
 Graphify-Labs/graphify,https://github.com/Graphify-Labs/graphify,399427184,v0.9.72,https://github.com/Graphify-Labs/graphify/releases/tag/v0.9.72,,,sim
 Graphify-Labs/graphify,https://github.com/Graphify-Labs/graphify,306727475,v0.3.13,https://github.com/Graphify-Labs/graphify/releases/tag/v0.3.13,,,sim
-nvm-sh/nvm,https://github.com/nvm-sh/nvm,334482963,v0.40.5,https://github.com/nvm-sh/nvm/releases/tag/v0.40.5,ferramenta cli,sim,sim
+nvm-sh/nvm,https://github.com/nvm-sh/nvm,334482963,v0.40.5,https://github.com/nvm-sh/nvm/releases/tag/v0.40.5,ferramenta cli,incerto,sim
 nvm-sh/nvm,https://github.com/nvm-sh/nvm,392658142,v0.40.8,https://github.com/nvm-sh/nvm/releases/tag/v0.40.8,,,sim
 nvm-sh/nvm,https://github.com/nvm-sh/nvm,354713311,v0.40.6,https://github.com/nvm-sh/nvm/releases/tag/v0.40.6,,,sim
 nvm-sh/nvm,https://github.com/nvm-sh/nvm,281303781,v0.40.4,https://github.com/nvm-sh/nvm/releases/tag/v0.40.4,,,sim
@@ -199,7 +199,7 @@ ant-design/ant-design,https://github.com/ant-design/ant-design,303062291,6.3.5,h
 ant-design/ant-design,https://github.com/ant-design/ant-design,310229676,6.3.6,https://github.com/ant-design/ant-design/releases/tag/6.3.6,,,sim
 ant-design/ant-design,https://github.com/ant-design/ant-design,362920593,6.5.3,https://github.com/ant-design/ant-design/releases/tag/6.5.3,,,sim
 ant-design/ant-design,https://github.com/ant-design/ant-design,353151418,6.5.1,https://github.com/ant-design/ant-design/releases/tag/6.5.1,,,sim
-mattpocock/skills,https://github.com/mattpocock/skills,340850294,mattpocock-skills@1.0.0,https://github.com/mattpocock/skills/releases/tag/mattpocock-skills%401.0.0,outro,incerto,nao
+mattpocock/skills,https://github.com/mattpocock/skills,340850294,mattpocock-skills@1.0.0,https://github.com/mattpocock/skills/releases/tag/mattpocock-skills%401.0.0,outro,nao,nao
 mattpocock/skills,https://github.com/mattpocock/skills,340850933,v1.0.0,https://github.com/mattpocock/skills/releases/tag/v1.0.0,,,nao
 mattpocock/skills,https://github.com/mattpocock/skills,365723949,v1.2.2,https://github.com/mattpocock/skills/releases/tag/v1.2.2,,,sim
 mattpocock/skills,https://github.com/mattpocock/skills,341069977,v1.0.1,https://github.com/mattpocock/skills/releases/tag/v1.0.1,,,nao
@@ -244,17 +244,17 @@ netdata/netdata,https://github.com/netdata/netdata,257850012,v2.7.3,https://gith
 netdata/netdata,https://github.com/netdata/netdata,270416324,v2.8.3,https://github.com/netdata/netdata/releases/tag/v2.8.3,,,sim
 netdata/netdata,https://github.com/netdata/netdata,390020534,v2.11.1,https://github.com/netdata/netdata/releases/tag/v2.11.1,,,sim
 netdata/netdata,https://github.com/netdata/netdata,308857421,v2.10.2,https://github.com/netdata/netdata/releases/tag/v2.10.2,,,sim
-addyosmani/agent-skills,https://github.com/addyosmani/agent-skills,391196722,0.6.10,https://github.com/addyosmani/agent-skills/releases/tag/0.6.10,outro,incerto,sim
+addyosmani/agent-skills,https://github.com/addyosmani/agent-skills,391196722,0.6.10,https://github.com/addyosmani/agent-skills/releases/tag/0.6.10,outro,nao,sim
 addyosmani/agent-skills,https://github.com/addyosmani/agent-skills,378812923,0.6.8,https://github.com/addyosmani/agent-skills/releases/tag/0.6.8,,,nao
 addyosmani/agent-skills,https://github.com/addyosmani/agent-skills,307363199,0.5.0,https://github.com/addyosmani/agent-skills/releases/tag/0.5.0,,,nao
 addyosmani/agent-skills,https://github.com/addyosmani/agent-skills,370764001,0.6.7,https://github.com/addyosmani/agent-skills/releases/tag/0.6.7,,,sim
 addyosmani/agent-skills,https://github.com/addyosmani/agent-skills,352811383,0.6.4,https://github.com/addyosmani/agent-skills/releases/tag/0.6.4,,,nao
-earendil-works/pi,https://github.com/earendil-works/pi,302836732,v0.63.2,https://github.com/earendil-works/pi/releases/tag/v0.63.2,ferramenta cli,sim,nao
+earendil-works/pi,https://github.com/earendil-works/pi,302836732,v0.63.2,https://github.com/earendil-works/pi/releases/tag/v0.63.2,ferramenta cli,incerto,nao
 earendil-works/pi,https://github.com/earendil-works/pi,277560001,v0.48.0,https://github.com/earendil-works/pi/releases/tag/v0.48.0,,,nao
 earendil-works/pi,https://github.com/earendil-works/pi,282789898,v0.51.5,https://github.com/earendil-works/pi/releases/tag/v0.51.5,,,sim
 earendil-works/pi,https://github.com/earendil-works/pi,323992388,v0.75.1,https://github.com/earendil-works/pi/releases/tag/v0.75.1,,,sim
 earendil-works/pi,https://github.com/earendil-works/pi,271494126,v0.23.4,https://github.com/earendil-works/pi/releases/tag/v0.23.4,,,nao
-DietrichGebert/ponytail,https://github.com/DietrichGebert/ponytail,338344709,v1.0.0,https://github.com/DietrichGebert/ponytail/releases/tag/v1.0.0,outro,incerto,nao
+DietrichGebert/ponytail,https://github.com/DietrichGebert/ponytail,338344709,v1.0.0,https://github.com/DietrichGebert/ponytail/releases/tag/v1.0.0,outro,nao,nao
 DietrichGebert/ponytail,https://github.com/DietrichGebert/ponytail,338520472,v4.0.0,https://github.com/DietrichGebert/ponytail/releases/tag/v4.0.0,,,nao
 DietrichGebert/ponytail,https://github.com/DietrichGebert/ponytail,339285539,v4.4.0,https://github.com/DietrichGebert/ponytail/releases/tag/v4.4.0,,,nao
 DietrichGebert/ponytail,https://github.com/DietrichGebert/ponytail,367010814,v4.9.0,https://github.com/DietrichGebert/ponytail/releases/tag/v4.9.0,,,sim

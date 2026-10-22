@@ -19,11 +19,11 @@ langflow-ai/langflow,https://github.com/langflow-ai/langflow,293693163,v1.8.0,ht
 langflow-ai/langflow,https://github.com/langflow-ai/langflow,265076176,1.6.9,https://github.com/langflow-ai/langflow/releases/tag/1.6.9,aplicacao/servico,sim,nao
 langflow-ai/langflow,https://github.com/langflow-ai/langflow,336805136,v1.10.0,https://github.com/langflow-ai/langflow/releases/tag/v1.10.0,aplicacao/servico,sim,nao
 langflow-ai/langflow,https://github.com/langflow-ai/langflow,255869532,1.6.5,https://github.com/langflow-ai/langflow/releases/tag/1.6.5,aplicacao/servico,sim,nao
-langchain-ai/langchain,https://github.com/langchain-ai/langchain,331117861,langchain-anthropic==1.4.4,https://github.com/langchain-ai/langchain/releases/tag/langchain-anthropic%3D%3D1.4.4,biblioteca/framework,incerto,sim
-langchain-ai/langchain,https://github.com/langchain-ai/langchain,255336918,langchain-text-splitters==1.0.0,https://github.com/langchain-ai/langchain/releases/tag/langchain-text-splitters%3D%3D1.0.0,biblioteca/framework,incerto,sim
-langchain-ai/langchain,https://github.com/langchain-ai/langchain,286506489,langchain-anthropic==1.3.2,https://github.com/langchain-ai/langchain/releases/tag/langchain-anthropic%3D%3D1.3.2,biblioteca/framework,incerto,nao
-langchain-ai/langchain,https://github.com/langchain-ai/langchain,255186564,langchain==1.0.0rc2,https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.0.0rc2,biblioteca/framework,incerto,nao
-langchain-ai/langchain,https://github.com/langchain-ai/langchain,373920197,langchain-fireworks==1.6.0,https://github.com/langchain-ai/langchain/releases/tag/langchain-fireworks%3D%3D1.6.0,biblioteca/framework,incerto,nao
+langchain-ai/langchain,https://github.com/langchain-ai/langchain,331117861,langchain-anthropic==1.4.4,https://github.com/langchain-ai/langchain/releases/tag/langchain-anthropic%3D%3D1.4.4,biblioteca/framework,sim,sim
+langchain-ai/langchain,https://github.com/langchain-ai/langchain,255336918,langchain-text-splitters==1.0.0,https://github.com/langchain-ai/langchain/releases/tag/langchain-text-splitters%3D%3D1.0.0,biblioteca/framework,sim,sim
+langchain-ai/langchain,https://github.com/langchain-ai/langchain,286506489,langchain-anthropic==1.3.2,https://github.com/langchain-ai/langchain/releases/tag/langchain-anthropic%3D%3D1.3.2,biblioteca/framework,sim,nao
+langchain-ai/langchain,https://github.com/langchain-ai/langchain,255186564,langchain==1.0.0rc2,https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.0.0rc2,biblioteca/framework,sim,nao
+langchain-ai/langchain,https://github.com/langchain-ai/langchain,373920197,langchain-fireworks==1.6.0,https://github.com/langchain-ai/langchain/releases/tag/langchain-fireworks%3D%3D1.6.0,biblioteca/framework,sim,nao
 immich-app/immich,https://github.com/immich-app/immich,284960654,v2.5.6,https://github.com/immich-app/immich/releases/tag/v2.5.6,aplicacao/servico,sim,sim
 immich-app/immich,https://github.com/immich-app/immich,301981849,v2.6.3,https://github.com/immich-app/immich/releases/tag/v2.6.3,aplicacao/servico,sim,sim
 immich-app/immich,https://github.com/immich-app/immich,351693817,v3.0.2,https://github.com/immich-app/immich/releases/tag/v3.0.2,aplicacao/servico,sim,sim
@@ -169,11 +169,11 @@ fastapi/fastapi,https://github.com/fastapi/fastapi,267334458,0.123.6,https://git
 fastapi/fastapi,https://github.com/fastapi/fastapi,291769581,0.135.0,https://github.com/fastapi/fastapi/releases/tag/0.135.0,biblioteca/framework,sim,nao
 fastapi/fastapi,https://github.com/fastapi/fastapi,355170111,0.139.2,https://github.com/fastapi/fastapi/releases/tag/0.139.2,biblioteca/framework,sim,sim
 fastapi/fastapi,https://github.com/fastapi/fastapi,252960115,0.118.1,https://github.com/fastapi/fastapi/releases/tag/0.118.1,biblioteca/framework,sim,nao
-tt-a1i/archify,https://github.com/tt-a1i/archify,309168024,v2.0.0,https://github.com/tt-a1i/archify/releases/tag/v2.0.0,outro,incerto,nao
-tt-a1i/archify,https://github.com/tt-a1i/archify,309178928,v2.3.1,https://github.com/tt-a1i/archify/releases/tag/v2.3.1,outro,incerto,nao
-tt-a1i/archify,https://github.com/tt-a1i/archify,354940334,v2.11.0,https://github.com/tt-a1i/archify/releases/tag/v2.11.0,outro,incerto,sim
-tt-a1i/archify,https://github.com/tt-a1i/archify,309169832,v2.1.0,https://github.com/tt-a1i/archify/releases/tag/v2.1.0,outro,incerto,nao
-tt-a1i/archify,https://github.com/tt-a1i/archify,348629786,v2.8.0,https://github.com/tt-a1i/archify/releases/tag/v2.8.0,outro,incerto,nao
+tt-a1i/archify,https://github.com/tt-a1i/archify,309168024,v2.0.0,https://github.com/tt-a1i/archify/releases/tag/v2.0.0,outro,sim,nao
+tt-a1i/archify,https://github.com/tt-a1i/archify,309178928,v2.3.1,https://github.com/tt-a1i/archify/releases/tag/v2.3.1,outro,sim,nao
+tt-a1i/archify,https://github.com/tt-a1i/archify,354940334,v2.11.0,https://github.com/tt-a1i/archify/releases/tag/v2.11.0,outro,sim,sim
+tt-a1i/archify,https://github.com/tt-a1i/archify,309169832,v2.1.0,https://github.com/tt-a1i/archify/releases/tag/v2.1.0,outro,sim,nao
+tt-a1i/archify,https://github.com/tt-a1i/archify,348629786,v2.8.0,https://github.com/tt-a1i/archify/releases/tag/v2.8.0,outro,sim,nao
 Graphify-Labs/graphify,https://github.com/Graphify-Labs/graphify,350407488,v0.9.9,https://github.com/Graphify-Labs/graphify/releases/tag/v0.9.9,ferramenta cli,sim,sim
 Graphify-Labs/graphify,https://github.com/Graphify-Labs/graphify,320018849,v0.7.13,https://github.com/Graphify-Labs/graphify/releases/tag/v0.7.13,ferramenta cli,sim,nao
 Graphify-Labs/graphify,https://github.com/Graphify-Labs/graphify,398065883,v0.9.71,https://github.com/Graphify-Labs/graphify/releases/tag/v0.9.71,ferramenta cli,sim,nao
@@ -189,21 +189,21 @@ nodejs/node,https://github.com/nodejs/node,257943424,v25.1.0,https://github.com/
 nodejs/node,https://github.com/nodejs/node,322058698,v22.22.3,https://github.com/nodejs/node/releases/tag/v22.22.3,outro,sim,nao
 nodejs/node,https://github.com/nodejs/node,276372644,v24.13.0,https://github.com/nodejs/node/releases/tag/v24.13.0,outro,sim,sim
 nodejs/node,https://github.com/nodejs/node,361798619,v22.23.2,https://github.com/nodejs/node/releases/tag/v22.23.2,outro,sim,sim
-google-gemini/gemini-cli,https://github.com/google-gemini/gemini-cli,264200425,v0.19.0-nightly.20251121.5982abeff,https://github.com/google-gemini/gemini-cli/releases/tag/v0.19.0-nightly.20251121.5982abeff,ferramenta cli,incerto,nao
-google-gemini/gemini-cli,https://github.com/google-gemini/gemini-cli,389459337,v0.60.0,https://github.com/google-gemini/gemini-cli/releases/tag/v0.60.0,ferramenta cli,incerto,sim
-google-gemini/gemini-cli,https://github.com/google-gemini/gemini-cli,274690353,v0.23.0,https://github.com/google-gemini/gemini-cli/releases/tag/v0.23.0,ferramenta cli,incerto,nao
-google-gemini/gemini-cli,https://github.com/google-gemini/gemini-cli,304395807,v0.36.0,https://github.com/google-gemini/gemini-cli/releases/tag/v0.36.0,ferramenta cli,incerto,nao
-google-gemini/gemini-cli,https://github.com/google-gemini/gemini-cli,253444183,v0.9.0-preview.1,https://github.com/google-gemini/gemini-cli/releases/tag/v0.9.0-preview.1,ferramenta cli,incerto,sim
+google-gemini/gemini-cli,https://github.com/google-gemini/gemini-cli,264200425,v0.19.0-nightly.20251121.5982abeff,https://github.com/google-gemini/gemini-cli/releases/tag/v0.19.0-nightly.20251121.5982abeff,ferramenta cli,sim,nao
+google-gemini/gemini-cli,https://github.com/google-gemini/gemini-cli,389459337,v0.60.0,https://github.com/google-gemini/gemini-cli/releases/tag/v0.60.0,ferramenta cli,sim,sim
+google-gemini/gemini-cli,https://github.com/google-gemini/gemini-cli,274690353,v0.23.0,https://github.com/google-gemini/gemini-cli/releases/tag/v0.23.0,ferramenta cli,sim,nao
+google-gemini/gemini-cli,https://github.com/google-gemini/gemini-cli,304395807,v0.36.0,https://github.com/google-gemini/gemini-cli/releases/tag/v0.36.0,ferramenta cli,sim,nao
+google-gemini/gemini-cli,https://github.com/google-gemini/gemini-cli,253444183,v0.9.0-preview.1,https://github.com/google-gemini/gemini-cli/releases/tag/v0.9.0-preview.1,ferramenta cli,sim,sim
 ant-design/ant-design,https://github.com/ant-design/ant-design,366548544,6.5.4,https://github.com/ant-design/ant-design/releases/tag/6.5.4,biblioteca/framework,sim,sim
 ant-design/ant-design,https://github.com/ant-design/ant-design,303062291,6.3.5,https://github.com/ant-design/ant-design/releases/tag/6.3.5,biblioteca/framework,sim,sim
 ant-design/ant-design,https://github.com/ant-design/ant-design,310229676,6.3.6,https://github.com/ant-design/ant-design/releases/tag/6.3.6,biblioteca/framework,sim,sim
 ant-design/ant-design,https://github.com/ant-design/ant-design,362920593,6.5.3,https://github.com/ant-design/ant-design/releases/tag/6.5.3,biblioteca/framework,sim,sim
 ant-design/ant-design,https://github.com/ant-design/ant-design,353151418,6.5.1,https://github.com/ant-design/ant-design/releases/tag/6.5.1,biblioteca/framework,sim,sim
-mattpocock/skills,https://github.com/mattpocock/skills,340850294,mattpocock-skills@1.0.0,https://github.com/mattpocock/skills/releases/tag/mattpocock-skills%401.0.0,outro,incerto,nao
-mattpocock/skills,https://github.com/mattpocock/skills,340850933,v1.0.0,https://github.com/mattpocock/skills/releases/tag/v1.0.0,outro,incerto,nao
-mattpocock/skills,https://github.com/mattpocock/skills,365723949,v1.2.2,https://github.com/mattpocock/skills/releases/tag/v1.2.2,outro,incerto,sim
-mattpocock/skills,https://github.com/mattpocock/skills,341069977,v1.0.1,https://github.com/mattpocock/skills/releases/tag/v1.0.1,outro,incerto,nao
-mattpocock/skills,https://github.com/mattpocock/skills,365515660,v1.2.0,https://github.com/mattpocock/skills/releases/tag/v1.2.0,outro,incerto,nao
+mattpocock/skills,https://github.com/mattpocock/skills,340850294,mattpocock-skills@1.0.0,https://github.com/mattpocock/skills/releases/tag/mattpocock-skills%401.0.0,outro,nao,nao
+mattpocock/skills,https://github.com/mattpocock/skills,340850933,v1.0.0,https://github.com/mattpocock/skills/releases/tag/v1.0.0,outro,nao,nao
+mattpocock/skills,https://github.com/mattpocock/skills,365723949,v1.2.2,https://github.com/mattpocock/skills/releases/tag/v1.2.2,outro,nao,sim
+mattpocock/skills,https://github.com/mattpocock/skills,341069977,v1.0.1,https://github.com/mattpocock/skills/releases/tag/v1.0.1,outro,nao,nao
+mattpocock/skills,https://github.com/mattpocock/skills,365515660,v1.2.0,https://github.com/mattpocock/skills/releases/tag/v1.2.0,outro,nao,nao
 gohugoio/hugo,https://github.com/gohugoio/hugo,300349711,v0.159.0,https://github.com/gohugoio/hugo/releases/tag/v0.159.0,ferramenta cli,sim,nao
 gohugoio/hugo,https://github.com/gohugoio/hugo,273720770,v0.154.1,https://github.com/gohugoio/hugo/releases/tag/v0.154.1,ferramenta cli,sim,sim
 gohugoio/hugo,https://github.com/gohugoio/hugo,272269258,v0.153.2,https://github.com/gohugoio/hugo/releases/tag/v0.153.2,ferramenta cli,sim,sim
@@ -254,11 +254,11 @@ earendil-works/pi,https://github.com/earendil-works/pi,277560001,v0.48.0,https:/
 earendil-works/pi,https://github.com/earendil-works/pi,282789898,v0.51.5,https://github.com/earendil-works/pi/releases/tag/v0.51.5,biblioteca/framework,sim,sim
 earendil-works/pi,https://github.com/earendil-works/pi,323992388,v0.75.1,https://github.com/earendil-works/pi/releases/tag/v0.75.1,biblioteca/framework,sim,sim
 earendil-works/pi,https://github.com/earendil-works/pi,271494126,v0.23.4,https://github.com/earendil-works/pi/releases/tag/v0.23.4,biblioteca/framework,sim,nao
-DietrichGebert/ponytail,https://github.com/DietrichGebert/ponytail,338344709,v1.0.0,https://github.com/DietrichGebert/ponytail/releases/tag/v1.0.0,outro,incerto,nao
-DietrichGebert/ponytail,https://github.com/DietrichGebert/ponytail,338520472,v4.0.0,https://github.com/DietrichGebert/ponytail/releases/tag/v4.0.0,outro,incerto,nao
-DietrichGebert/ponytail,https://github.com/DietrichGebert/ponytail,339285539,v4.4.0,https://github.com/DietrichGebert/ponytail/releases/tag/v4.4.0,outro,incerto,nao
-DietrichGebert/ponytail,https://github.com/DietrichGebert/ponytail,367010814,v4.9.0,https://github.com/DietrichGebert/ponytail/releases/tag/v4.9.0,outro,incerto,nao
-DietrichGebert/ponytail,https://github.com/DietrichGebert/ponytail,346077740,v4.8.4,https://github.com/DietrichGebert/ponytail/releases/tag/v4.8.4,outro,incerto,nao
+DietrichGebert/ponytail,https://github.com/DietrichGebert/ponytail,338344709,v1.0.0,https://github.com/DietrichGebert/ponytail/releases/tag/v1.0.0,outro,nao,nao
+DietrichGebert/ponytail,https://github.com/DietrichGebert/ponytail,338520472,v4.0.0,https://github.com/DietrichGebert/ponytail/releases/tag/v4.0.0,outro,nao,nao
+DietrichGebert/ponytail,https://github.com/DietrichGebert/ponytail,339285539,v4.4.0,https://github.com/DietrichGebert/ponytail/releases/tag/v4.4.0,outro,nao,nao
+DietrichGebert/ponytail,https://github.com/DietrichGebert/ponytail,367010814,v4.9.0,https://github.com/DietrichGebert/ponytail/releases/tag/v4.9.0,outro,nao,nao
+DietrichGebert/ponytail,https://github.com/DietrichGebert/ponytail,346077740,v4.8.4,https://github.com/DietrichGebert/ponytail/releases/tag/v4.8.4,outro,nao,nao
 astral-sh/uv,https://github.com/astral-sh/uv,370794065,0.12.5,https://github.com/astral-sh/uv/releases/tag/0.12.5,ferramenta cli,sim,nao
 astral-sh/uv,https://github.com/astral-sh/uv,318048243,0.11.10,https://github.com/astral-sh/uv/releases/tag/0.11.10,ferramenta cli,sim,sim
 astral-sh/uv,https://github.com/astral-sh/uv,338153758,0.11.21,https://github.com/astral-sh/uv/releases/tag/0.11.21,ferramenta cli,sim,nao
@@ -279,11 +279,11 @@ redis/redis,https://github.com/redis/redis,371817212,7.4.11,https://github.com/r
 redis/redis,https://github.com/redis/redis,390812671,8.2.10,https://github.com/redis/redis/releases/tag/8.2.10,aplicacao/servico,sim,sim
 redis/redis,https://github.com/redis/redis,284122572,8.4.1,https://github.com/redis/redis/releases/tag/8.4.1,aplicacao/servico,sim,sim
 redis/redis,https://github.com/redis/redis,371819484,8.4.6,https://github.com/redis/redis/releases/tag/8.4.6,aplicacao/servico,sim,sim
-JuliusBrussee/caveman,https://github.com/JuliusBrussee/caveman,375160888,v2.3.0,https://github.com/JuliusBrussee/caveman/releases/tag/v2.3.0,outro,incerto,nao
-JuliusBrussee/caveman,https://github.com/JuliusBrussee/caveman,321393500,v1.8.2,https://github.com/JuliusBrussee/caveman/releases/tag/v1.8.2,outro,incerto,sim
-JuliusBrussee/caveman,https://github.com/JuliusBrussee/caveman,307922262,v1.5.1,https://github.com/JuliusBrussee/caveman/releases/tag/v1.5.1,outro,incerto,sim
-JuliusBrussee/caveman,https://github.com/JuliusBrussee/caveman,375162111,v2.3.1,https://github.com/JuliusBrussee/caveman/releases/tag/v2.3.1,outro,incerto,sim
-JuliusBrussee/caveman,https://github.com/JuliusBrussee/caveman,307235829,v1.3.5,https://github.com/JuliusBrussee/caveman/releases/tag/v1.3.5,outro,incerto,nao
+JuliusBrussee/caveman,https://github.com/JuliusBrussee/caveman,375160888,v2.3.0,https://github.com/JuliusBrussee/caveman/releases/tag/v2.3.0,outro,sim,nao
+JuliusBrussee/caveman,https://github.com/JuliusBrussee/caveman,321393500,v1.8.2,https://github.com/JuliusBrussee/caveman/releases/tag/v1.8.2,outro,sim,sim
+JuliusBrussee/caveman,https://github.com/JuliusBrussee/caveman,307922262,v1.5.1,https://github.com/JuliusBrussee/caveman/releases/tag/v1.5.1,outro,sim,sim
+JuliusBrussee/caveman,https://github.com/JuliusBrussee/caveman,375162111,v2.3.1,https://github.com/JuliusBrussee/caveman/releases/tag/v2.3.1,outro,sim,sim
+JuliusBrussee/caveman,https://github.com/JuliusBrussee/caveman,307235829,v1.3.5,https://github.com/JuliusBrussee/caveman/releases/tag/v1.3.5,outro,sim,nao
 nexu-io/open-design,https://github.com/nexu-io/open-design,385495816,open-design-v0.22.1,https://github.com/nexu-io/open-design/releases/tag/open-design-v0.22.1,aplicacao/servico,sim,sim
 nexu-io/open-design,https://github.com/nexu-io/open-design,393947317,open-design-v0.24.0,https://github.com/nexu-io/open-design/releases/tag/open-design-v0.24.0,aplicacao/servico,sim,nao
 nexu-io/open-design,https://github.com/nexu-io/open-design,318321911,open-design-v0.4.1,https://github.com/nexu-io/open-design/releases/tag/open-design-v0.4.1,aplicacao/servico,sim,sim

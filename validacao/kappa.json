@@ -8,12 +8,12 @@
     "concordancia_esperada": 0.2926543209876543
   },
   "entrega_real": {
-    "kappa": -0.008676789587852441,
-    "interpretacao": "pobre",
+    "kappa": 0.37154495199301735,
+    "interpretacao": "razoavel",
     "itens": 60,
     "avaliadores": 3,
-    "concordancia_observada": 0.6555555555555556,
-    "concordancia_esperada": 0.6585185185185185
+    "concordancia_observada": 0.8666666666666667,
+    "concordancia_esperada": 0.7878395061728395
   },
   "corretiva": {
     "kappa": 0.6476805637110981,

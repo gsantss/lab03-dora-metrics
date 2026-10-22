@@ -39,11 +39,11 @@ rust-lang/rust,https://github.com/rust-lang/rust,355073850,1.97.1,https://github
 rust-lang/rust,https://github.com/rust-lang/rust,258584176,1.91.0,https://github.com/rust-lang/rust/releases/tag/1.91.0,outro,sim,nao
 rust-lang/rust,https://github.com/rust-lang/rust,373931400,1.98.0,https://github.com/rust-lang/rust/releases/tag/1.98.0,outro,sim,nao
 rust-lang/rust,https://github.com/rust-lang/rust,293629082,1.94.0,https://github.com/rust-lang/rust/releases/tag/1.94.0,outro,sim,nao
-Panniantong/Agent-Reach,https://github.com/Panniantong/Agent-Reach,290354431,v1.1.0,https://github.com/Panniantong/Agent-Reach/releases/tag/v1.1.0,ferramenta cli,sim,nao
-Panniantong/Agent-Reach,https://github.com/Panniantong/Agent-Reach,290879013,v1.2.0,https://github.com/Panniantong/Agent-Reach/releases/tag/v1.2.0,ferramenta cli,sim,nao
-Panniantong/Agent-Reach,https://github.com/Panniantong/Agent-Reach,337079415,v1.4.2,https://github.com/Panniantong/Agent-Reach/releases/tag/v1.4.2,ferramenta cli,sim,nao
-Panniantong/Agent-Reach,https://github.com/Panniantong/Agent-Reach,292911301,v1.3.0,https://github.com/Panniantong/Agent-Reach/releases/tag/v1.3.0,ferramenta cli,sim,nao
-Panniantong/Agent-Reach,https://github.com/Panniantong/Agent-Reach,336995046,v1.4.1,https://github.com/Panniantong/Agent-Reach/releases/tag/v1.4.1,ferramenta cli,sim,sim
+Panniantong/Agent-Reach,https://github.com/Panniantong/Agent-Reach,290354431,v1.1.0,https://github.com/Panniantong/Agent-Reach/releases/tag/v1.1.0,ferramenta cli,incerto,nao
+Panniantong/Agent-Reach,https://github.com/Panniantong/Agent-Reach,290879013,v1.2.0,https://github.com/Panniantong/Agent-Reach/releases/tag/v1.2.0,ferramenta cli,incerto,nao
+Panniantong/Agent-Reach,https://github.com/Panniantong/Agent-Reach,337079415,v1.4.2,https://github.com/Panniantong/Agent-Reach/releases/tag/v1.4.2,ferramenta cli,incerto,nao
+Panniantong/Agent-Reach,https://github.com/Panniantong/Agent-Reach,292911301,v1.3.0,https://github.com/Panniantong/Agent-Reach/releases/tag/v1.3.0,ferramenta cli,incerto,nao
+Panniantong/Agent-Reach,https://github.com/Panniantong/Agent-Reach,336995046,v1.4.1,https://github.com/Panniantong/Agent-Reach/releases/tag/v1.4.1,ferramenta cli,incerto,sim
 2dust/v2rayN,https://github.com/2dust/v2rayN,378854248,7.24.9,https://github.com/2dust/v2rayN/releases/tag/7.24.9,aplicacao/servico,sim,sim
 2dust/v2rayN,https://github.com/2dust/v2rayN,320099507,7.21.3,https://github.com/2dust/v2rayN/releases/tag/7.21.3,aplicacao/servico,sim,nao
 2dust/v2rayN,https://github.com/2dust/v2rayN,299336934,7.19.5,https://github.com/2dust/v2rayN/releases/tag/7.19.5,aplicacao/servico,sim,nao
@@ -74,11 +74,11 @@ tailwindlabs/tailwindcss,https://github.com/tailwindlabs/tailwindcss,251481811,v
 tailwindlabs/tailwindcss,https://github.com/tailwindlabs/tailwindcss,269243201,v3.4.19,https://github.com/tailwindlabs/tailwindcss/releases/tag/v3.4.19,biblioteca/framework,sim,sim
 tailwindlabs/tailwindcss,https://github.com/tailwindlabs/tailwindcss,346312201,v4.3.2,https://github.com/tailwindlabs/tailwindcss/releases/tag/v4.3.2,biblioteca/framework,sim,sim
 tailwindlabs/tailwindcss,https://github.com/tailwindlabs/tailwindcss,338723975,v4.3.1,https://github.com/tailwindlabs/tailwindcss/releases/tag/v4.3.1,biblioteca/framework,sim,sim
-Egonex-AI/Understand-Anything,https://github.com/Egonex-AI/Understand-Anything,302660159,v1.3.0,https://github.com/Egonex-AI/Understand-Anything/releases/tag/v1.3.0,aplicacao/servico,sim,nao
-Egonex-AI/Understand-Anything,https://github.com/Egonex-AI/Understand-Anything,316972427,v2.5.0,https://github.com/Egonex-AI/Understand-Anything/releases/tag/v2.5.0,aplicacao/servico,sim,nao
-Egonex-AI/Understand-Anything,https://github.com/Egonex-AI/Understand-Anything,300977420,v1.2.0,https://github.com/Egonex-AI/Understand-Anything/releases/tag/v1.2.0,aplicacao/servico,sim,nao
-Egonex-AI/Understand-Anything,https://github.com/Egonex-AI/Understand-Anything,352006549,v2.9.0,https://github.com/Egonex-AI/Understand-Anything/releases/tag/v2.9.0,aplicacao/servico,sim,nao
-Egonex-AI/Understand-Anything,https://github.com/Egonex-AI/Understand-Anything,302704241,v2.0.0,https://github.com/Egonex-AI/Understand-Anything/releases/tag/v2.0.0,aplicacao/servico,sim,nao
+Egonex-AI/Understand-Anything,https://github.com/Egonex-AI/Understand-Anything,302660159,v1.3.0,https://github.com/Egonex-AI/Understand-Anything/releases/tag/v1.3.0,aplicacao/servico,incerto,nao
+Egonex-AI/Understand-Anything,https://github.com/Egonex-AI/Understand-Anything,316972427,v2.5.0,https://github.com/Egonex-AI/Understand-Anything/releases/tag/v2.5.0,aplicacao/servico,incerto,nao
+Egonex-AI/Understand-Anything,https://github.com/Egonex-AI/Understand-Anything,300977420,v1.2.0,https://github.com/Egonex-AI/Understand-Anything/releases/tag/v1.2.0,aplicacao/servico,incerto,nao
+Egonex-AI/Understand-Anything,https://github.com/Egonex-AI/Understand-Anything,352006549,v2.9.0,https://github.com/Egonex-AI/Understand-Anything/releases/tag/v2.9.0,aplicacao/servico,incerto,nao
+Egonex-AI/Understand-Anything,https://github.com/Egonex-AI/Understand-Anything,302704241,v2.0.0,https://github.com/Egonex-AI/Understand-Anything/releases/tag/v2.0.0,aplicacao/servico,incerto,nao
 react/react,https://github.com/react/react,269718915,v19.0.3,https://github.com/react/react/releases/tag/v19.0.3,biblioteca/framework,sim,nao
 react/react,https://github.com/react/react,356654401,v19.0.8,https://github.com/react/react/releases/tag/v19.0.8,biblioteca/framework,sim,nao
 react/react,https://github.com/react/react,269718826,v19.1.4,https://github.com/react/react/releases/tag/v19.1.4,biblioteca/framework,sim,nao
@@ -99,11 +99,11 @@ ggml-org/llama.cpp,https://github.com/ggml-org/llama.cpp,266552292,b7220,https:/
 ggml-org/llama.cpp,https://github.com/ggml-org/llama.cpp,321806438,b9129,https://github.com/ggml-org/llama.cpp/releases/tag/b9129,biblioteca/framework,sim,nao
 ggml-org/llama.cpp,https://github.com/ggml-org/llama.cpp,262740496,b7078,https://github.com/ggml-org/llama.cpp/releases/tag/b7078,biblioteca/framework,sim,sim
 ggml-org/llama.cpp,https://github.com/ggml-org/llama.cpp,388619384,v0.4.1,https://github.com/ggml-org/llama.cpp/releases/tag/v0.4.1,biblioteca/framework,sim,nao
-microsoft/vscode,https://github.com/microsoft/vscode,396494632,1.139.1,https://github.com/microsoft/vscode/releases/tag/1.139.1,aplicacao/servico,sim,sim
-microsoft/vscode,https://github.com/microsoft/vscode,384947215,1.136.2,https://github.com/microsoft/vscode/releases/tag/1.136.2,aplicacao/servico,sim,sim
-microsoft/vscode,https://github.com/microsoft/vscode,251802178,1.104.3,https://github.com/microsoft/vscode/releases/tag/1.104.3,aplicacao/servico,sim,sim
-microsoft/vscode,https://github.com/microsoft/vscode,347353206,1.127.0,https://github.com/microsoft/vscode/releases/tag/1.127.0,aplicacao/servico,sim,nao
-microsoft/vscode,https://github.com/microsoft/vscode,263768428,1.106.2,https://github.com/microsoft/vscode/releases/tag/1.106.2,aplicacao/servico,sim,sim
+microsoft/vscode,https://github.com/microsoft/vscode,396494632,1.139.1,https://github.com/microsoft/vscode/releases/tag/1.139.1,aplicacao/servico,incerto,sim
+microsoft/vscode,https://github.com/microsoft/vscode,384947215,1.136.2,https://github.com/microsoft/vscode/releases/tag/1.136.2,aplicacao/servico,incerto,sim
+microsoft/vscode,https://github.com/microsoft/vscode,251802178,1.104.3,https://github.com/microsoft/vscode/releases/tag/1.104.3,aplicacao/servico,incerto,sim
+microsoft/vscode,https://github.com/microsoft/vscode,347353206,1.127.0,https://github.com/microsoft/vscode/releases/tag/1.127.0,aplicacao/servico,incerto,nao
+microsoft/vscode,https://github.com/microsoft/vscode,263768428,1.106.2,https://github.com/microsoft/vscode/releases/tag/1.106.2,aplicacao/servico,incerto,sim
 sveltejs/svelte,https://github.com/sveltejs/svelte,292623393,svelte@5.53.7,https://github.com/sveltejs/svelte/releases/tag/svelte%405.53.7,biblioteca/framework,sim,sim
 sveltejs/svelte,https://github.com/sveltejs/svelte,254158357,svelte@5.39.12,https://github.com/sveltejs/svelte/releases/tag/svelte%405.39.12,biblioteca/framework,sim,sim
 sveltejs/svelte,https://github.com/sveltejs/svelte,266907910,svelte@5.45.4,https://github.com/sveltejs/svelte/releases/tag/svelte%405.45.4,biblioteca/framework,sim,sim
@@ -199,11 +199,11 @@ ant-design/ant-design,https://github.com/ant-design/ant-design,303062291,6.3.5,h
 ant-design/ant-design,https://github.com/ant-design/ant-design,310229676,6.3.6,https://github.com/ant-design/ant-design/releases/tag/6.3.6,biblioteca/framework,sim,sim
 ant-design/ant-design,https://github.com/ant-design/ant-design,362920593,6.5.3,https://github.com/ant-design/ant-design/releases/tag/6.5.3,biblioteca/framework,sim,sim
 ant-design/ant-design,https://github.com/ant-design/ant-design,353151418,6.5.1,https://github.com/ant-design/ant-design/releases/tag/6.5.1,biblioteca/framework,sim,sim
-mattpocock/skills,https://github.com/mattpocock/skills,340850294,mattpocock-skills@1.0.0,https://github.com/mattpocock/skills/releases/tag/mattpocock-skills%401.0.0,outro,incerto,nao
-mattpocock/skills,https://github.com/mattpocock/skills,340850933,v1.0.0,https://github.com/mattpocock/skills/releases/tag/v1.0.0,outro,incerto,nao
-mattpocock/skills,https://github.com/mattpocock/skills,365723949,v1.2.2,https://github.com/mattpocock/skills/releases/tag/v1.2.2,outro,incerto,sim
-mattpocock/skills,https://github.com/mattpocock/skills,341069977,v1.0.1,https://github.com/mattpocock/skills/releases/tag/v1.0.1,outro,incerto,nao
-mattpocock/skills,https://github.com/mattpocock/skills,365515660,v1.2.0,https://github.com/mattpocock/skills/releases/tag/v1.2.0,outro,incerto,nao
+mattpocock/skills,https://github.com/mattpocock/skills,340850294,mattpocock-skills@1.0.0,https://github.com/mattpocock/skills/releases/tag/mattpocock-skills%401.0.0,outro,nao,nao
+mattpocock/skills,https://github.com/mattpocock/skills,340850933,v1.0.0,https://github.com/mattpocock/skills/releases/tag/v1.0.0,outro,nao,nao
+mattpocock/skills,https://github.com/mattpocock/skills,365723949,v1.2.2,https://github.com/mattpocock/skills/releases/tag/v1.2.2,outro,nao,sim
+mattpocock/skills,https://github.com/mattpocock/skills,341069977,v1.0.1,https://github.com/mattpocock/skills/releases/tag/v1.0.1,outro,nao,nao
+mattpocock/skills,https://github.com/mattpocock/skills,365515660,v1.2.0,https://github.com/mattpocock/skills/releases/tag/v1.2.0,outro,nao,nao
 gohugoio/hugo,https://github.com/gohugoio/hugo,300349711,v0.159.0,https://github.com/gohugoio/hugo/releases/tag/v0.159.0,ferramenta cli,sim,nao
 gohugoio/hugo,https://github.com/gohugoio/hugo,273720770,v0.154.1,https://github.com/gohugoio/hugo/releases/tag/v0.154.1,ferramenta cli,sim,sim
 gohugoio/hugo,https://github.com/gohugoio/hugo,272269258,v0.153.2,https://github.com/gohugoio/hugo/releases/tag/v0.153.2,ferramenta cli,sim,sim
@@ -244,21 +244,21 @@ netdata/netdata,https://github.com/netdata/netdata,257850012,v2.7.3,https://gith
 netdata/netdata,https://github.com/netdata/netdata,270416324,v2.8.3,https://github.com/netdata/netdata/releases/tag/v2.8.3,aplicacao/servico,sim,sim
 netdata/netdata,https://github.com/netdata/netdata,390020534,v2.11.1,https://github.com/netdata/netdata/releases/tag/v2.11.1,aplicacao/servico,sim,sim
 netdata/netdata,https://github.com/netdata/netdata,308857421,v2.10.2,https://github.com/netdata/netdata/releases/tag/v2.10.2,aplicacao/servico,sim,sim
-addyosmani/agent-skills,https://github.com/addyosmani/agent-skills,391196722,0.6.10,https://github.com/addyosmani/agent-skills/releases/tag/0.6.10,outro,incerto,sim
-addyosmani/agent-skills,https://github.com/addyosmani/agent-skills,378812923,0.6.8,https://github.com/addyosmani/agent-skills/releases/tag/0.6.8,outro,incerto,nao
-addyosmani/agent-skills,https://github.com/addyosmani/agent-skills,307363199,0.5.0,https://github.com/addyosmani/agent-skills/releases/tag/0.5.0,outro,incerto,nao
-addyosmani/agent-skills,https://github.com/addyosmani/agent-skills,370764001,0.6.7,https://github.com/addyosmani/agent-skills/releases/tag/0.6.7,outro,incerto,nao
-addyosmani/agent-skills,https://github.com/addyosmani/agent-skills,352811383,0.6.4,https://github.com/addyosmani/agent-skills/releases/tag/0.6.4,outro,incerto,nao
+addyosmani/agent-skills,https://github.com/addyosmani/agent-skills,391196722,0.6.10,https://github.com/addyosmani/agent-skills/releases/tag/0.6.10,outro,nao,sim
+addyosmani/agent-skills,https://github.com/addyosmani/agent-skills,378812923,0.6.8,https://github.com/addyosmani/agent-skills/releases/tag/0.6.8,outro,nao,nao
+addyosmani/agent-skills,https://github.com/addyosmani/agent-skills,307363199,0.5.0,https://github.com/addyosmani/agent-skills/releases/tag/0.5.0,outro,nao,nao
+addyosmani/agent-skills,https://github.com/addyosmani/agent-skills,370764001,0.6.7,https://github.com/addyosmani/agent-skills/releases/tag/0.6.7,outro,nao,nao
+addyosmani/agent-skills,https://github.com/addyosmani/agent-skills,352811383,0.6.4,https://github.com/addyosmani/agent-skills/releases/tag/0.6.4,outro,nao,nao
 earendil-works/pi,https://github.com/earendil-works/pi,302836732,v0.63.2,https://github.com/earendil-works/pi/releases/tag/v0.63.2,biblioteca/framework,sim,nao
 earendil-works/pi,https://github.com/earendil-works/pi,277560001,v0.48.0,https://github.com/earendil-works/pi/releases/tag/v0.48.0,biblioteca/framework,sim,nao
 earendil-works/pi,https://github.com/earendil-works/pi,282789898,v0.51.5,https://github.com/earendil-works/pi/releases/tag/v0.51.5,biblioteca/framework,sim,sim
 earendil-works/pi,https://github.com/earendil-works/pi,323992388,v0.75.1,https://github.com/earendil-works/pi/releases/tag/v0.75.1,biblioteca/framework,sim,sim
 earendil-works/pi,https://github.com/earendil-works/pi,271494126,v0.23.4,https://github.com/earendil-works/pi/releases/tag/v0.23.4,biblioteca/framework,sim,nao
-DietrichGebert/ponytail,https://github.com/DietrichGebert/ponytail,338344709,v1.0.0,https://github.com/DietrichGebert/ponytail/releases/tag/v1.0.0,outro,incerto,nao
-DietrichGebert/ponytail,https://github.com/DietrichGebert/ponytail,338520472,v4.0.0,https://github.com/DietrichGebert/ponytail/releases/tag/v4.0.0,outro,incerto,nao
-DietrichGebert/ponytail,https://github.com/DietrichGebert/ponytail,339285539,v4.4.0,https://github.com/DietrichGebert/ponytail/releases/tag/v4.4.0,outro,incerto,nao
-DietrichGebert/ponytail,https://github.com/DietrichGebert/ponytail,367010814,v4.9.0,https://github.com/DietrichGebert/ponytail/releases/tag/v4.9.0,outro,incerto,nao
-DietrichGebert/ponytail,https://github.com/DietrichGebert/ponytail,346077740,v4.8.4,https://github.com/DietrichGebert/ponytail/releases/tag/v4.8.4,outro,incerto,nao
+DietrichGebert/ponytail,https://github.com/DietrichGebert/ponytail,338344709,v1.0.0,https://github.com/DietrichGebert/ponytail/releases/tag/v1.0.0,outro,nao,nao
+DietrichGebert/ponytail,https://github.com/DietrichGebert/ponytail,338520472,v4.0.0,https://github.com/DietrichGebert/ponytail/releases/tag/v4.0.0,outro,nao,nao
+DietrichGebert/ponytail,https://github.com/DietrichGebert/ponytail,339285539,v4.4.0,https://github.com/DietrichGebert/ponytail/releases/tag/v4.4.0,outro,nao,nao
+DietrichGebert/ponytail,https://github.com/DietrichGebert/ponytail,367010814,v4.9.0,https://github.com/DietrichGebert/ponytail/releases/tag/v4.9.0,outro,nao,nao
+DietrichGebert/ponytail,https://github.com/DietrichGebert/ponytail,346077740,v4.8.4,https://github.com/DietrichGebert/ponytail/releases/tag/v4.8.4,outro,nao,nao
 astral-sh/uv,https://github.com/astral-sh/uv,370794065,0.12.5,https://github.com/astral-sh/uv/releases/tag/0.12.5,ferramenta cli,sim,nao
 astral-sh/uv,https://github.com/astral-sh/uv,318048243,0.11.10,https://github.com/astral-sh/uv/releases/tag/0.11.10,ferramenta cli,sim,sim
 astral-sh/uv,https://github.com/astral-sh/uv,338153758,0.11.21,https://github.com/astral-sh/uv/releases/tag/0.11.21,ferramenta cli,sim,nao
@@ -279,11 +279,11 @@ redis/redis,https://github.com/redis/redis,371817212,7.4.11,https://github.com/r
 redis/redis,https://github.com/redis/redis,390812671,8.2.10,https://github.com/redis/redis/releases/tag/8.2.10,aplicacao/servico,sim,sim
 redis/redis,https://github.com/redis/redis,284122572,8.4.1,https://github.com/redis/redis/releases/tag/8.4.1,aplicacao/servico,sim,sim
 redis/redis,https://github.com/redis/redis,371819484,8.4.6,https://github.com/redis/redis/releases/tag/8.4.6,aplicacao/servico,sim,sim
-JuliusBrussee/caveman,https://github.com/JuliusBrussee/caveman,375160888,v2.3.0,https://github.com/JuliusBrussee/caveman/releases/tag/v2.3.0,outro,incerto,nao
-JuliusBrussee/caveman,https://github.com/JuliusBrussee/caveman,321393500,v1.8.2,https://github.com/JuliusBrussee/caveman/releases/tag/v1.8.2,outro,incerto,sim
-JuliusBrussee/caveman,https://github.com/JuliusBrussee/caveman,307922262,v1.5.1,https://github.com/JuliusBrussee/caveman/releases/tag/v1.5.1,outro,incerto,nao
-JuliusBrussee/caveman,https://github.com/JuliusBrussee/caveman,375162111,v2.3.1,https://github.com/JuliusBrussee/caveman/releases/tag/v2.3.1,outro,incerto,sim
-JuliusBrussee/caveman,https://github.com/JuliusBrussee/caveman,307235829,v1.3.5,https://github.com/JuliusBrussee/caveman/releases/tag/v1.3.5,outro,incerto,nao
+JuliusBrussee/caveman,https://github.com/JuliusBrussee/caveman,375160888,v2.3.0,https://github.com/JuliusBrussee/caveman/releases/tag/v2.3.0,outro,sim,nao
+JuliusBrussee/caveman,https://github.com/JuliusBrussee/caveman,321393500,v1.8.2,https://github.com/JuliusBrussee/caveman/releases/tag/v1.8.2,outro,sim,sim
+JuliusBrussee/caveman,https://github.com/JuliusBrussee/caveman,307922262,v1.5.1,https://github.com/JuliusBrussee/caveman/releases/tag/v1.5.1,outro,sim,nao
+JuliusBrussee/caveman,https://github.com/JuliusBrussee/caveman,375162111,v2.3.1,https://github.com/JuliusBrussee/caveman/releases/tag/v2.3.1,outro,sim,sim
+JuliusBrussee/caveman,https://github.com/JuliusBrussee/caveman,307235829,v1.3.5,https://github.com/JuliusBrussee/caveman/releases/tag/v1.3.5,outro,sim,nao
 nexu-io/open-design,https://github.com/nexu-io/open-design,385495816,open-design-v0.22.1,https://github.com/nexu-io/open-design/releases/tag/open-design-v0.22.1,aplicacao/servico,sim,sim
 nexu-io/open-design,https://github.com/nexu-io/open-design,393947317,open-design-v0.24.0,https://github.com/nexu-io/open-design/releases/tag/open-design-v0.24.0,aplicacao/servico,sim,nao
 nexu-io/open-design,https://github.com/nexu-io/open-design,318321911,open-design-v0.4.1,https://github.com/nexu-io/open-design/releases/tag/open-design-v0.4.1,aplicacao/servico,sim,sim

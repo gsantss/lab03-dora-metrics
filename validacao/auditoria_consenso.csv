@@ -2,41 +2,41 @@
 2dust/v2rayN,,tipo_projeto,aplicacao/servico,aplicacao/servico,aplicacao/servico,aplicacao/servico,maioria
 2dust/v2rayN,,entrega_real,sim,sim,sim,sim,maioria
 DietrichGebert/ponytail,,tipo_projeto,outro,outro,outro,outro,maioria
-DietrichGebert/ponytail,,entrega_real,incerto,incerto,nao,incerto,maioria
+DietrichGebert/ponytail,,entrega_real,nao,nao,sim,nao,maioria
 Egonex-AI/Understand-Anything,,tipo_projeto,outro,aplicacao/servico,aplicacao/servico,aplicacao/servico,maioria
-Egonex-AI/Understand-Anything,,entrega_real,sim,sim,incerto,sim,maioria
+Egonex-AI/Understand-Anything,,entrega_real,incerto,sim,incerto,incerto,maioria
 Graphify-Labs/graphify,,tipo_projeto,ferramenta cli,ferramenta cli,outro,ferramenta cli,maioria
 Graphify-Labs/graphify,,entrega_real,sim,sim,sim,sim,maioria
 JuliusBrussee/caveman,,tipo_projeto,outro,outro,ferramenta cli,outro,maioria
-JuliusBrussee/caveman,,entrega_real,sim,incerto,incerto,incerto,maioria
+JuliusBrussee/caveman,,entrega_real,sim,sim,sim,sim,maioria
 NationalSecurityAgency/ghidra,,tipo_projeto,aplicacao/servico,aplicacao/servico,biblioteca/framework,aplicacao/servico,maioria
 NationalSecurityAgency/ghidra,,entrega_real,sim,sim,sim,sim,maioria
 OpenHands/OpenHands,,tipo_projeto,aplicacao/servico,aplicacao/servico,aplicacao/servico,aplicacao/servico,maioria
 OpenHands/OpenHands,,entrega_real,sim,sim,sim,sim,maioria
 PaddlePaddle/PaddleOCR,,tipo_projeto,biblioteca/framework,biblioteca/framework,biblioteca/framework,biblioteca/framework,maioria
-PaddlePaddle/PaddleOCR,,entrega_real,sim,sim,incerto,sim,maioria
+PaddlePaddle/PaddleOCR,,entrega_real,sim,sim,sim,sim,maioria
 Panniantong/Agent-Reach,,tipo_projeto,ferramenta cli,ferramenta cli,ferramenta cli,ferramenta cli,maioria
-Panniantong/Agent-Reach,,entrega_real,sim,sim,incerto,sim,maioria
+Panniantong/Agent-Reach,,entrega_real,incerto,sim,incerto,incerto,maioria
 Significant-Gravitas/AutoGPT,,tipo_projeto,aplicacao/servico,aplicacao/servico,aplicacao/servico,aplicacao/servico,maioria
-Significant-Gravitas/AutoGPT,,entrega_real,sim,sim,incerto,sim,maioria
+Significant-Gravitas/AutoGPT,,entrega_real,incerto,sim,sim,sim,maioria
 Stirling-Tools/Stirling-PDF,,tipo_projeto,aplicacao/servico,aplicacao/servico,aplicacao/servico,aplicacao/servico,maioria
 Stirling-Tools/Stirling-PDF,,entrega_real,sim,sim,sim,sim,maioria
 addyosmani/agent-skills,,tipo_projeto,outro,outro,outro,outro,maioria
-addyosmani/agent-skills,,entrega_real,incerto,incerto,nao,incerto,maioria
+addyosmani/agent-skills,,entrega_real,nao,incerto,nao,nao,maioria
 angular/angular,,tipo_projeto,biblioteca/framework,biblioteca/framework,biblioteca/framework,biblioteca/framework,maioria
-angular/angular,,entrega_real,sim,sim,incerto,sim,maioria
+angular/angular,,entrega_real,sim,sim,sim,sim,maioria
 ant-design/ant-design,,tipo_projeto,biblioteca/framework,biblioteca/framework,biblioteca/framework,biblioteca/framework,maioria
-ant-design/ant-design,,entrega_real,sim,sim,incerto,sim,maioria
+ant-design/ant-design,,entrega_real,sim,sim,sim,sim,maioria
 astral-sh/uv,,tipo_projeto,ferramenta cli,ferramenta cli,ferramenta cli,ferramenta cli,maioria
 astral-sh/uv,,entrega_real,sim,sim,sim,sim,maioria
 axios/axios,,tipo_projeto,biblioteca/framework,biblioteca/framework,biblioteca/framework,biblioteca/framework,maioria
-axios/axios,,entrega_real,sim,sim,incerto,sim,maioria
+axios/axios,,entrega_real,sim,sim,sim,sim,maioria
 bitcoin/bitcoin,,tipo_projeto,aplicacao/servico,aplicacao/servico,aplicacao/servico,aplicacao/servico,maioria
 bitcoin/bitcoin,,entrega_real,sim,sim,sim,sim,maioria
 coder/code-server,,tipo_projeto,aplicacao/servico,aplicacao/servico,aplicacao/servico,aplicacao/servico,maioria
 coder/code-server,,entrega_real,sim,sim,sim,sim,maioria
 earendil-works/pi,,tipo_projeto,ferramenta cli,biblioteca/framework,biblioteca/framework,biblioteca/framework,maioria
-earendil-works/pi,,entrega_real,sim,sim,sim,sim,maioria
+earendil-works/pi,,entrega_real,incerto,sim,sim,sim,maioria
 elastic/elasticsearch,,tipo_projeto,aplicacao/servico,aplicacao/servico,aplicacao/servico,aplicacao/servico,maioria
 elastic/elasticsearch,,entrega_real,sim,sim,sim,sim,maioria
 electron/electron,,tipo_projeto,biblioteca/framework,biblioteca/framework,biblioteca/framework,biblioteca/framework,maioria
@@ -44,9 +44,9 @@ electron/electron,,entrega_real,sim,sim,sim,sim,maioria
 farion1231/cc-switch,,tipo_projeto,aplicacao/servico,aplicacao/servico,aplicacao/servico,aplicacao/servico,maioria
 farion1231/cc-switch,,entrega_real,sim,sim,sim,sim,maioria
 fastapi/fastapi,,tipo_projeto,biblioteca/framework,biblioteca/framework,biblioteca/framework,biblioteca/framework,maioria
-fastapi/fastapi,,entrega_real,sim,sim,incerto,sim,maioria
+fastapi/fastapi,,entrega_real,sim,sim,sim,sim,maioria
 firecrawl/firecrawl,,tipo_projeto,aplicacao/servico,aplicacao/servico,aplicacao/servico,aplicacao/servico,maioria
-firecrawl/firecrawl,,entrega_real,sim,sim,incerto,sim,maioria
+firecrawl/firecrawl,,entrega_real,sim,sim,sim,sim,maioria
 ggml-org/llama.cpp,,tipo_projeto,ferramenta cli,biblioteca/framework,biblioteca/framework,biblioteca/framework,maioria
 ggml-org/llama.cpp,,entrega_real,sim,sim,sim,sim,maioria
 godotengine/godot,,tipo_projeto,aplicacao/servico,biblioteca/framework,biblioteca/framework,biblioteca/framework,maioria
@@ -54,11 +54,11 @@ godotengine/godot,,entrega_real,sim,sim,sim,sim,maioria
 gohugoio/hugo,,tipo_projeto,ferramenta cli,ferramenta cli,ferramenta cli,ferramenta cli,maioria
 gohugoio/hugo,,entrega_real,sim,sim,sim,sim,maioria
 google-gemini/gemini-cli,,tipo_projeto,ferramenta cli,ferramenta cli,ferramenta cli,ferramenta cli,maioria
-google-gemini/gemini-cli,,entrega_real,sim,incerto,sim,sim,maioria
+google-gemini/gemini-cli,,entrega_real,sim,sim,sim,sim,maioria
 harry0703/MoneyPrinterTurbo,,tipo_projeto,aplicacao/servico,aplicacao/servico,aplicacao/servico,aplicacao/servico,maioria
 harry0703/MoneyPrinterTurbo,,entrega_real,sim,sim,sim,sim,maioria
 huggingface/transformers,,tipo_projeto,biblioteca/framework,biblioteca/framework,biblioteca/framework,biblioteca/framework,maioria
-huggingface/transformers,,entrega_real,sim,sim,incerto,sim,maioria
+huggingface/transformers,,entrega_real,sim,sim,sim,sim,maioria
 immich-app/immich,,tipo_projeto,aplicacao/servico,aplicacao/servico,aplicacao/servico,aplicacao/servico,maioria
 immich-app/immich,,entrega_real,sim,sim,sim,sim,maioria
 infiniflow/ragflow,,tipo_projeto,aplicacao/servico,aplicacao/servico,aplicacao/servico,aplicacao/servico,maioria
@@ -66,59 +66,59 @@ infiniflow/ragflow,,entrega_real,sim,sim,sim,sim,maioria
 junegunn/fzf,,tipo_projeto,ferramenta cli,ferramenta cli,ferramenta cli,ferramenta cli,maioria
 junegunn/fzf,,entrega_real,sim,sim,sim,sim,maioria
 langchain-ai/langchain,,tipo_projeto,biblioteca/framework,biblioteca/framework,biblioteca/framework,biblioteca/framework,maioria
-langchain-ai/langchain,,entrega_real,sim,incerto,sim,sim,maioria
+langchain-ai/langchain,,entrega_real,sim,sim,sim,sim,maioria
 langflow-ai/langflow,,tipo_projeto,aplicacao/servico,aplicacao/servico,aplicacao/servico,aplicacao/servico,maioria
 langflow-ai/langflow,,entrega_real,sim,sim,sim,sim,maioria
 laravel/laravel,,tipo_projeto,biblioteca/framework,biblioteca/framework,outro,biblioteca/framework,maioria
 laravel/laravel,,entrega_real,sim,sim,incerto,sim,maioria
 mattpocock/skills,,tipo_projeto,outro,outro,outro,outro,maioria
-mattpocock/skills,,entrega_real,incerto,incerto,nao,incerto,maioria
+mattpocock/skills,,entrega_real,nao,nao,nao,nao,maioria
 microsoft/playwright,,tipo_projeto,biblioteca/framework,biblioteca/framework,biblioteca/framework,biblioteca/framework,maioria
-microsoft/playwright,,entrega_real,sim,sim,incerto,sim,maioria
+microsoft/playwright,,entrega_real,sim,sim,sim,sim,maioria
 microsoft/vscode,,tipo_projeto,aplicacao/servico,aplicacao/servico,aplicacao/servico,aplicacao/servico,maioria
-microsoft/vscode,,entrega_real,sim,sim,incerto,sim,maioria
+microsoft/vscode,,entrega_real,incerto,sim,incerto,incerto,maioria
 netdata/netdata,,tipo_projeto,aplicacao/servico,aplicacao/servico,aplicacao/servico,aplicacao/servico,maioria
 netdata/netdata,,entrega_real,sim,sim,sim,sim,maioria
 nexu-io/open-design,,tipo_projeto,aplicacao/servico,aplicacao/servico,aplicacao/servico,aplicacao/servico,maioria
 nexu-io/open-design,,entrega_real,sim,sim,sim,sim,maioria
 nodejs/node,,tipo_projeto,outro,outro,outro,outro,maioria
-nodejs/node,,entrega_real,sim,sim,incerto,sim,maioria
+nodejs/node,,entrega_real,sim,sim,sim,sim,maioria
 nvm-sh/nvm,,tipo_projeto,ferramenta cli,ferramenta cli,ferramenta cli,ferramenta cli,maioria
-nvm-sh/nvm,,entrega_real,sim,sim,nao,sim,maioria
+nvm-sh/nvm,,entrega_real,incerto,sim,sim,sim,maioria
 open-webui/open-webui,,tipo_projeto,aplicacao/servico,aplicacao/servico,aplicacao/servico,aplicacao/servico,maioria
-open-webui/open-webui,,entrega_real,sim,sim,incerto,sim,maioria
+open-webui/open-webui,,entrega_real,sim,sim,sim,sim,maioria
 openai/codex,,tipo_projeto,ferramenta cli,ferramenta cli,ferramenta cli,ferramenta cli,maioria
 openai/codex,,entrega_real,sim,sim,sim,sim,maioria
 oven-sh/bun,,tipo_projeto,outro,outro,ferramenta cli,outro,maioria
 oven-sh/bun,,entrega_real,sim,sim,sim,sim,maioria
 paperclipai/paperclip,,tipo_projeto,aplicacao/servico,aplicacao/servico,aplicacao/servico,aplicacao/servico,maioria
-paperclipai/paperclip,,entrega_real,sim,sim,incerto,sim,maioria
+paperclipai/paperclip,,entrega_real,sim,sim,sim,sim,maioria
 react/react,,tipo_projeto,biblioteca/framework,biblioteca/framework,biblioteca/framework,biblioteca/framework,maioria
 react/react,,entrega_real,sim,sim,incerto,sim,maioria
 react/react-native,,tipo_projeto,biblioteca/framework,biblioteca/framework,biblioteca/framework,biblioteca/framework,maioria
 react/react-native,,entrega_real,sim,sim,sim,sim,maioria
 redis/redis,,tipo_projeto,aplicacao/servico,aplicacao/servico,aplicacao/servico,aplicacao/servico,maioria
-redis/redis,,entrega_real,sim,sim,incerto,sim,maioria
+redis/redis,,entrega_real,sim,sim,sim,sim,maioria
 rust-lang/rust,,tipo_projeto,outro,outro,outro,outro,maioria
 rust-lang/rust,,entrega_real,sim,sim,incerto,sim,maioria
 rustdesk/rustdesk,,tipo_projeto,aplicacao/servico,aplicacao/servico,aplicacao/servico,aplicacao/servico,maioria
 rustdesk/rustdesk,,entrega_real,sim,sim,sim,sim,maioria
 shadcn-ui/ui,,tipo_projeto,ferramenta cli,biblioteca/framework,biblioteca/framework,biblioteca/framework,maioria
-shadcn-ui/ui,,entrega_real,sim,sim,incerto,sim,maioria
+shadcn-ui/ui,,entrega_real,sim,sim,sim,sim,maioria
 stablyai/orca,,tipo_projeto,aplicacao/servico,aplicacao/servico,aplicacao/servico,aplicacao/servico,maioria
 stablyai/orca,,entrega_real,sim,sim,sim,sim,maioria
 sveltejs/svelte,,tipo_projeto,biblioteca/framework,biblioteca/framework,biblioteca/framework,biblioteca/framework,maioria
-sveltejs/svelte,,entrega_real,sim,sim,incerto,sim,maioria
+sveltejs/svelte,,entrega_real,sim,sim,sim,sim,maioria
 syncthing/syncthing,,tipo_projeto,aplicacao/servico,aplicacao/servico,aplicacao/servico,aplicacao/servico,maioria
 syncthing/syncthing,,entrega_real,sim,sim,sim,sim,maioria
 tailwindlabs/tailwindcss,,tipo_projeto,biblioteca/framework,biblioteca/framework,biblioteca/framework,biblioteca/framework,maioria
-tailwindlabs/tailwindcss,,entrega_real,sim,sim,sim,sim,maioria
+tailwindlabs/tailwindcss,,entrega_real,sim,sim,incerto,sim,maioria
 tt-a1i/archify,,tipo_projeto,outro,outro,outro,outro,maioria
-tt-a1i/archify,,entrega_real,sim,incerto,sim,sim,maioria
+tt-a1i/archify,,entrega_real,sim,sim,sim,sim,maioria
 vercel/next.js,,tipo_projeto,biblioteca/framework,biblioteca/framework,biblioteca/framework,biblioteca/framework,maioria
-vercel/next.js,,entrega_real,sim,sim,incerto,sim,maioria
+vercel/next.js,,entrega_real,sim,sim,sim,sim,maioria
 vitejs/vite,,tipo_projeto,ferramenta cli,ferramenta cli,biblioteca/framework,ferramenta cli,maioria
-vitejs/vite,,entrega_real,sim,sim,incerto,sim,maioria
+vitejs/vite,,entrega_real,sim,sim,sim,sim,maioria
 shadcn-ui/ui,363108689,corretiva,sim,sim,nao,sim,maioria
 shadcn-ui/ui,379653049,corretiva,sim,sim,nao,sim,maioria
 shadcn-ui/ui,252249772,corretiva,nao,nao,nao,nao,maioria
