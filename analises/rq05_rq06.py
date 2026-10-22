@@ -69,7 +69,7 @@ def epsilon_squared(h: float, n: int) -> float:
 
 
 def epsilon_magnitude(eps: float) -> str:
-    """Faixas usuais para ε² (Rea & Parker): <0,01 desprezível; <0,04 pequeno; <0,16 médio; resto grande."""
+    """Faixas de ε² adotadas pelo grupo (convenção, sem fonte única): <0,01 desprezível; <0,04 pequeno; <0,16 médio; resto grande."""
     if eps < 0.01:
         return "desprezível"
     if eps < 0.04:

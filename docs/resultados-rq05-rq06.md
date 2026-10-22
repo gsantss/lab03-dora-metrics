@@ -29,7 +29,7 @@ Cinco fatores contra seis métricas (frequência, lead time (a) e (b), CFR (a) e
 - **estrelas, contribuidores e idade:** quartis (75 repositórios por grupo; a idade é contada até 30/09/2026);
 - **tipo do projeto:** só os 60 repositórios da amostra-ouro, com o rótulo de `validacao/consenso.csv` (24 aplicação/serviço, 19 biblioteca/framework, 9 CLI, 8 outro).
 
-Com 4 ou mais grupos em todos os fatores, o teste foi sempre o de Kruskal-Wallis, com ε² = H / (n − 1) como tamanho de efeito. O Mann-Whitney e o Cliff's delta estão implementados e testados, mas nenhum fator teve só dois grupos. Os p-valores foram corrigidos por Holm nos 30 testes. Para o ε², o enunciado não fixa faixas, então usamos as de Rea e Parker: < 0,01 desprezível, < 0,04 pequeno, < 0,16 médio e o restante grande.
+Com 4 ou mais grupos em todos os fatores, o teste foi sempre o de Kruskal-Wallis, com ε² = H / (n − 1) como tamanho de efeito. O Mann-Whitney e o Cliff's delta estão implementados e testados, mas nenhum fator teve só dois grupos. Os p-valores foram corrigidos por Holm nos 30 testes. Para o ε², o enunciado não fixa faixas, então adotamos uma convenção própria, sem fonte única: < 0,01 desprezível, < 0,04 pequeno, < 0,16 médio e o restante grande. A classificação é uma ajuda de leitura, e o valor de ε² é o que deve ser comparado.
 
 Figuras: `analises/resultados/rq06_efeitos.png` mostra o tamanho de efeito dos 30 testes (gráfico de pontos, círculo cheio = significativo após Holm), e `analises/resultados/rq06_distribuicoes.png` mostra, para os 10 significativos, a distribuição por grupo com os pontos de cada repositório, a mediana e o IQR. Os valores que sustentam as figuras estão em `analises/resultados/rq06_testes.csv`, que serve de tabela equivalente.
 

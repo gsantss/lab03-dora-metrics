@@ -38,7 +38,7 @@ FACTOR_LABELS = {
 # métricas em que o eixo logarítmico faz sentido (positivas e muito assimétricas)
 LOG_METRICS = {"deployment_frequency", "lead_time_release_h", "lead_time_commit_h", "recovery_h"}
 
-# limites de ε² (Rea e Parker) usados para classificar o tamanho de efeito
+# limites de ε² adotados pelo grupo (convenção; o enunciado não fixa faixas para ε²)
 EPSILON_LIMITS = ((0.01, "desprezível | pequeno"), (0.04, "pequeno | médio"), (0.16, "médio | grande"))
 
 
