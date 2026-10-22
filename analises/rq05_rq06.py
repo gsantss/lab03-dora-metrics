@@ -185,10 +185,12 @@ def main() -> None:
     rq05 = run_rq05(metrics)
     rq05.to_csv(out / "rq05_spearman.csv", index=False)
     plot_rq05(metrics, rq05, out / "rq05_dispersao.png")
+    plot_rq05(metrics, rq05, out / "rq05_dispersao_compacta.png", compacto=True)  # versão para o artigo
 
     rq06 = run_rq06(metrics, factors)
     rq06.to_csv(out / "rq06_testes.csv", index=False)
     plot_rq06_effects(rq06, METRICS, out / "rq06_efeitos.png")
+    plot_rq06_effects(rq06, METRICS, out / "rq06_efeitos_significativos.png", apenas_significativos=True)  # artigo
     plot_rq06_distributions(metrics, factors, rq06, METRICS, out / "rq06_distribuicoes.png")
 
     print(rq05.round(4).to_string(index=False))

@@ -104,8 +104,11 @@ def _save(fig, path: Path) -> None:
 
 # ---------------------------------------------------------------------- RQ 05
 
-def plot_rq05(metrics: pd.DataFrame, rq05: pd.DataFrame, path: Path) -> None:
-    """Dispersão + tendência (linha de cima) e mediana/IQR por quartil de frequência (embaixo)."""
+def plot_rq05(metrics: pd.DataFrame, rq05: pd.DataFrame, path: Path, compacto: bool = False) -> None:
+    """Dispersão + tendência (linha de cima) e mediana/IQR por quartil de frequência (embaixo).
+
+    Com `compacto=True` só a linha de cima, em formato baixo, para caber no artigo.
+    """
     from statsmodels.nonparametric.smoothers_lowess import lowess
 
     plt = _pyplot()
@@ -114,9 +117,13 @@ def plot_rq05(metrics: pd.DataFrame, rq05: pd.DataFrame, path: Path) -> None:
         ("cfr_delivery", "CFR (b): proxy de entrega", "(b) CFR de entrega"),
     )
     with plt.rc_context(_rc()):
-        fig, axes = plt.subplots(
-            2, 2, figsize=(10, 7.4), gridspec_kw={"height_ratios": [3, 2], "hspace": 0.38, "wspace": 0.18}
-        )
+        if compacto:
+            fig, axes = plt.subplots(1, 2, figsize=(10, 3.7), gridspec_kw={"wspace": 0.18})
+            axes = axes.reshape(1, 2)
+        else:
+            fig, axes = plt.subplots(
+                2, 2, figsize=(10, 7.4), gridspec_kw={"height_ratios": [3, 2], "hspace": 0.38, "wspace": 0.18}
+            )
         for col, (column, title, variant) in enumerate(panels):
             pair = metrics[["deployment_frequency", column]].dropna()
             x, y = pair["deployment_frequency"], pair[column]
@@ -133,6 +140,8 @@ def plot_rq05(metrics: pd.DataFrame, rq05: pd.DataFrame, path: Path) -> None:
             ax.set_xlabel("Frequência de deploy (releases por semana, escala log)")
             if col == 0:
                 ax.set_ylabel("Taxa de falha")
+            if compacto:
+                continue
 
             # mediana e IQR por quartil de frequência
             ax2 = axes[1, col]
@@ -154,12 +163,13 @@ def plot_rq05(metrics: pd.DataFrame, rq05: pd.DataFrame, path: Path) -> None:
             if col == 0:
                 ax2.set_ylabel("Taxa de falha")
         handles, labels = axes[0, 0].get_legend_handles_labels()
-        fig.legend(handles, labels, loc="lower center", bbox_to_anchor=(0.5, 0.955), ncol=2)
-        fig.text(
-            0.01, 0.005,
-            "Embaixo: caixa = IQR, linha azul = mediana, bigodes = 1,5 × IQR (pontos fora dos bigodes omitidos).",
-            color=MUTED, fontsize=8,
-        )
+        fig.legend(handles, labels, loc="lower center", bbox_to_anchor=(0.5, 0.955 if not compacto else 1.0), ncol=2)
+        if not compacto:
+            fig.text(
+                0.01, 0.005,
+                "Embaixo: caixa = IQR, linha azul = mediana, bigodes = 1,5 × IQR (pontos fora dos bigodes omitidos).",
+                color=MUTED, fontsize=8,
+            )
         _save(fig, path)
         plt.close(fig)
 
@@ -170,12 +180,20 @@ def _test_label(row: pd.Series, metric_labels: dict) -> str:
     return f"{FACTOR_LABELS.get(row['fator'], row['fator'])} × {metric_labels.get(row['metrica'], row['metrica'])}"
 
 
-def plot_rq06_effects(table: pd.DataFrame, metric_labels: dict, path: Path) -> None:
-    """Gráfico de pontos de Cleveland: tamanho de efeito de cada um dos testes, ordenado."""
+def plot_rq06_effects(
+    table: pd.DataFrame, metric_labels: dict, path: Path, apenas_significativos: bool = False
+) -> None:
+    """Gráfico de pontos de Cleveland: tamanho de efeito de cada um dos testes, ordenado.
+
+    Com `apenas_significativos=True` mostra só os testes significativos após Holm, em formato mais baixo.
+    """
     plt = _pyplot()
+    total = len(table)
+    if apenas_significativos:
+        table = table[table["significativo_holm"]]
     data = table.assign(magnitude_abs=table["efeito"].abs()).sort_values("magnitude_abs").reset_index(drop=True)
     with plt.rc_context(_rc()):
-        fig, ax = plt.subplots(figsize=(8.6, 0.28 * len(data) + 1.8))
+        fig, ax = plt.subplots(figsize=(8.6, (0.26 if apenas_significativos else 0.28) * len(data) + 1.8))
         y = np.arange(len(data))
         ax.hlines(y, 0, data["magnitude_abs"], color=GRID, linewidth=0.8, zorder=1)
         significant = data["significativo_holm"].to_numpy(dtype=bool)
@@ -183,10 +201,11 @@ def plot_rq06_effects(table: pd.DataFrame, metric_labels: dict, path: Path) -> N
             data.loc[significant, "magnitude_abs"], y[significant], s=46, color=BLUE, zorder=3,
             label="Significativo após Holm",
         )
-        ax.scatter(
-            data.loc[~significant, "magnitude_abs"], y[~significant], s=46, facecolor=SURFACE,
-            edgecolor=MUTED, linewidth=1.4, zorder=3, label="Não significativo",
-        )
+        if (~significant).any():
+            ax.scatter(
+                data.loc[~significant, "magnitude_abs"], y[~significant], s=46, facecolor=SURFACE,
+                edgecolor=MUTED, linewidth=1.4, zorder=3, label="Não significativo",
+            )
         for limit, _ in EPSILON_LIMITS:
             ax.axvline(limit, color=AXIS, linewidth=0.8, zorder=0)
         ax.set_yticks(y)
@@ -197,9 +216,13 @@ def plot_rq06_effects(table: pd.DataFrame, metric_labels: dict, path: Path) -> N
             "Tamanho de efeito (ε² de Kruskal-Wallis; |δ| de Cliff para dois grupos)\n"
             "Linhas verticais em 0,01, 0,04 e 0,16: limites entre desprezível, pequeno, médio e grande"
         )
-        ax.set_title(f"Tamanho de efeito dos {len(data)} testes da RQ 06")
+        if apenas_significativos:
+            ax.set_title(f"Tamanho de efeito dos {len(data)} testes significativos da RQ 06 (de {total})")
+        else:
+            ax.set_title(f"Tamanho de efeito dos {len(data)} testes da RQ 06")
         ax.grid(True, axis="x")
-        ax.legend(loc="lower right")
+        if not apenas_significativos:
+            ax.legend(loc="lower right")
         _save(fig, path)
         plt.close(fig)
 
@@ -267,3 +290,47 @@ def plot_rq06_distributions(
         _save(fig, path)
         plt.close(fig)
     return True
+
+
+# ------------------------------------------------------------------ RQ 01 a RQ 04
+
+def plot_rq0104_painel(metrics: pd.DataFrame, path: Path) -> None:
+    """Painel 2×2 com a distribuição das quatro métricas (caixa = IQR, linha = mediana), para o artigo."""
+    plt = _pyplot()
+    panels = (
+        ("RQ 01: frequência de deploy", [("deployment_frequency", "Releases")], "releases por semana (log)", True),
+        ("RQ 02: lead time", [("lead_time_release_h", "(a) por release"), ("lead_time_commit_h", "(b) por commit")],
+         "horas (log)", True),
+        ("RQ 03: taxa de falha", [("cfr_ci", "(a) CI"), ("cfr_delivery", "(b) entrega")], "proporção de falhas", False),
+        ("RQ 04: tempo de recuperação", [("recovery_h", "Recuperação")], "horas (log)", True),
+    )
+    with plt.rc_context(_rc()):
+        fig, axes = plt.subplots(2, 2, figsize=(7.4, 4.0), gridspec_kw={"hspace": 0.75, "wspace": 0.55})
+        for ax, (title, series, xlabel, log) in zip(axes.flat, panels):
+            data = [metrics[col].dropna() for col, _ in series]
+            ax.boxplot(
+                data, vert=False, whis=1.5, showfliers=False, widths=0.55,
+                boxprops={"color": INK_2, "linewidth": 1.1}, whiskerprops={"color": INK_2, "linewidth": 1.1},
+                capprops={"color": INK_2, "linewidth": 1.1}, medianprops={"color": BLUE, "linewidth": 2.2},
+            )
+            ax.set_yticks(range(1, len(series) + 1))
+            medianas = [float(values.median()) for values in data]
+            ax.set_yticklabels(
+                [f"{name}\nmediana {_num(m, 2 if m < 10 else 0)}" for (_, name), m in zip(series, medianas)],
+                fontsize=7.5,
+            )
+            if log:
+                ax.set_xscale("log")
+            ax.set_xlabel(xlabel, fontsize=8)
+            ax.set_title(title, fontsize=9)
+            ax.tick_params(labelsize=7.5)
+            ax.grid(True, axis="x")
+        _save(fig, path)
+        plt.close(fig)
+
+
+if __name__ == "__main__":
+    # python -m analises.figuras: gera o painel da RQ 01 a RQ 04 a partir de metrics.csv
+    painel = Path("analises/resultados/rq01_04_painel.png")
+    plot_rq0104_painel(pd.read_csv("data/processed/metrics.csv"), painel)
+    print("gerado:", painel)

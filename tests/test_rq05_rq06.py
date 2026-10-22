@@ -232,3 +232,22 @@ def test_ordered_groups_keeps_quartile_order_and_sorts_others_by_median():
 def test_p_value_formatting_uses_decimal_comma_and_scientific_notation():
     assert _p(0.0076) == "0,008"
     assert _p(8.29e-19) == "8,3 × 10⁻¹⁹"
+
+
+def test_compact_figures_are_written(tmp_path):
+    pytest.importorskip("matplotlib")
+    metrics, factors = _synthetic()
+    table = run_rq06(metrics, factors).assign(significativo_holm=lambda d: d["p"] < 0.5)
+    plot_rq05(metrics, run_rq05(metrics), tmp_path / "rq05.png", compacto=True)
+    plot_rq06_effects(table, METRICS, tmp_path / "rq06.png", apenas_significativos=True)
+    assert (tmp_path / "rq05.png").stat().st_size > 0
+    assert (tmp_path / "rq06.png").stat().st_size > 0
+
+
+def test_rq0104_panel_is_written(tmp_path):
+    pytest.importorskip("matplotlib")
+    from analises.figuras import plot_rq0104_painel
+
+    metrics, _ = _synthetic()
+    plot_rq0104_painel(metrics, tmp_path / "painel.png")
+    assert (tmp_path / "painel.png").stat().st_size > 0
