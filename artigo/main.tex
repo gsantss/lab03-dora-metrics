@@ -44,12 +44,14 @@
 
 \maketitle
 
+% RASCUNHO do resumo e do abstract: usa só os resultados já disponíveis (RQ 05 a RQ 08 e validação manual).
+% Revisar quando as RQ 01 a 04 (issue #42) estiverem prontas e acrescentar os números de frequência, lead time, CFR e recuperação.
 \begin{abstract}
-\textbf{[TODO]} Resumo em inglês, escrito por último.
+DORA metrics have become the standard for measuring software delivery performance, but GitHub does not record production deploys or failures. We compute the four metrics from proxies (published releases and GitHub Actions runs) for 300 popular open-source repositories over a 12-month window, and we measure how much the values and the conclusions depend on the definitions adopted. We validated the heuristic that flags corrective releases with three independent raters (Fleiss' kappa of 0.65; F1 of 0.73) and compared three combinations of operational definitions: between 24\% and 26\% of the repositories change DORA category depending on the combination. The delivery-based failure rate grows with deploy frequency ($\rho=0.48$), largely as an effect of the proxy itself, and repository age is the factor most associated with lead time. We conclude that per-metric classifications are sensitive to the definition, and that release frequency measures version publishing rather than production deploys.
 \end{abstract}
 
 \begin{resumo}
-\textbf{[TODO]} Resumo em português, escrito por último.
+As métricas DORA tornaram-se o padrão para medir o desempenho de entrega de software, mas o GitHub não registra deploys nem falhas em produção. Neste trabalho, calculamos as quatro métricas a partir de proxies (releases publicadas e execuções do GitHub Actions) em 300 repositórios populares de código aberto, em uma janela de 12 meses, e medimos o quanto os valores e as conclusões dependem das definições adotadas. Validamos a heurística que identifica releases corretivas com três avaliadores independentes (kappa de Fleiss de 0,65; F1 de 0,73) e comparamos três combinações de definições operacionais: entre 24\% e 26\% dos repositórios mudam de categoria DORA conforme a combinação. A taxa de falha por entrega cresce com a frequência de deploy ($\rho=0{,}48$), em boa parte como efeito do próprio proxy, e a idade do repositório é o fator mais associado ao lead time. Concluímos que a classificação por métrica é sensível à definição, e que a frequência de releases mede a publicação de versões, e não o deploy em produção.
 \end{resumo}
 
 \section{Introdução}
@@ -513,7 +515,7 @@ Parte da robustez observada é, portanto, um efeito mecânico da forma de agrega
 
 \textbf{As alternativas mudam a classificação em direções opostas.} Usar tags (C3) \textbf{melhora} a classificação: 54 repositórios sobem e 15 descem em relação à C1. Muitos projetos criam tags sem publicar releases, como uma tag por pacote em monorepos ou \emph{builds} de integração. Isso eleva a frequência mediana de 0,52 para 0,90 deploy por semana. O lead time também cai, de 239 h para 183 h, em parte porque a C3 usa a variante (b) e em parte porque cada tag agrupa menos commits que uma release: com a mesma variante (b), a C2 fica em 194 h. Incluir pré-releases e usar o proxy de entrega (C2) \textbf{piora} a classificação: 45 repositórios descem e 29 sobem. O motivo principal é o CFR, cuja mediana sobe de 4,6\% (CI) para 15,2\% (entrega): falhas de pipeline no default branch são raras, enquanto releases de correção logo após uma release são comuns.
 
-\textbf{Limitação desta análise.} Cada combinação altera mais de uma definição ao mesmo tempo, então não é possível atribuir uma mudança de categoria a uma única escolha. A Tabela 7.4 ajuda a separar parte desses efeitos. Entre C1 e C3, o CFR não muda e toda a diferença vem da unidade de deploy e do lead time. Entre C2 e C3, o lead time usa a mesma variante e a diferença vem da unidade e do CFR.
+\textbf{Limitação desta análise.} Cada combinação altera mais de uma definição ao mesmo tempo, então não é possível atribuir uma mudança de categoria a uma única escolha. A última tabela desta seção, com a mudança de faixa por métrica, ajuda a separar parte desses efeitos. Entre C1 e C3, o CFR não muda e toda a diferença vem da unidade de deploy e do lead time. Entre C2 e C3, o lead time usa a mesma variante e a diferença vem da unidade e do CFR.
 
 \textbf{Implicação para as RQ 01 a 06.} As conclusões sobre a \textbf{classificação geral} são moderadamente robustas: cerca de três em cada quatro repositórios mantêm a categoria. As conclusões \textbf{por métrica} não são: a faixa de lead time e a de CFR dependem da variante escolhida, e a frequência de deploy depende de contar releases ou tags. Por isso, os resultados das RQ 02, 03 e 05 devem ser lidos sempre com as duas variantes lado a lado, e a frequência de deploy, como uma medida de \textbf{publicação de versões}, não de deploy em produção.
 
@@ -539,28 +541,55 @@ A hipótese H8 previa uma rework rate maior que o CFR (b), da mesma ordem de gra
 
 A diferença de magnitude se explica pela heurística. Em projetos que usam mensagens no padrão \emph{Conventional Commits}, quase toda release de \emph{patch} contém algum commit \texttt{fix:}. Assim, a rework rate passa a medir sobretudo a \textbf{proporção de releases de patch}, um traço da política de versionamento do projeto, e não o retrabalho não planejado que o DORA pretende capturar. O CFR (b) é mais restritivo, porque exige que a correção chegue em até 7 dias depois da release avaliada. Isso faz o CFR (b) depender também do ritmo de publicação, o que ajuda a explicar a correlação fraca entre as duas medidas.
 
-Os dois resultados dependem da validade da heurística de release corretiva (seção 2.7). Se a heurística marca como corretivas releases que não são, a rework rate e o CFR (b) ficam superestimados na mesma proporção.
+Os dois resultados dependem da validade da heurística de release corretiva (Seção~\ref{sec:validacao}). Se a heurística marca como corretivas releases que não são, a rework rate e o CFR (b) ficam superestimados na mesma proporção.
 \section{Discussão}
 \label{sec:discussao}
 
-\textbf{[TODO]} Hipóteses frente aos resultados, uma por uma (H1 a H8 da Seção~\ref{sec:intro}), e o que surpreendeu. O material já está nas discussões de cada RQ: RQ 05 e RQ 06 (Seções~\ref{sec:rq05} e~\ref{sec:rq06}), RQ 07 (Seção~\ref{sec:rq07}) e RQ 08.
+% RASCUNHO: a tabela cobre H5 a H8, que já têm resultado. As linhas de H1 a H4 dependem das RQ 01 a 04 (issue #42).
+A Tabela~\ref{tab:hipoteses} confronta cada hipótese da Seção~\ref{sec:intro} com o resultado obtido. Os detalhes de cada questão estão nas Seções~\ref{sec:rq05}, \ref{sec:rq06}, \ref{sec:rq07} e na RQ 08.
+
+\begin{table}[ht]
+\centering
+\small
+\caption{Hipóteses frente aos resultados (H5 a H8).}
+\label{tab:hipoteses}
+\begin{tabular}{p{1.1cm}p{5cm}p{6.4cm}p{1.9cm}}
+\hline
+Hipótese & Previsão & Resultado & Situação \\
+\hline
+H5 (CFR de CI) & Correlação com a frequência fraca ou nula, talvez negativa. & $\rho=0{,}15$: fraca, mas positiva. & Em parte \\
+H5 (CFR de entrega) & Correlação fraca e positiva, em parte artefato do proxy. & $\rho=0{,}48$: positiva e moderada, mais forte que o previsto. & Em parte \\
+H6 (i) & Mais contribuidores, maior frequência e menor lead time. & Frequência sem diferença; lead time \emph{maior} com mais contribuidores. & Refutada \\
+H6 (ii) & Bibliotecas publicam menos e têm lead time maior. & Sem diferença significativa; apenas 60 repositórios com tipo rotulado. & Inconclusiva \\
+H6 (iii) & JS/TS, Go e Rust publicam mais que C/C++ e Java. & Frequência sem diferença após Holm; a linguagem diferencia o lead time. & Refutada \\
+H6 (iv) & Repositórios mais antigos têm lead time maior. & Confirmada, com efeito grande ($\varepsilon^2=0{,}31$). & Confirmada \\
+H7 & Pelo menos 30\% mudam de categoria; $\kappa$ ponderado de 0,4 a 0,6; mudanças entre vizinhas. & 24\% a 26\% mudam; $\kappa$ de 0,58 a 0,65; 93\% a 97\% das mudanças entre vizinhas. & Em parte \\
+H8 & \emph{Rework rate} maior que o CFR (b), mesma ordem de grandeza e fortemente correlacionada. & Maior em 88\% dos repositórios, mas com mediana de 0,60 contra 0,18 e $\rho=0{,}32$. & Em parte \\
+\hline
+\end{tabular}
+\end{table}
+
+\paragraph{O que surpreendeu.} Três resultados contrariaram a intuição. Primeiro, projetos com mais contribuidores têm lead time \emph{maior}, e não menor, o que sugere que o tamanho da comunidade acompanha um processo de release mais cauteloso. Segundo, a correlação positiva entre frequência e CFR de entrega foi mais forte que a prevista, e a análise de sensibilidade (RQ 07) e a rework rate (RQ 08) apontam a mesma causa: o proxy de release corretiva mede em boa parte a política de versionamento do projeto. Terceiro, a classificação geral é mais estável do que as classificações por métrica, em parte por efeito da agregação pela mediana das quatro notas. A conclusão comum é que as métricas DORA calculadas por proxies em código aberto devem ser lidas por variante, e a frequência de releases como publicação de versões, e não como deploy em produção.
+
+\textbf{[TODO -- issue \#42]} Linhas de H1 a H4 da tabela, com os resultados das RQ 01 a 04.
 
 \section{Ameaças à validade}
 \label{sec:ameacas}
 
-\textbf{[TODO -- revisão dos três]} As quatro categorias de Wohlin et al., cada uma apoiada na validação manual e na análise de sensibilidade.
+% RASCUNHO para revisão dos três. Organizado nas quatro categorias de Wohlin et al.~\cite{wohlin2012}.
+Organizamos as ameaças nas quatro categorias clássicas~\cite{wohlin2012}, apoiadas na validação manual e na análise de sensibilidade.
 
 \subsection{Validade de construto}
-\textbf{[TODO]} Release $\neq$ deploy (ver kappa de \emph{entrega real}, Seção~\ref{sec:validacao}); falha de CI $\neq$ falha em produção; qualidade da heurística de release corretiva (F1 e sensibilidade ao rótulo de referência, Seção~\ref{sec:validacao}); CFR (b) sensível à frequência (Seção~\ref{sec:rq05}).
+A principal ameaça é que uma release não é um deploy. Na validação manual, a concordância dos três avaliadores sobre se as releases representam entregas reais ao usuário foi de 87\% (média entre pares; os três coincidiram em 80\% dos repositórios), com $\kappa=0{,}372$ e AC1 de 0,851, e quase todos os repositórios foram classificados como entrega. Mesmo assim, em bibliotecas e \emph{frameworks} a release disponibiliza uma versão e o deploy é feito pelos usuários, e por isso lemos a frequência como publicação de versões (Seção~\ref{sec:rq07}). Da mesma forma, uma falha de CI não é uma falha em produção: o CFR (a) mede a instabilidade do pipeline (mediana de 4,6\%), e o CFR (b) depende de uma heurística de release corretiva cujo F1 foi de 0,73 pela maioria dos avaliadores, mas variou de 0,56 a 0,76 conforme a definição do rótulo de referência (Seção~\ref{sec:validacao}). O CFR (b) também está acoplado à frequência de releases (Seção~\ref{sec:rq05}). Outras ameaças de construto: o tempo de recuperação usa o CI, e uma nova execução bem-sucedida do mesmo commit conta como recuperação sem correção de código; a data do commit é a data de autoria, que preserva a data original em \emph{rebases} e \emph{squash merges} e pode inflar o lead time; e, em projetos com várias linhas de versão em paralelo, a release anterior pode pertencer a outra linha. Mitigamos o último ponto escolhendo como anterior a release da mesma linha de versão, o que, na coleta inicial de 100 repositórios, reduziu o total de commits associados às releases de 1,19 milhão para 533 mil.
 
 \subsection{Validade interna}
-\textbf{[TODO]} Idade do repositório como confundidor das métricas (Seção~\ref{sec:rq06}); linhas de versão paralelas e a escolha da release anterior.
+A idade do repositório se associa a quase todas as métricas (Seção~\ref{sec:rq06}), e as comparações entre grupos são univariadas, de modo que não separam o efeito da idade do de outros fatores, como a linguagem e o número de contribuidores. Cada combinação de definições da análise de sensibilidade altera mais de uma definição ao mesmo tempo, então uma mudança de categoria não pode ser atribuída a uma única escolha (Seção~\ref{sec:rq07}). Na rotulagem, os avaliadores não passaram por uma rodada de calibração antes de rotular, o que preserva a independência, mas deixou limiares diferentes para ``objetivo principal'' (um deles marcou 165 releases como corretivas, contra 112 e 116), e o número da versão, visível no nome da release, pode influenciar o julgamento. Uma primeira rodada de rotulagem foi descartada justamente porque dois avaliadores seguiam a regra do número de versão.
 
 \subsection{Validade externa}
-\textbf{[TODO]} Projetos populares de código aberto não representam projetos corporativos; amostra de 300 repositórios com Actions e releases; rótulos da amostra-ouro cobrem apenas 60 repositórios.
+A amostra tem 300 repositórios com mais de mil estrelas (mediana de cerca de 62 mil), que usam GitHub Actions e têm ao menos 5 releases e 50 execuções de CI na janela de 12 meses. A coleta percorre os candidatos em ordem decrescente de estrelas dentro de cada faixa e para ao atingir a amostra, o que favorece os projetos mais populares. Os resultados, portanto, não se estendem a projetos corporativos, a projetos pequenos, nem a outras plataformas de CI. A validação manual cobre 60 repositórios, sorteados de um subconjunto de 100 da amostra, e o tipo do projeto e a entrega real só existem para eles.
 
 \subsection{Validade de conclusão}
-\textbf{[TODO]} 30 testes com correção de Holm e fragilidade dos resultados com $p$ ajustado próximo de 0,05; grupos pequenos (tipo do projeto, C++); ausência de calibração prévia dos avaliadores.
+Foram 30 testes na RQ 06, corrigidos por Holm. Resultados com $p$ ajustado próximo de 0,05, como o CFR (b) por linguagem ($p=0{,}024$), são frágeis, e vários grupos são pequenos (14 repositórios em C++; de 8 a 24 por tipo de projeto, com apenas 60 rotulados). As faixas de tamanho de efeito de $\varepsilon^2$ são uma convenção nossa, e o kappa de entrega real é baixo por efeito da prevalência, e não só por discordância (Seção~\ref{sec:validacao}). A correlação da RQ 05 não implica causalidade, e a robustez da classificação geral na RQ 07 é em parte efeito mecânico da mediana das quatro notas.
 
 \section{Replicação cruzada}
 \label{sec:replicacao}

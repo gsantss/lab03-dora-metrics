@@ -87,15 +87,65 @@ python -m pipeline --config config.yaml --variants   # gera data/processed/varia
 python -m analises.rq07 --config config.yaml         # gera analises/resultados/ (sem API)
 ```
 
+## Correlação e comparação de grupos (RQ 05 e RQ 06)
+
+A RQ 05 (Spearman entre frequência de deploy e CFR) e a RQ 06 (fatores associados ao desempenho,
+com Kruskal-Wallis, correção de Holm e tamanho de efeito) rodam a partir de `metrics.csv` e
+`repositories.csv`, sem API nem token:
+
+```bash
+pip install -r requirements.txt            # já inclui requirements-analise.txt (matplotlib e scipy)
+python -m analises.rq05_rq06               # gera analises/resultados/rq05_*, rq06_* (CSVs e figuras)
+```
+
+## Validação manual e heurística de release corretiva
+
+A amostra-ouro (60 repositórios, 5 releases cada) tem um arquivo de rótulos por avaliador em
+`validacao/rotulos/`. O protocolo está em `docs/protocolo-amostra-ouro.md`. Depois de rotulada, a
+concordância e o consenso saem de `amostra_ouro.py` (ver a seção sobre a Issue #30, abaixo), e a
+heurística é avaliada contra o consenso, com precisão, *recall* e F1 de cada variante:
+
+```bash
+python validacao.py --consenso validacao/consenso.csv
+```
+
+Quem for rotular não deve abrir `validacao/rotulos/*.csv` dos colegas, `consenso.csv` nem
+`relatorio.md` antes de terminar, para manter a independência.
+
+## Replicação cruzada
+
+Para comparar uma execução replicada (por exemplo, de 30 repositórios) com o CSV original:
+
+```bash
+python -m analises.replicacao --original original.csv --replica replica.csv
+python -m analises.replicacao --original original.csv --replica replica.csv --mapa mapa.json
+```
+
+O `mapa.json` (opcional) traduz os nomes de coluna do outro grupo para os usados aqui, no formato
+`{"coluna do arquivo": "nome em metrics.csv"}`. A saída, em `analises/resultados/replicacao/`,
+traz a diferença relativa por métrica, a concordância da classificação DORA (com kappa
+ponderado) e a lista de divergências por repositório, pronta para virar Issue.
+
+## Artigo
+
+O artigo está em `artigo/main.tex`, no template da SBC, com `referencias.bib` e as figuras em
+`artigo/figuras/`. Para compilar, no Overleaf: abrir o projeto do template SBC, substituir o
+`main.tex` por este, enviar `referencias.bib` e a pasta `figuras/`. Os arquivos `sbc-template.sty`
+e `sbc.bst` vêm do template. As partes pendentes estão marcadas com `TODO`.
+
 ## Estrutura
 
 ```
 metricas.py          cálculo das métricas e classificação DORA
 pipeline/            coleta (cliente REST/GraphQL, seleção, releases, workflow runs, variantes da RQ 07)
-analises/            análises das RQs, reexecutáveis a partir dos CSVs
+analises/            análises das RQs e comparação de replicação, reexecutáveis a partir dos CSVs
+validacao.py         avaliação da heurística de release corretiva contra o consenso
+amostra_ouro.py      sorteio, concordância (kappa de Fleiss) e consenso da amostra-ouro
+validacao/           rótulos, consenso e relatório de concordância
+artigo/              artigo (main.tex), bibliografia e figuras
 tests/               testes pytest
 config.yaml          parâmetros da execução
-docs/                dicionário de dados e seções do artigo
+docs/                dicionário de dados, protocolo e seções do artigo em markdown
 ```
 
 ## Definições operacionais
@@ -110,9 +160,10 @@ com o mesmo prefixo de tag (`v`, `pkg@`…), publicada antes dela. Isso evita co
 patch de uma linha antiga (`3.6.3`) com uma release de outra linha (`4.7.2`). Tags sem versão
 reconhecível usam a release anterior por data.
 
-Release corretiva (CFR por entrega, heurística v1, a validar na amostra-ouro): a versão
-muda só no número de *patch* e há ao menos um commit com `revert`, `hotfix`, `bugfix` ou
-`fix` entre as duas releases. Releases dos últimos 7 dias da janela são censuradas.
+Release corretiva (CFR por entrega, heurística v1): a versão muda só no número de *patch* e há
+ao menos um commit com `revert`, `hotfix`, `bugfix` ou `fix` entre as duas releases. Contra o
+consenso da amostra-ouro, a v1 tem precisão de 0,68, *recall* de 0,78 e F1 de 0,73 (meta de 0,70).
+Releases dos últimos 7 dias da janela são censuradas.
 
 <!-- issue30-comandos -->
 ## Amostra-ouro e concordância — Issue #30
