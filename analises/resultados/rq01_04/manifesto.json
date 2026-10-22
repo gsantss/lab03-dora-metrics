@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "input_sha256": "feeced37ec6ee09ab4c30ad4dee93956dece233bf9385433e9d60ed79b0f5bd4",
+  "repositories": 300,
+  "quantiles": "linear",
+  "unit": "repository",
+  "versions": {
+    "pandas": "2.2.3",
+    "numpy": "2.2.6",
+    "matplotlib": "3.10.7",
+    "scipy": "1.18.1",
+    "Pillow": "13.0.0"
+  },
+  "scales": {
+    "deployment_frequency": "log",
+    "lead_time_release_h": "log",
+    "lead_time_commit_h": "log",
+    "recovery_h": "log"
+  },
+  "censorship": {
+    "episodios_total": 64677,
+    "episodios_censurados": 307,
+    "fracao_ponderada_por_episodios": 0.004746664192835166,
+    "repositorios_sem_episodios": 12,
+    "repositorios_so_censurados": 3,
+    "repositorios_com_censura": 147
+  },
+  "sha256": {
+    "c1_categorias.png": "5e9145b0fc407509da489dc448d8aec74240be056bb60ab5f054bd11b5002eca",
+    "categorias_c1.csv": "14a3d3ae1b4f25a54e2367661dfd428c63fcb6a58cfeda9c1970477b2f0887f6",
+    "censura_por_repositorio.csv": "feb8bd59808333501bd8729a253fc99df9fbdc7a0d9b00161d00e10f11bb63a3",
+    "comparacoes_pareadas.csv": "6abccd22c13f7067c6bf2089876da9bdf50b5652acfdcbc97d04f7b8c262c25b",
+    "estatisticas.csv": "5d62ffc172828b22a1bb9f5ec7bc87276dca0e0cb6d534c7be37e1949c981896",
+    "relatorio.md": "45da9148bb97ce788d6cf8a72160eb7af37874dfd564016c0841b61f57d22be1",
+    "rq01_frequencia.png": "e8cc179aeb4d7e0abbc70bef52f87aeefa6dab9e8800178c6a21afea0dd2a8e0",
+    "rq02_lead_time.png": "2805a2fee5e74dc665ebaee731ff5926855042647f31b2a9770c48bc3e74a99d",
+    "rq03_cfr.png": "5e798a0cfde38c4c52bf5cf9346561c43d260de9e4920f703af7fbf64ec7cb75",
+    "rq04_recuperacao.png": "e23885af127c06fce736bfb8190ef98e19b711efa199c0f0717a016090fe6e6c"
+  }
+}

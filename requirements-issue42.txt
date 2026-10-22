@@ -1,0 +1,5 @@
+# Ambiente de analise verificado no desenvolvimento (Python 3.12 64 bits).
+-r requirements.txt
+matplotlib==3.10.7
+scipy==1.18.1
+Pillow==13.0.0

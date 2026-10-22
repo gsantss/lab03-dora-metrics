@@ -1,0 +1,8 @@
+rq,metrica,descricao,unidade,n,ausentes,min,q1,mediana,q3,iqr,p90,max
+RQ01,deployment_frequency,Frequência de publicação,releases/semana,300,0,0.09589,0.249315,0.517808,1.208219,0.958904,3.0704108,49.556166
+RQ02,lead_time_release_h,"Lead time (a), por release",h,299,1,0.008333,103.3106945,239.152222,781.9559725,678.645278,1852.5917774,20930.652778
+RQ02,lead_time_commit_h,"Lead time (b), por commit",h,299,1,0.008333,96.9989585,263.645,893.542639,796.5436805,1989.0667496,57825.879444
+RQ03,cfr_ci,"CFR (a), proxy de CI",proporção,300,0,0,0.02316025,0.046456,0.1114375,0.08827725,0.2113537,0.900996
+RQ03,cfr_delivery,"CFR (b), proxy de entrega",proporção,298,2,0,0.02185975,0.181073,0.4,0.37814025,0.636364,0.980769
+RQ04,recovery_h,Recuperação de CI,h,285,15,0.065278,1.02875,2.620833,6.829444,5.800694,28.0618052,181.768056
+RQ04,recovery_censored_ratio,Episódios censurados por repositório,proporção,288,12,0,0,0.000728,0.01860625,0.01860625,0.071429,1

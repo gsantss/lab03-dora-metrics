@@ -1,0 +1,26 @@
+coluna,metrica,categoria,n,total,percentual
+class_deployment_frequency,Frequência,Elite,8,300,2.66666666667
+class_deployment_frequency,Frequência,High,82,300,27.3333333333
+class_deployment_frequency,Frequência,Medium,137,300,45.6666666667
+class_deployment_frequency,Frequência,Low,73,300,24.3333333333
+class_deployment_frequency,Frequência,Sem classificação,0,300,0
+class_lead_time,Lead time (a),Elite,39,300,13
+class_lead_time,Lead time (a),High,75,300,25
+class_lead_time,Lead time (a),Medium,105,300,35
+class_lead_time,Lead time (a),Low,80,300,26.6666666667
+class_lead_time,Lead time (a),Sem classificação,1,300,0.333333333333
+class_cfr,CFR (a),Elite,249,300,83
+class_cfr,CFR (a),High,34,300,11.3333333333
+class_cfr,CFR (a),Medium,10,300,3.33333333333
+class_cfr,CFR (a),Low,7,300,2.33333333333
+class_cfr,CFR (a),Sem classificação,0,300,0
+class_recovery,Recuperação,Elite,71,300,23.6666666667
+class_recovery,Recuperação,High,182,300,60.6666666667
+class_recovery,Recuperação,Medium,31,300,10.3333333333
+class_recovery,Recuperação,Low,1,300,0.333333333333
+class_recovery,Recuperação,Sem classificação,15,300,5
+class_overall,Geral C1,Elite,20,300,6.66666666667
+class_overall,Geral C1,High,122,300,40.6666666667
+class_overall,Geral C1,Medium,130,300,43.3333333333
+class_overall,Geral C1,Low,12,300,4
+class_overall,Geral C1,Sem classificação,16,300,5.33333333333

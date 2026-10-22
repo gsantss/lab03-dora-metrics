@@ -1,0 +1,3 @@
+rq,a,b,n_pares,a_maior_b,a_igual_b,a_menor_b,mediana_diferenca_a_menos_b,rho_spearman,p_spearman_exploratorio
+RQ02,lead_time_release_h,lead_time_commit_h,299,178,1,120,24.49125,0.706192453593,1.89816161683e-46
+RQ03,cfr_ci,cfr_delivery,298,103,7,188,-0.103816,0.12647875356,0.0290388024757
