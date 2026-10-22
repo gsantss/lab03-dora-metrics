@@ -183,10 +183,10 @@ Os candidatos são repositórios com mais de 1.000 estrelas, não arquivados e q
   tem ao menos 50 workflow runs válidos no default branch na janela.
 \end{enumerate}
 
-\textbf{Tabela 1. Funil de seleção.}
 
-{\def\LTcaptype{none} % do not increment counter
+{
 \begin{longtable}[]{@{}llll@{}}
+\caption{Funil de seleção}\label{tab:md1}\tabularnewline
 \toprule\noalign{}
 Etapa & Repositórios & Descartados & Motivo do descarte \\
 \midrule\noalign{}
@@ -380,13 +380,14 @@ Reproduzível a partir dos CSVs: \texttt{python\ -m\ pipeline\ -\/-config\ confi
 
 Comparamos a classificação DORA dos 300 repositórios em três combinações de definições operacionais. As combinações mudam ao mesmo tempo a unidade de deploy e as variantes de lead time e de CFR:
 
-{\def\LTcaptype{none} % do not increment counter
+{
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
   >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
   >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
   >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
   >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\caption{Combinações de definições operacionais comparadas na RQ 07}\label{tab:md0}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Combinação
@@ -411,10 +412,10 @@ C3 & tag (datada pelo commit apontado) & 51.392 (29.432 sem release) & (b) por c
 
 O tempo de recuperação vem dos workflow runs e é o mesmo nas três combinações. Entre 15 e 17 repositórios ficam sem classificação geral em cada combinação, por falta de alguma métrica.
 
-\textbf{Tabela 7.1. Métricas em cada combinação: mediana {[}IQR{]}.}
 
-{\def\LTcaptype{none} % do not increment counter
+{
 \begin{longtable}[]{@{}llll@{}}
+\caption{Métricas em cada combinação: mediana {[}IQR{]}}\label{tab:md2}\tabularnewline
 \toprule\noalign{}
 Combinação & Frequência (deploys/semana) & Lead time (h) & CFR \\
 \midrule\noalign{}
@@ -427,10 +428,10 @@ C3 & 0,90 {[}0,36; 2,16{]} & 183 {[}72; 486{]} & 0,046 {[}0,023; 0,112{]} \\
 \end{longtable}
 }
 
-\textbf{Tabela 7.2. Distribuição da classificação geral.}
 
-{\def\LTcaptype{none} % do not increment counter
+{
 \begin{longtable}[]{@{}llllll@{}}
+\caption{Distribuição da classificação geral}\label{tab:md3}\tabularnewline
 \toprule\noalign{}
 Combinação & Elite & High & Medium & Low & Sem classificação \\
 \midrule\noalign{}
@@ -443,9 +444,8 @@ C3 & 24 & 150 & 105 & 6 & 15 \\
 \end{longtable}
 }
 
-\textbf{Tabela 7.3. Concordância entre as combinações} (apenas repositórios classificados nas duas).
 
-{\def\LTcaptype{none} % do not increment counter
+{
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
   >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
@@ -453,6 +453,7 @@ C3 & 24 & 150 & 105 & 6 & 15 \\
   >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
   >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
   >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\caption{Concordância entre as combinações (apenas repositórios classificados nas duas)}\label{tab:md4}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Par
@@ -477,10 +478,10 @@ C2 × C3 & 283 & 67 (23,7\%) & 63 / 4 & 65 (97\%) & 0,639 (substancial) \\
 \end{longtable}
 }
 
-\textbf{Tabela 7.4. \% de repositórios que mudam de categoria em cada métrica.}
 
-{\def\LTcaptype{none} % do not increment counter
+{
 \begin{longtable}[]{@{}lllll@{}}
+\caption{\% de repositórios que mudam de categoria em cada métrica}\label{tab:md5}\tabularnewline
 \toprule\noalign{}
 Par & Frequência & Lead time & CFR & Recuperação \\
 \midrule\noalign{}
